@@ -7,7 +7,3 @@ C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\re
 C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\register-programmer.csproj.GenerateResource.cache
 C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\register-programmer.exe
 C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\register-programmer.pdb
-C:\Users\metin\source\repos\register-programmer\register-programmer\bin\Debug\register-programmer.exe.manifest
-C:\Users\metin\source\repos\register-programmer\register-programmer\bin\Debug\register-programmer.application
-C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\register-programmer.exe.manifest
-C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\register-programmer.application

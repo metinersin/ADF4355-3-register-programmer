@@ -75,42 +75,6 @@
             System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
             System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
             System.Windows.Forms.Label label29;
-            System.Windows.Forms.Panel panel4;
-            System.Windows.Forms.Label label44;
-            System.Windows.Forms.GroupBox groupBox3;
-            System.Windows.Forms.Panel panel16;
-            System.Windows.Forms.Label label56;
-            System.Windows.Forms.Panel panel15;
-            System.Windows.Forms.Label label55;
-            System.Windows.Forms.Panel panel14;
-            System.Windows.Forms.Label label54;
-            System.Windows.Forms.Panel panel13;
-            System.Windows.Forms.Label label53;
-            System.Windows.Forms.Panel panel12;
-            System.Windows.Forms.Label label52;
-            System.Windows.Forms.Panel panel11;
-            System.Windows.Forms.Label label51;
-            System.Windows.Forms.Panel panel10;
-            System.Windows.Forms.Label label50;
-            System.Windows.Forms.Panel panel9;
-            System.Windows.Forms.Label label49;
-            System.Windows.Forms.Panel panel8;
-            System.Windows.Forms.Label label48;
-            System.Windows.Forms.Panel panel7;
-            System.Windows.Forms.Label label47;
-            System.Windows.Forms.Panel panel6;
-            System.Windows.Forms.Label label46;
-            System.Windows.Forms.Panel panel5;
-            System.Windows.Forms.Label label45;
-            System.Windows.Forms.Panel panel20;
-            System.Windows.Forms.Label label21;
-            System.Windows.Forms.Label label22;
-            System.Windows.Forms.Panel panel21;
-            System.Windows.Forms.Label label26;
-            System.Windows.Forms.Panel panel22;
-            System.Windows.Forms.Label label27;
-            System.Windows.Forms.Label label28;
-            System.Windows.Forms.GroupBox groupBox2;
             System.Windows.Forms.FlowLayoutPanel flowLayoutPanel13;
             System.Windows.Forms.Label label25;
             System.Windows.Forms.Label label30;
@@ -164,6 +128,25 @@
             System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
             System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.TableLayoutPanel tlpRegisters;
+            System.Windows.Forms.Label label44;
+            System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label label66;
+            System.Windows.Forms.Label label67;
+            System.Windows.Forms.Label label69;
+            System.Windows.Forms.Label label63;
+            System.Windows.Forms.Label label68;
+            System.Windows.Forms.Label label70;
+            System.Windows.Forms.Label label71;
+            System.Windows.Forms.Label label72;
+            System.Windows.Forms.Label label73;
+            System.Windows.Forms.Label label75;
+            System.Windows.Forms.Label label76;
+            System.Windows.Forms.Label label21;
+            System.Windows.Forms.Label label45;
+            System.Windows.Forms.Label label26;
+            System.Windows.Forms.Label label27;
+            System.Windows.Forms.Label label22;
             this.lblInt = new System.Windows.Forms.Label();
             this.numInt = new System.Windows.Forms.NumericUpDown();
             this.numFrac1 = new System.Windows.Forms.NumericUpDown();
@@ -197,25 +180,6 @@
             this.cbPhaseResync = new System.Windows.Forms.CheckBox();
             this.cbPhaseAdjust = new System.Windows.Forms.CheckBox();
             this.numPhase = new System.Windows.Forms.NumericUpDown();
-            this.txtReg0 = new System.Windows.Forms.TextBox();
-            this.txtReg12 = new System.Windows.Forms.TextBox();
-            this.txtReg11 = new System.Windows.Forms.TextBox();
-            this.txtReg10 = new System.Windows.Forms.TextBox();
-            this.txtReg9 = new System.Windows.Forms.TextBox();
-            this.txtReg8 = new System.Windows.Forms.TextBox();
-            this.txtReg7 = new System.Windows.Forms.TextBox();
-            this.txtReg6 = new System.Windows.Forms.TextBox();
-            this.txtReg5 = new System.Windows.Forms.TextBox();
-            this.txtReg4 = new System.Windows.Forms.TextBox();
-            this.txtReg3 = new System.Windows.Forms.TextBox();
-            this.txtReg2 = new System.Windows.Forms.TextBox();
-            this.txtReg1 = new System.Windows.Forms.TextBox();
-            this.numReferenceInput = new System.Windows.Forms.NumericUpDown();
-            this.numDivider = new System.Windows.Forms.NumericUpDown();
-            this.numFchsp = new System.Windows.Forms.NumericUpDown();
-            this.flpInputs = new System.Windows.Forms.FlowLayoutPanel();
-            this.cbDoubler = new System.Windows.Forms.CheckBox();
-            this.cbDivideby2 = new System.Windows.Forms.CheckBox();
             this.numCPBleedCurrentInt = new System.Windows.Forms.NumericUpDown();
             this.numCPBleedCurrentValue = new System.Windows.Forms.NumericUpDown();
             this.numAuxOutPower = new System.Windows.Forms.NumericUpDown();
@@ -286,6 +250,25 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.hpLDMode = new System.Windows.Forms.ErrorProvider(this.components);
             this.hpADCEnable = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtReg0 = new System.Windows.Forms.TextBox();
+            this.txtReg1 = new System.Windows.Forms.TextBox();
+            this.txtReg2 = new System.Windows.Forms.TextBox();
+            this.txtReg4 = new System.Windows.Forms.TextBox();
+            this.txtReg3 = new System.Windows.Forms.TextBox();
+            this.txtReg5 = new System.Windows.Forms.TextBox();
+            this.txtReg6 = new System.Windows.Forms.TextBox();
+            this.txtReg7 = new System.Windows.Forms.TextBox();
+            this.txtReg11 = new System.Windows.Forms.TextBox();
+            this.txtReg10 = new System.Windows.Forms.TextBox();
+            this.txtReg9 = new System.Windows.Forms.TextBox();
+            this.txtReg12 = new System.Windows.Forms.TextBox();
+            this.txtReg8 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.numReferenceInput = new System.Windows.Forms.NumericUpDown();
+            this.numDivider = new System.Windows.Forms.NumericUpDown();
+            this.cbDoubler = new System.Windows.Forms.CheckBox();
+            this.cbDivideby2 = new System.Windows.Forms.CheckBox();
+            this.numFchsp = new System.Windows.Forms.NumericUpDown();
             gbCalculations = new System.Windows.Forms.GroupBox();
             flowLayoutPanel46 = new System.Windows.Forms.FlowLayoutPanel();
             flowLayoutPanel44 = new System.Windows.Forms.FlowLayoutPanel();
@@ -332,42 +315,6 @@
             flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             label29 = new System.Windows.Forms.Label();
-            panel4 = new System.Windows.Forms.Panel();
-            label44 = new System.Windows.Forms.Label();
-            groupBox3 = new System.Windows.Forms.GroupBox();
-            panel16 = new System.Windows.Forms.Panel();
-            label56 = new System.Windows.Forms.Label();
-            panel15 = new System.Windows.Forms.Panel();
-            label55 = new System.Windows.Forms.Label();
-            panel14 = new System.Windows.Forms.Panel();
-            label54 = new System.Windows.Forms.Label();
-            panel13 = new System.Windows.Forms.Panel();
-            label53 = new System.Windows.Forms.Label();
-            panel12 = new System.Windows.Forms.Panel();
-            label52 = new System.Windows.Forms.Label();
-            panel11 = new System.Windows.Forms.Panel();
-            label51 = new System.Windows.Forms.Label();
-            panel10 = new System.Windows.Forms.Panel();
-            label50 = new System.Windows.Forms.Label();
-            panel9 = new System.Windows.Forms.Panel();
-            label49 = new System.Windows.Forms.Label();
-            panel8 = new System.Windows.Forms.Panel();
-            label48 = new System.Windows.Forms.Label();
-            panel7 = new System.Windows.Forms.Panel();
-            label47 = new System.Windows.Forms.Label();
-            panel6 = new System.Windows.Forms.Panel();
-            label46 = new System.Windows.Forms.Label();
-            panel5 = new System.Windows.Forms.Panel();
-            label45 = new System.Windows.Forms.Label();
-            panel20 = new System.Windows.Forms.Panel();
-            label21 = new System.Windows.Forms.Label();
-            label22 = new System.Windows.Forms.Label();
-            panel21 = new System.Windows.Forms.Panel();
-            label26 = new System.Windows.Forms.Label();
-            panel22 = new System.Windows.Forms.Panel();
-            label27 = new System.Windows.Forms.Label();
-            label28 = new System.Windows.Forms.Label();
-            groupBox2 = new System.Windows.Forms.GroupBox();
             flowLayoutPanel13 = new System.Windows.Forms.FlowLayoutPanel();
             label25 = new System.Windows.Forms.Label();
             label30 = new System.Windows.Forms.Label();
@@ -420,6 +367,25 @@
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            tlpRegisters = new System.Windows.Forms.TableLayoutPanel();
+            label44 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label66 = new System.Windows.Forms.Label();
+            label67 = new System.Windows.Forms.Label();
+            label69 = new System.Windows.Forms.Label();
+            label63 = new System.Windows.Forms.Label();
+            label68 = new System.Windows.Forms.Label();
+            label70 = new System.Windows.Forms.Label();
+            label71 = new System.Windows.Forms.Label();
+            label72 = new System.Windows.Forms.Label();
+            label73 = new System.Windows.Forms.Label();
+            label75 = new System.Windows.Forms.Label();
+            label76 = new System.Windows.Forms.Label();
+            label21 = new System.Windows.Forms.Label();
+            label45 = new System.Windows.Forms.Label();
+            label26 = new System.Windows.Forms.Label();
+            label27 = new System.Windows.Forms.Label();
+            label22 = new System.Windows.Forms.Label();
             gbCalculations.SuspendLayout();
             flowLayoutPanel46.SuspendLayout();
             flowLayoutPanel44.SuspendLayout();
@@ -458,28 +424,6 @@
             flowLayoutPanel5.SuspendLayout();
             flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPhase)).BeginInit();
-            panel4.SuspendLayout();
-            groupBox3.SuspendLayout();
-            panel16.SuspendLayout();
-            panel15.SuspendLayout();
-            panel14.SuspendLayout();
-            panel13.SuspendLayout();
-            panel12.SuspendLayout();
-            panel11.SuspendLayout();
-            panel10.SuspendLayout();
-            panel9.SuspendLayout();
-            panel8.SuspendLayout();
-            panel7.SuspendLayout();
-            panel6.SuspendLayout();
-            panel5.SuspendLayout();
-            panel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numReferenceInput)).BeginInit();
-            panel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDivider)).BeginInit();
-            panel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numFchsp)).BeginInit();
-            groupBox2.SuspendLayout();
-            this.flpInputs.SuspendLayout();
             flowLayoutPanel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCPBleedCurrentInt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCPBleedCurrentValue)).BeginInit();
@@ -549,6 +493,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.hpSDLoadReset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpLDMode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpADCEnable)).BeginInit();
+            tlpRegisters.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numReferenceInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDivider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFchsp)).BeginInit();
             this.SuspendLayout();
             // 
             // gbCalculations
@@ -1624,729 +1573,6 @@
             this.numPhase.Size = new System.Drawing.Size(100, 23);
             this.numPhase.TabIndex = 9;
             // 
-            // panel4
-            // 
-            panel4.AutoSize = true;
-            panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel4.Controls.Add(this.txtReg0);
-            panel4.Controls.Add(label44);
-            panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            panel4.Location = new System.Drawing.Point(3, 19);
-            panel4.MinimumSize = new System.Drawing.Size(0, 22);
-            panel4.Name = "panel4";
-            panel4.Padding = new System.Windows.Forms.Padding(3);
-            panel4.Size = new System.Drawing.Size(181, 22);
-            panel4.TabIndex = 12;
-            // 
-            // txtReg0
-            // 
-            this.txtReg0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReg0.Location = new System.Drawing.Point(67, 3);
-            this.txtReg0.Name = "txtReg0";
-            this.txtReg0.ReadOnly = true;
-            this.txtReg0.Size = new System.Drawing.Size(111, 23);
-            this.txtReg0.TabIndex = 36;
-            // 
-            // label44
-            // 
-            label44.AutoEllipsis = true;
-            label44.AutoSize = true;
-            label44.Dock = System.Windows.Forms.DockStyle.Left;
-            label44.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label44.Location = new System.Drawing.Point(3, 3);
-            label44.Margin = new System.Windows.Forms.Padding(3);
-            label44.Name = "label44";
-            label44.Size = new System.Drawing.Size(64, 17);
-            label44.TabIndex = 37;
-            label44.Text = "Reg 0 :";
-            label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // groupBox3
-            // 
-            groupBox3.AutoSize = true;
-            groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            groupBox3.Controls.Add(panel16);
-            groupBox3.Controls.Add(panel15);
-            groupBox3.Controls.Add(panel14);
-            groupBox3.Controls.Add(panel13);
-            groupBox3.Controls.Add(panel12);
-            groupBox3.Controls.Add(panel11);
-            groupBox3.Controls.Add(panel10);
-            groupBox3.Controls.Add(panel9);
-            groupBox3.Controls.Add(panel8);
-            groupBox3.Controls.Add(panel7);
-            groupBox3.Controls.Add(panel6);
-            groupBox3.Controls.Add(panel5);
-            groupBox3.Controls.Add(panel4);
-            groupBox3.Location = new System.Drawing.Point(1226, 12);
-            groupBox3.MinimumSize = new System.Drawing.Size(187, 308);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(187, 308);
-            groupBox3.TabIndex = 36;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Registers";
-            // 
-            // panel16
-            // 
-            panel16.AutoSize = true;
-            panel16.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel16.Controls.Add(this.txtReg12);
-            panel16.Controls.Add(label56);
-            panel16.Dock = System.Windows.Forms.DockStyle.Top;
-            panel16.Location = new System.Drawing.Point(3, 283);
-            panel16.MinimumSize = new System.Drawing.Size(0, 22);
-            panel16.Name = "panel16";
-            panel16.Padding = new System.Windows.Forms.Padding(3);
-            panel16.Size = new System.Drawing.Size(181, 22);
-            panel16.TabIndex = 49;
-            // 
-            // txtReg12
-            // 
-            this.txtReg12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReg12.Location = new System.Drawing.Point(67, 3);
-            this.txtReg12.Name = "txtReg12";
-            this.txtReg12.ReadOnly = true;
-            this.txtReg12.Size = new System.Drawing.Size(111, 23);
-            this.txtReg12.TabIndex = 36;
-            // 
-            // label56
-            // 
-            label56.AutoEllipsis = true;
-            label56.AutoSize = true;
-            label56.Dock = System.Windows.Forms.DockStyle.Left;
-            label56.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label56.Location = new System.Drawing.Point(3, 3);
-            label56.Margin = new System.Windows.Forms.Padding(3);
-            label56.Name = "label56";
-            label56.Size = new System.Drawing.Size(64, 17);
-            label56.TabIndex = 37;
-            label56.Text = "Reg 12:";
-            label56.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel15
-            // 
-            panel15.AutoSize = true;
-            panel15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel15.Controls.Add(this.txtReg11);
-            panel15.Controls.Add(label55);
-            panel15.Dock = System.Windows.Forms.DockStyle.Top;
-            panel15.Location = new System.Drawing.Point(3, 261);
-            panel15.MinimumSize = new System.Drawing.Size(0, 22);
-            panel15.Name = "panel15";
-            panel15.Padding = new System.Windows.Forms.Padding(3);
-            panel15.Size = new System.Drawing.Size(181, 22);
-            panel15.TabIndex = 48;
-            // 
-            // txtReg11
-            // 
-            this.txtReg11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReg11.Location = new System.Drawing.Point(67, 3);
-            this.txtReg11.Name = "txtReg11";
-            this.txtReg11.ReadOnly = true;
-            this.txtReg11.Size = new System.Drawing.Size(111, 23);
-            this.txtReg11.TabIndex = 36;
-            // 
-            // label55
-            // 
-            label55.AutoEllipsis = true;
-            label55.AutoSize = true;
-            label55.Dock = System.Windows.Forms.DockStyle.Left;
-            label55.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label55.Location = new System.Drawing.Point(3, 3);
-            label55.Margin = new System.Windows.Forms.Padding(3);
-            label55.Name = "label55";
-            label55.Size = new System.Drawing.Size(64, 17);
-            label55.TabIndex = 37;
-            label55.Text = "Reg 11:";
-            label55.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel14
-            // 
-            panel14.AutoSize = true;
-            panel14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel14.Controls.Add(this.txtReg10);
-            panel14.Controls.Add(label54);
-            panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            panel14.Location = new System.Drawing.Point(3, 239);
-            panel14.MinimumSize = new System.Drawing.Size(0, 22);
-            panel14.Name = "panel14";
-            panel14.Padding = new System.Windows.Forms.Padding(3);
-            panel14.Size = new System.Drawing.Size(181, 22);
-            panel14.TabIndex = 47;
-            // 
-            // txtReg10
-            // 
-            this.txtReg10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReg10.Location = new System.Drawing.Point(67, 3);
-            this.txtReg10.Name = "txtReg10";
-            this.txtReg10.ReadOnly = true;
-            this.txtReg10.Size = new System.Drawing.Size(111, 23);
-            this.txtReg10.TabIndex = 36;
-            // 
-            // label54
-            // 
-            label54.AutoEllipsis = true;
-            label54.AutoSize = true;
-            label54.Dock = System.Windows.Forms.DockStyle.Left;
-            label54.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label54.Location = new System.Drawing.Point(3, 3);
-            label54.Margin = new System.Windows.Forms.Padding(3);
-            label54.Name = "label54";
-            label54.Size = new System.Drawing.Size(64, 17);
-            label54.TabIndex = 37;
-            label54.Text = "Reg 10:";
-            label54.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel13
-            // 
-            panel13.AutoSize = true;
-            panel13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel13.Controls.Add(this.txtReg9);
-            panel13.Controls.Add(label53);
-            panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            panel13.Location = new System.Drawing.Point(3, 217);
-            panel13.MinimumSize = new System.Drawing.Size(0, 22);
-            panel13.Name = "panel13";
-            panel13.Padding = new System.Windows.Forms.Padding(3);
-            panel13.Size = new System.Drawing.Size(181, 22);
-            panel13.TabIndex = 46;
-            // 
-            // txtReg9
-            // 
-            this.txtReg9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReg9.Location = new System.Drawing.Point(67, 3);
-            this.txtReg9.Name = "txtReg9";
-            this.txtReg9.ReadOnly = true;
-            this.txtReg9.Size = new System.Drawing.Size(111, 23);
-            this.txtReg9.TabIndex = 36;
-            // 
-            // label53
-            // 
-            label53.AutoEllipsis = true;
-            label53.AutoSize = true;
-            label53.Dock = System.Windows.Forms.DockStyle.Left;
-            label53.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label53.Location = new System.Drawing.Point(3, 3);
-            label53.Margin = new System.Windows.Forms.Padding(3);
-            label53.Name = "label53";
-            label53.Size = new System.Drawing.Size(64, 17);
-            label53.TabIndex = 37;
-            label53.Text = "Reg 9 :";
-            label53.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel12
-            // 
-            panel12.AutoSize = true;
-            panel12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel12.Controls.Add(this.txtReg8);
-            panel12.Controls.Add(label52);
-            panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            panel12.Location = new System.Drawing.Point(3, 195);
-            panel12.MinimumSize = new System.Drawing.Size(0, 22);
-            panel12.Name = "panel12";
-            panel12.Padding = new System.Windows.Forms.Padding(3);
-            panel12.Size = new System.Drawing.Size(181, 22);
-            panel12.TabIndex = 45;
-            // 
-            // txtReg8
-            // 
-            this.txtReg8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReg8.Location = new System.Drawing.Point(67, 3);
-            this.txtReg8.Name = "txtReg8";
-            this.txtReg8.ReadOnly = true;
-            this.txtReg8.Size = new System.Drawing.Size(111, 23);
-            this.txtReg8.TabIndex = 36;
-            // 
-            // label52
-            // 
-            label52.AutoEllipsis = true;
-            label52.AutoSize = true;
-            label52.Dock = System.Windows.Forms.DockStyle.Left;
-            label52.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label52.Location = new System.Drawing.Point(3, 3);
-            label52.Margin = new System.Windows.Forms.Padding(3);
-            label52.Name = "label52";
-            label52.Size = new System.Drawing.Size(64, 17);
-            label52.TabIndex = 37;
-            label52.Text = "Reg 8 :";
-            label52.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel11
-            // 
-            panel11.AutoSize = true;
-            panel11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel11.Controls.Add(this.txtReg7);
-            panel11.Controls.Add(label51);
-            panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            panel11.Location = new System.Drawing.Point(3, 173);
-            panel11.MinimumSize = new System.Drawing.Size(0, 22);
-            panel11.Name = "panel11";
-            panel11.Padding = new System.Windows.Forms.Padding(3);
-            panel11.Size = new System.Drawing.Size(181, 22);
-            panel11.TabIndex = 44;
-            // 
-            // txtReg7
-            // 
-            this.txtReg7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReg7.Location = new System.Drawing.Point(67, 3);
-            this.txtReg7.Name = "txtReg7";
-            this.txtReg7.ReadOnly = true;
-            this.txtReg7.Size = new System.Drawing.Size(111, 23);
-            this.txtReg7.TabIndex = 36;
-            // 
-            // label51
-            // 
-            label51.AutoEllipsis = true;
-            label51.AutoSize = true;
-            label51.Dock = System.Windows.Forms.DockStyle.Left;
-            label51.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label51.Location = new System.Drawing.Point(3, 3);
-            label51.Margin = new System.Windows.Forms.Padding(3);
-            label51.Name = "label51";
-            label51.Size = new System.Drawing.Size(64, 17);
-            label51.TabIndex = 37;
-            label51.Text = "Reg 7 :";
-            label51.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel10
-            // 
-            panel10.AutoSize = true;
-            panel10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel10.Controls.Add(this.txtReg6);
-            panel10.Controls.Add(label50);
-            panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            panel10.Location = new System.Drawing.Point(3, 151);
-            panel10.MinimumSize = new System.Drawing.Size(0, 22);
-            panel10.Name = "panel10";
-            panel10.Padding = new System.Windows.Forms.Padding(3);
-            panel10.Size = new System.Drawing.Size(181, 22);
-            panel10.TabIndex = 43;
-            // 
-            // txtReg6
-            // 
-            this.txtReg6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReg6.Location = new System.Drawing.Point(67, 3);
-            this.txtReg6.Name = "txtReg6";
-            this.txtReg6.ReadOnly = true;
-            this.txtReg6.Size = new System.Drawing.Size(111, 23);
-            this.txtReg6.TabIndex = 36;
-            // 
-            // label50
-            // 
-            label50.AutoEllipsis = true;
-            label50.AutoSize = true;
-            label50.Dock = System.Windows.Forms.DockStyle.Left;
-            label50.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label50.Location = new System.Drawing.Point(3, 3);
-            label50.Margin = new System.Windows.Forms.Padding(3);
-            label50.Name = "label50";
-            label50.Size = new System.Drawing.Size(64, 17);
-            label50.TabIndex = 37;
-            label50.Text = "Reg 6 :";
-            label50.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel9
-            // 
-            panel9.AutoSize = true;
-            panel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel9.Controls.Add(this.txtReg5);
-            panel9.Controls.Add(label49);
-            panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            panel9.Location = new System.Drawing.Point(3, 129);
-            panel9.MinimumSize = new System.Drawing.Size(0, 22);
-            panel9.Name = "panel9";
-            panel9.Padding = new System.Windows.Forms.Padding(3);
-            panel9.Size = new System.Drawing.Size(181, 22);
-            panel9.TabIndex = 42;
-            // 
-            // txtReg5
-            // 
-            this.txtReg5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReg5.Location = new System.Drawing.Point(67, 3);
-            this.txtReg5.Name = "txtReg5";
-            this.txtReg5.ReadOnly = true;
-            this.txtReg5.Size = new System.Drawing.Size(111, 23);
-            this.txtReg5.TabIndex = 36;
-            // 
-            // label49
-            // 
-            label49.AutoEllipsis = true;
-            label49.AutoSize = true;
-            label49.Dock = System.Windows.Forms.DockStyle.Left;
-            label49.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label49.Location = new System.Drawing.Point(3, 3);
-            label49.Margin = new System.Windows.Forms.Padding(3);
-            label49.Name = "label49";
-            label49.Size = new System.Drawing.Size(64, 17);
-            label49.TabIndex = 37;
-            label49.Text = "Reg 5 :";
-            label49.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel8
-            // 
-            panel8.AutoSize = true;
-            panel8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel8.Controls.Add(this.txtReg4);
-            panel8.Controls.Add(label48);
-            panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            panel8.Location = new System.Drawing.Point(3, 107);
-            panel8.MinimumSize = new System.Drawing.Size(0, 22);
-            panel8.Name = "panel8";
-            panel8.Padding = new System.Windows.Forms.Padding(3);
-            panel8.Size = new System.Drawing.Size(181, 22);
-            panel8.TabIndex = 41;
-            // 
-            // txtReg4
-            // 
-            this.txtReg4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReg4.Location = new System.Drawing.Point(67, 3);
-            this.txtReg4.Name = "txtReg4";
-            this.txtReg4.ReadOnly = true;
-            this.txtReg4.Size = new System.Drawing.Size(111, 23);
-            this.txtReg4.TabIndex = 36;
-            // 
-            // label48
-            // 
-            label48.AutoEllipsis = true;
-            label48.AutoSize = true;
-            label48.Dock = System.Windows.Forms.DockStyle.Left;
-            label48.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label48.Location = new System.Drawing.Point(3, 3);
-            label48.Margin = new System.Windows.Forms.Padding(3);
-            label48.Name = "label48";
-            label48.Size = new System.Drawing.Size(64, 17);
-            label48.TabIndex = 37;
-            label48.Text = "Reg 4 :";
-            label48.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel7
-            // 
-            panel7.AutoSize = true;
-            panel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel7.Controls.Add(this.txtReg3);
-            panel7.Controls.Add(label47);
-            panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            panel7.Location = new System.Drawing.Point(3, 85);
-            panel7.MinimumSize = new System.Drawing.Size(0, 22);
-            panel7.Name = "panel7";
-            panel7.Padding = new System.Windows.Forms.Padding(3);
-            panel7.Size = new System.Drawing.Size(181, 22);
-            panel7.TabIndex = 40;
-            // 
-            // txtReg3
-            // 
-            this.txtReg3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReg3.Location = new System.Drawing.Point(67, 3);
-            this.txtReg3.Name = "txtReg3";
-            this.txtReg3.ReadOnly = true;
-            this.txtReg3.Size = new System.Drawing.Size(111, 23);
-            this.txtReg3.TabIndex = 36;
-            // 
-            // label47
-            // 
-            label47.AutoEllipsis = true;
-            label47.AutoSize = true;
-            label47.Dock = System.Windows.Forms.DockStyle.Left;
-            label47.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label47.Location = new System.Drawing.Point(3, 3);
-            label47.Margin = new System.Windows.Forms.Padding(3);
-            label47.Name = "label47";
-            label47.Size = new System.Drawing.Size(64, 17);
-            label47.TabIndex = 37;
-            label47.Text = "Reg 3 :";
-            label47.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel6
-            // 
-            panel6.AutoSize = true;
-            panel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel6.Controls.Add(this.txtReg2);
-            panel6.Controls.Add(label46);
-            panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            panel6.Location = new System.Drawing.Point(3, 63);
-            panel6.MinimumSize = new System.Drawing.Size(0, 22);
-            panel6.Name = "panel6";
-            panel6.Padding = new System.Windows.Forms.Padding(3);
-            panel6.Size = new System.Drawing.Size(181, 22);
-            panel6.TabIndex = 39;
-            // 
-            // txtReg2
-            // 
-            this.txtReg2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReg2.Location = new System.Drawing.Point(67, 3);
-            this.txtReg2.Name = "txtReg2";
-            this.txtReg2.ReadOnly = true;
-            this.txtReg2.Size = new System.Drawing.Size(111, 23);
-            this.txtReg2.TabIndex = 36;
-            // 
-            // label46
-            // 
-            label46.AutoEllipsis = true;
-            label46.AutoSize = true;
-            label46.Dock = System.Windows.Forms.DockStyle.Left;
-            label46.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label46.Location = new System.Drawing.Point(3, 3);
-            label46.Margin = new System.Windows.Forms.Padding(3);
-            label46.Name = "label46";
-            label46.Size = new System.Drawing.Size(64, 17);
-            label46.TabIndex = 37;
-            label46.Text = "Reg 2 :";
-            label46.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel5
-            // 
-            panel5.AutoSize = true;
-            panel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel5.Controls.Add(this.txtReg1);
-            panel5.Controls.Add(label45);
-            panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            panel5.Location = new System.Drawing.Point(3, 41);
-            panel5.MinimumSize = new System.Drawing.Size(0, 22);
-            panel5.Name = "panel5";
-            panel5.Padding = new System.Windows.Forms.Padding(3);
-            panel5.Size = new System.Drawing.Size(181, 22);
-            panel5.TabIndex = 38;
-            // 
-            // txtReg1
-            // 
-            this.txtReg1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReg1.Location = new System.Drawing.Point(67, 3);
-            this.txtReg1.Name = "txtReg1";
-            this.txtReg1.ReadOnly = true;
-            this.txtReg1.Size = new System.Drawing.Size(111, 23);
-            this.txtReg1.TabIndex = 36;
-            // 
-            // label45
-            // 
-            label45.AutoEllipsis = true;
-            label45.AutoSize = true;
-            label45.Dock = System.Windows.Forms.DockStyle.Left;
-            label45.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label45.Location = new System.Drawing.Point(3, 3);
-            label45.Margin = new System.Windows.Forms.Padding(3);
-            label45.Name = "label45";
-            label45.Size = new System.Drawing.Size(64, 17);
-            label45.TabIndex = 37;
-            label45.Text = "Reg 1 :";
-            label45.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel20
-            // 
-            panel20.AutoSize = true;
-            panel20.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel20.Controls.Add(this.numReferenceInput);
-            panel20.Controls.Add(label21);
-            panel20.Controls.Add(label22);
-            panel20.Location = new System.Drawing.Point(3, 3);
-            panel20.Name = "panel20";
-            panel20.Size = new System.Drawing.Size(244, 23);
-            panel20.TabIndex = 13;
-            // 
-            // numReferenceInput
-            // 
-            this.numReferenceInput.AutoSize = true;
-            this.numReferenceInput.DecimalPlaces = 6;
-            this.numReferenceInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numReferenceInput.Location = new System.Drawing.Point(96, 0);
-            this.numReferenceInput.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.numReferenceInput.Name = "numReferenceInput";
-            this.numReferenceInput.Size = new System.Drawing.Size(116, 23);
-            this.numReferenceInput.TabIndex = 0;
-            this.numReferenceInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numReferenceInput.Value = new decimal(new int[] {
-            12288,
-            0,
-            0,
-            131072});
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Dock = System.Windows.Forms.DockStyle.Left;
-            label21.Location = new System.Drawing.Point(0, 0);
-            label21.MinimumSize = new System.Drawing.Size(0, 23);
-            label21.Name = "label21";
-            label21.Size = new System.Drawing.Size(96, 23);
-            label21.TabIndex = 1;
-            label21.Text = "Ref. Input:";
-            label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Dock = System.Windows.Forms.DockStyle.Right;
-            label22.Location = new System.Drawing.Point(212, 0);
-            label22.MinimumSize = new System.Drawing.Size(0, 23);
-            label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(32, 23);
-            label22.TabIndex = 2;
-            label22.Text = "MHz";
-            label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel21
-            // 
-            panel21.AutoSize = true;
-            panel21.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel21.Controls.Add(this.numDivider);
-            panel21.Controls.Add(label26);
-            panel21.Dock = System.Windows.Forms.DockStyle.Left;
-            panel21.Location = new System.Drawing.Point(253, 3);
-            panel21.Name = "panel21";
-            panel21.Size = new System.Drawing.Size(132, 23);
-            panel21.TabIndex = 14;
-            // 
-            // numDivider
-            // 
-            this.numDivider.AutoSize = true;
-            this.numDivider.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numDivider.Location = new System.Drawing.Point(72, 0);
-            this.numDivider.Maximum = new decimal(new int[] {
-            1023,
-            0,
-            0,
-            0});
-            this.numDivider.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numDivider.Name = "numDivider";
-            this.numDivider.Size = new System.Drawing.Size(60, 23);
-            this.numDivider.TabIndex = 4;
-            this.numDivider.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numDivider.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Dock = System.Windows.Forms.DockStyle.Left;
-            label26.Location = new System.Drawing.Point(0, 0);
-            label26.MinimumSize = new System.Drawing.Size(0, 23);
-            label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(72, 23);
-            label26.TabIndex = 1;
-            label26.Text = "Divider:";
-            label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel22
-            // 
-            panel22.AutoSize = true;
-            panel22.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            panel22.Controls.Add(this.numFchsp);
-            panel22.Controls.Add(label27);
-            panel22.Controls.Add(label28);
-            panel22.Dock = System.Windows.Forms.DockStyle.Left;
-            panel22.Location = new System.Drawing.Point(551, 3);
-            panel22.Name = "panel22";
-            panel22.Size = new System.Drawing.Size(252, 23);
-            panel22.TabIndex = 38;
-            // 
-            // numFchsp
-            // 
-            this.numFchsp.AutoSize = true;
-            this.numFchsp.DecimalPlaces = 6;
-            this.numFchsp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numFchsp.Location = new System.Drawing.Point(104, 0);
-            this.numFchsp.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.numFchsp.Name = "numFchsp";
-            this.numFchsp.Size = new System.Drawing.Size(116, 23);
-            this.numFchsp.TabIndex = 23;
-            this.numFchsp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numFchsp.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Dock = System.Windows.Forms.DockStyle.Left;
-            label27.Location = new System.Drawing.Point(0, 0);
-            label27.MinimumSize = new System.Drawing.Size(0, 23);
-            label27.Name = "label27";
-            label27.Size = new System.Drawing.Size(104, 23);
-            label27.TabIndex = 1;
-            label27.Text = "Ch. Spacing:";
-            label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label28
-            // 
-            label28.AutoSize = true;
-            label28.Dock = System.Windows.Forms.DockStyle.Right;
-            label28.Location = new System.Drawing.Point(220, 0);
-            label28.MinimumSize = new System.Drawing.Size(0, 23);
-            label28.Name = "label28";
-            label28.Size = new System.Drawing.Size(32, 23);
-            label28.TabIndex = 2;
-            label28.Text = "MHz";
-            label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // groupBox2
-            // 
-            groupBox2.AutoSize = true;
-            groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            groupBox2.Controls.Add(this.flpInputs);
-            groupBox2.Location = new System.Drawing.Point(10, 7);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new System.Drawing.Size(812, 51);
-            groupBox2.TabIndex = 12;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Inputs";
-            // 
-            // flpInputs
-            // 
-            this.flpInputs.AutoSize = true;
-            this.flpInputs.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flpInputs.Controls.Add(panel20);
-            this.flpInputs.Controls.Add(panel21);
-            this.flpInputs.Controls.Add(this.cbDoubler);
-            this.flpInputs.Controls.Add(this.cbDivideby2);
-            this.flpInputs.Controls.Add(panel22);
-            this.flpInputs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpInputs.Location = new System.Drawing.Point(3, 19);
-            this.flpInputs.Name = "flpInputs";
-            this.flpInputs.Size = new System.Drawing.Size(806, 29);
-            this.flpInputs.TabIndex = 12;
-            // 
-            // cbDoubler
-            // 
-            this.cbDoubler.AutoSize = true;
-            this.cbDoubler.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbDoubler.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbDoubler.Location = new System.Drawing.Point(391, 3);
-            this.cbDoubler.Name = "cbDoubler";
-            this.cbDoubler.Size = new System.Drawing.Size(94, 23);
-            this.cbDoubler.TabIndex = 15;
-            this.cbDoubler.Text = "Doubler:";
-            this.cbDoubler.UseVisualStyleBackColor = true;
-            // 
-            // cbDivideby2
-            // 
-            this.cbDivideby2.AutoSize = true;
-            this.cbDivideby2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbDivideby2.Checked = true;
-            this.cbDivideby2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbDivideby2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbDivideby2.Location = new System.Drawing.Point(491, 3);
-            this.cbDivideby2.Name = "cbDivideby2";
-            this.cbDivideby2.Size = new System.Drawing.Size(54, 23);
-            this.cbDivideby2.TabIndex = 16;
-            this.cbDivideby2.Text = "/2:";
-            this.cbDivideby2.UseVisualStyleBackColor = true;
-            // 
             // flowLayoutPanel13
             // 
             flowLayoutPanel13.AutoSize = true;
@@ -2679,7 +1905,7 @@
             "2048",
             "4096",
             "8192"});
-            this.cbLDCycleCount.Location = new System.Drawing.Point(89, 5);
+            this.cbLDCycleCount.Location = new System.Drawing.Point(89, 4);
             this.cbLDCycleCount.Name = "cbLDCycleCount";
             this.cbLDCycleCount.Size = new System.Drawing.Size(78, 23);
             this.cbLDCycleCount.TabIndex = 4;
@@ -2717,7 +1943,7 @@
             "6.0 ns",
             "8.0 ns",
             "12.0 ns"});
-            this.cbFracNPrecision.Location = new System.Drawing.Point(97, 4);
+            this.cbFracNPrecision.Location = new System.Drawing.Point(97, 5);
             this.cbFracNPrecision.Name = "cbFracNPrecision";
             this.cbFracNPrecision.Size = new System.Drawing.Size(78, 23);
             this.cbFracNPrecision.TabIndex = 4;
@@ -3694,7 +2920,7 @@
             this.flpErrors.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpErrors.Location = new System.Drawing.Point(757, 72);
             this.flpErrors.Name = "flpErrors";
-            this.flpErrors.Size = new System.Drawing.Size(399, 191);
+            this.flpErrors.Size = new System.Drawing.Size(575, 191);
             this.flpErrors.TabIndex = 66;
             this.flpErrors.WrapContents = false;
             // 
@@ -3905,17 +3131,599 @@
             this.hpADCEnable.ContainerControl = this;
             this.hpADCEnable.Icon = ((System.Drawing.Icon)(resources.GetObject("hpADCEnable.Icon")));
             // 
+            // tlpRegisters
+            // 
+            tlpRegisters.AutoSize = true;
+            tlpRegisters.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tlpRegisters.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            tlpRegisters.ColumnCount = 2;
+            tlpRegisters.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tlpRegisters.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tlpRegisters.Controls.Add(label44, 0, 0);
+            tlpRegisters.Controls.Add(this.txtReg0, 1, 0);
+            tlpRegisters.Controls.Add(label76, 0, 1);
+            tlpRegisters.Controls.Add(label4, 0, 2);
+            tlpRegisters.Controls.Add(label67, 0, 3);
+            tlpRegisters.Controls.Add(label69, 0, 4);
+            tlpRegisters.Controls.Add(label66, 0, 5);
+            tlpRegisters.Controls.Add(label63, 0, 6);
+            tlpRegisters.Controls.Add(label68, 0, 7);
+            tlpRegisters.Controls.Add(label71, 0, 8);
+            tlpRegisters.Controls.Add(label70, 0, 9);
+            tlpRegisters.Controls.Add(label73, 0, 10);
+            tlpRegisters.Controls.Add(label75, 0, 11);
+            tlpRegisters.Controls.Add(label72, 0, 12);
+            tlpRegisters.Controls.Add(this.txtReg1, 1, 1);
+            tlpRegisters.Controls.Add(this.txtReg2, 1, 2);
+            tlpRegisters.Controls.Add(this.txtReg4, 1, 4);
+            tlpRegisters.Controls.Add(this.txtReg3, 1, 3);
+            tlpRegisters.Controls.Add(this.txtReg5, 1, 5);
+            tlpRegisters.Controls.Add(this.txtReg6, 1, 6);
+            tlpRegisters.Controls.Add(this.txtReg7, 1, 7);
+            tlpRegisters.Controls.Add(this.txtReg9, 1, 9);
+            tlpRegisters.Controls.Add(this.txtReg10, 1, 10);
+            tlpRegisters.Controls.Add(this.txtReg11, 1, 11);
+            tlpRegisters.Controls.Add(this.txtReg12, 1, 12);
+            tlpRegisters.Controls.Add(this.txtReg8, 1, 8);
+            tlpRegisters.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tlpRegisters.Location = new System.Drawing.Point(1495, 154);
+            tlpRegisters.Name = "tlpRegisters";
+            tlpRegisters.RowCount = 14;
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.Size = new System.Drawing.Size(254, 548);
+            tlpRegisters.TabIndex = 68;
+            // 
+            // label44
+            // 
+            label44.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label44.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label44.Location = new System.Drawing.Point(4, 13);
+            label44.Margin = new System.Windows.Forms.Padding(3);
+            label44.Name = "label44";
+            label44.Size = new System.Drawing.Size(64, 17);
+            label44.TabIndex = 38;
+            label44.Text = "Reg 0 :";
+            label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtReg0
+            // 
+            this.txtReg0.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg0.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg0.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg0.Location = new System.Drawing.Point(75, 4);
+            this.txtReg0.MinimumSize = new System.Drawing.Size(125, 0);
+            this.txtReg0.Name = "txtReg0";
+            this.txtReg0.ReadOnly = true;
+            this.txtReg0.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg0.Size = new System.Drawing.Size(175, 35);
+            this.txtReg0.TabIndex = 39;
+            this.txtReg0.WordWrap = false;
+            // 
+            // label4
+            // 
+            label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.Location = new System.Drawing.Point(4, 97);
+            label4.Margin = new System.Windows.Forms.Padding(3);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(64, 17);
+            label4.TabIndex = 40;
+            label4.Text = "Reg 2 :";
+            label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label66
+            // 
+            label66.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label66.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label66.Location = new System.Drawing.Point(4, 223);
+            label66.Margin = new System.Windows.Forms.Padding(3);
+            label66.Name = "label66";
+            label66.Size = new System.Drawing.Size(64, 17);
+            label66.TabIndex = 42;
+            label66.Text = "Reg 5 :";
+            label66.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label67
+            // 
+            label67.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label67.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label67.Location = new System.Drawing.Point(4, 139);
+            label67.Margin = new System.Windows.Forms.Padding(3);
+            label67.Name = "label67";
+            label67.Size = new System.Drawing.Size(64, 17);
+            label67.TabIndex = 43;
+            label67.Text = "Reg 3 :";
+            label67.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label69
+            // 
+            label69.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label69.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label69.Location = new System.Drawing.Point(4, 181);
+            label69.Margin = new System.Windows.Forms.Padding(3);
+            label69.Name = "label69";
+            label69.Size = new System.Drawing.Size(64, 17);
+            label69.TabIndex = 45;
+            label69.Text = "Reg 4 :";
+            label69.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label63
+            // 
+            label63.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label63.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label63.Location = new System.Drawing.Point(4, 265);
+            label63.Margin = new System.Windows.Forms.Padding(3);
+            label63.Name = "label63";
+            label63.Size = new System.Drawing.Size(64, 17);
+            label63.TabIndex = 46;
+            label63.Text = "Reg 6 :";
+            label63.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label68
+            // 
+            label68.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label68.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label68.Location = new System.Drawing.Point(4, 307);
+            label68.Margin = new System.Windows.Forms.Padding(3);
+            label68.Name = "label68";
+            label68.Size = new System.Drawing.Size(64, 17);
+            label68.TabIndex = 47;
+            label68.Text = "Reg 7 :";
+            label68.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label70
+            // 
+            label70.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label70.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label70.Location = new System.Drawing.Point(4, 391);
+            label70.Margin = new System.Windows.Forms.Padding(3);
+            label70.Name = "label70";
+            label70.Size = new System.Drawing.Size(64, 17);
+            label70.TabIndex = 48;
+            label70.Text = "Reg 9 :";
+            label70.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label71
+            // 
+            label71.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label71.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label71.Location = new System.Drawing.Point(4, 349);
+            label71.Margin = new System.Windows.Forms.Padding(3);
+            label71.Name = "label71";
+            label71.Size = new System.Drawing.Size(64, 17);
+            label71.TabIndex = 49;
+            label71.Text = "Reg 8 :";
+            label71.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label72
+            // 
+            label72.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label72.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label72.Location = new System.Drawing.Point(4, 517);
+            label72.Margin = new System.Windows.Forms.Padding(3);
+            label72.Name = "label72";
+            label72.Size = new System.Drawing.Size(64, 17);
+            label72.TabIndex = 50;
+            label72.Text = "Reg 12:";
+            label72.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label73
+            // 
+            label73.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label73.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label73.Location = new System.Drawing.Point(4, 433);
+            label73.Margin = new System.Windows.Forms.Padding(3);
+            label73.Name = "label73";
+            label73.Size = new System.Drawing.Size(64, 17);
+            label73.TabIndex = 51;
+            label73.Text = "Reg 10:";
+            label73.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label75
+            // 
+            label75.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label75.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label75.Location = new System.Drawing.Point(4, 475);
+            label75.Margin = new System.Windows.Forms.Padding(3);
+            label75.Name = "label75";
+            label75.Size = new System.Drawing.Size(64, 17);
+            label75.TabIndex = 53;
+            label75.Text = "Reg 11:";
+            label75.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label76
+            // 
+            label76.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label76.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label76.Location = new System.Drawing.Point(4, 55);
+            label76.Margin = new System.Windows.Forms.Padding(3);
+            label76.Name = "label76";
+            label76.Size = new System.Drawing.Size(64, 17);
+            label76.TabIndex = 54;
+            label76.Text = "Reg 1 :";
+            label76.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtReg1
+            // 
+            this.txtReg1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg1.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg1.Location = new System.Drawing.Point(75, 46);
+            this.txtReg1.MinimumSize = new System.Drawing.Size(125, 0);
+            this.txtReg1.Name = "txtReg1";
+            this.txtReg1.ReadOnly = true;
+            this.txtReg1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg1.Size = new System.Drawing.Size(175, 35);
+            this.txtReg1.TabIndex = 55;
+            this.txtReg1.WordWrap = false;
+            // 
+            // txtReg2
+            // 
+            this.txtReg2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg2.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg2.Location = new System.Drawing.Point(75, 88);
+            this.txtReg2.MinimumSize = new System.Drawing.Size(125, 0);
+            this.txtReg2.Name = "txtReg2";
+            this.txtReg2.ReadOnly = true;
+            this.txtReg2.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg2.Size = new System.Drawing.Size(175, 35);
+            this.txtReg2.TabIndex = 56;
+            this.txtReg2.WordWrap = false;
+            // 
+            // txtReg4
+            // 
+            this.txtReg4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg4.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg4.Location = new System.Drawing.Point(75, 172);
+            this.txtReg4.MinimumSize = new System.Drawing.Size(125, 0);
+            this.txtReg4.Name = "txtReg4";
+            this.txtReg4.ReadOnly = true;
+            this.txtReg4.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg4.Size = new System.Drawing.Size(175, 35);
+            this.txtReg4.TabIndex = 57;
+            this.txtReg4.WordWrap = false;
+            // 
+            // txtReg3
+            // 
+            this.txtReg3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg3.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg3.Location = new System.Drawing.Point(75, 130);
+            this.txtReg3.MinimumSize = new System.Drawing.Size(125, 0);
+            this.txtReg3.Name = "txtReg3";
+            this.txtReg3.ReadOnly = true;
+            this.txtReg3.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg3.Size = new System.Drawing.Size(175, 35);
+            this.txtReg3.TabIndex = 58;
+            this.txtReg3.WordWrap = false;
+            // 
+            // txtReg5
+            // 
+            this.txtReg5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg5.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg5.Location = new System.Drawing.Point(75, 214);
+            this.txtReg5.MinimumSize = new System.Drawing.Size(125, 0);
+            this.txtReg5.Name = "txtReg5";
+            this.txtReg5.ReadOnly = true;
+            this.txtReg5.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg5.Size = new System.Drawing.Size(175, 35);
+            this.txtReg5.TabIndex = 59;
+            this.txtReg5.WordWrap = false;
+            // 
+            // txtReg6
+            // 
+            this.txtReg6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg6.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg6.Location = new System.Drawing.Point(75, 256);
+            this.txtReg6.MinimumSize = new System.Drawing.Size(125, 0);
+            this.txtReg6.Name = "txtReg6";
+            this.txtReg6.ReadOnly = true;
+            this.txtReg6.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg6.Size = new System.Drawing.Size(175, 35);
+            this.txtReg6.TabIndex = 60;
+            this.txtReg6.WordWrap = false;
+            // 
+            // txtReg7
+            // 
+            this.txtReg7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg7.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg7.Location = new System.Drawing.Point(75, 298);
+            this.txtReg7.MinimumSize = new System.Drawing.Size(125, 0);
+            this.txtReg7.Name = "txtReg7";
+            this.txtReg7.ReadOnly = true;
+            this.txtReg7.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg7.Size = new System.Drawing.Size(175, 35);
+            this.txtReg7.TabIndex = 61;
+            this.txtReg7.WordWrap = false;
+            // 
+            // txtReg11
+            // 
+            this.txtReg11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg11.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg11.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg11.Location = new System.Drawing.Point(75, 466);
+            this.txtReg11.MinimumSize = new System.Drawing.Size(125, 0);
+            this.txtReg11.Name = "txtReg11";
+            this.txtReg11.ReadOnly = true;
+            this.txtReg11.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg11.Size = new System.Drawing.Size(175, 35);
+            this.txtReg11.TabIndex = 62;
+            this.txtReg11.WordWrap = false;
+            // 
+            // txtReg10
+            // 
+            this.txtReg10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg10.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg10.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg10.Location = new System.Drawing.Point(75, 424);
+            this.txtReg10.MinimumSize = new System.Drawing.Size(125, 0);
+            this.txtReg10.Name = "txtReg10";
+            this.txtReg10.ReadOnly = true;
+            this.txtReg10.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg10.Size = new System.Drawing.Size(175, 35);
+            this.txtReg10.TabIndex = 63;
+            this.txtReg10.WordWrap = false;
+            // 
+            // txtReg9
+            // 
+            this.txtReg9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg9.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg9.Location = new System.Drawing.Point(75, 382);
+            this.txtReg9.MinimumSize = new System.Drawing.Size(125, 0);
+            this.txtReg9.Name = "txtReg9";
+            this.txtReg9.ReadOnly = true;
+            this.txtReg9.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg9.Size = new System.Drawing.Size(175, 35);
+            this.txtReg9.TabIndex = 64;
+            this.txtReg9.WordWrap = false;
+            // 
+            // txtReg12
+            // 
+            this.txtReg12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg12.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg12.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg12.Location = new System.Drawing.Point(75, 508);
+            this.txtReg12.MinimumSize = new System.Drawing.Size(125, 0);
+            this.txtReg12.Name = "txtReg12";
+            this.txtReg12.ReadOnly = true;
+            this.txtReg12.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg12.Size = new System.Drawing.Size(175, 35);
+            this.txtReg12.TabIndex = 65;
+            this.txtReg12.WordWrap = false;
+            // 
+            // txtReg8
+            // 
+            this.txtReg8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg8.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg8.Location = new System.Drawing.Point(75, 340);
+            this.txtReg8.MinimumSize = new System.Drawing.Size(125, 0);
+            this.txtReg8.Name = "txtReg8";
+            this.txtReg8.ReadOnly = true;
+            this.txtReg8.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg8.Size = new System.Drawing.Size(175, 35);
+            this.txtReg8.TabIndex = 66;
+            this.txtReg8.WordWrap = false;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.AutoSize = true;
+            this.tableLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel5.ColumnCount = 10;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Controls.Add(this.numReferenceInput, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(label21, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.numDivider, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(label45, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.cbDoubler, 4, 0);
+            this.tableLayoutPanel5.Controls.Add(this.cbDivideby2, 5, 0);
+            this.tableLayoutPanel5.Controls.Add(label27, 7, 0);
+            this.tableLayoutPanel5.Controls.Add(label26, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.numFchsp, 8, 0);
+            this.tableLayoutPanel5.Controls.Add(label22, 9, 0);
+            this.tableLayoutPanel5.Font = new System.Drawing.Font("Consolas", 9F);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(12, 24);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(908, 31);
+            this.tableLayoutPanel5.TabIndex = 69;
+            // 
+            // label21
+            // 
+            label21.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label21.AutoSize = true;
+            label21.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label21.Location = new System.Drawing.Point(3, 6);
+            label21.Name = "label21";
+            label21.Size = new System.Drawing.Size(96, 18);
+            label21.TabIndex = 0;
+            label21.Text = "Ref. Input:";
+            // 
+            // numReferenceInput
+            // 
+            this.numReferenceInput.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numReferenceInput.AutoSize = true;
+            this.numReferenceInput.DecimalPlaces = 6;
+            this.numReferenceInput.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numReferenceInput.Location = new System.Drawing.Point(105, 3);
+            this.numReferenceInput.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numReferenceInput.Name = "numReferenceInput";
+            this.numReferenceInput.Size = new System.Drawing.Size(116, 25);
+            this.numReferenceInput.TabIndex = 2;
+            this.numReferenceInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numReferenceInput.Value = new decimal(new int[] {
+            12288,
+            0,
+            0,
+            131072});
+            // 
+            // label45
+            // 
+            label45.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label45.AutoSize = true;
+            label45.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label45.Location = new System.Drawing.Point(227, 6);
+            label45.Name = "label45";
+            label45.Size = new System.Drawing.Size(72, 18);
+            label45.TabIndex = 3;
+            label45.Text = "Divider:";
+            // 
+            // numDivider
+            // 
+            this.numDivider.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numDivider.AutoSize = true;
+            this.numDivider.Font = new System.Drawing.Font("Consolas", 9F);
+            this.numDivider.Location = new System.Drawing.Point(343, 3);
+            this.numDivider.Maximum = new decimal(new int[] {
+            1023,
+            0,
+            0,
+            0});
+            this.numDivider.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numDivider.Name = "numDivider";
+            this.numDivider.Size = new System.Drawing.Size(60, 25);
+            this.numDivider.TabIndex = 5;
+            this.numDivider.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numDivider.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // cbDoubler
+            // 
+            this.cbDoubler.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbDoubler.AutoSize = true;
+            this.cbDoubler.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbDoubler.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDoubler.Location = new System.Drawing.Point(409, 4);
+            this.cbDoubler.Name = "cbDoubler";
+            this.cbDoubler.Size = new System.Drawing.Size(94, 22);
+            this.cbDoubler.TabIndex = 16;
+            this.cbDoubler.Text = "Doubler:";
+            this.cbDoubler.UseVisualStyleBackColor = true;
+            // 
+            // cbDivideby2
+            // 
+            this.cbDivideby2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbDivideby2.AutoSize = true;
+            this.cbDivideby2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbDivideby2.Checked = true;
+            this.cbDivideby2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDivideby2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDivideby2.Location = new System.Drawing.Point(509, 4);
+            this.cbDivideby2.Name = "cbDivideby2";
+            this.cbDivideby2.Size = new System.Drawing.Size(54, 22);
+            this.cbDivideby2.TabIndex = 17;
+            this.cbDivideby2.Text = "/2:";
+            this.cbDivideby2.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            label26.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label26.AutoSize = true;
+            label26.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label26.Location = new System.Drawing.Point(305, 6);
+            label26.Name = "label26";
+            label26.Size = new System.Drawing.Size(32, 18);
+            label26.TabIndex = 18;
+            label26.Text = "MHz";
+            // 
+            // label27
+            // 
+            label27.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label27.AutoSize = true;
+            label27.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label27.Location = new System.Drawing.Point(569, 6);
+            label27.Name = "label27";
+            label27.Size = new System.Drawing.Size(104, 18);
+            label27.TabIndex = 19;
+            label27.Text = "Ch. Spacing:";
+            // 
+            // numFchsp
+            // 
+            this.numFchsp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numFchsp.AutoSize = true;
+            this.numFchsp.DecimalPlaces = 6;
+            this.numFchsp.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numFchsp.Location = new System.Drawing.Point(679, 3);
+            this.numFchsp.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numFchsp.Name = "numFchsp";
+            this.numFchsp.Size = new System.Drawing.Size(116, 25);
+            this.numFchsp.TabIndex = 24;
+            this.numFchsp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numFchsp.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label22
+            // 
+            label22.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label22.AutoSize = true;
+            label22.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label22.Location = new System.Drawing.Point(801, 6);
+            label22.Name = "label22";
+            label22.Size = new System.Drawing.Size(104, 18);
+            label22.TabIndex = 25;
+            label22.Text = "Ch. Spacing:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1428, 831);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1924, 831);
+            this.Controls.Add(this.tableLayoutPanel5);
+            this.Controls.Add(tlpRegisters);
             this.Controls.Add(this.flpErrors);
             this.Controls.Add(gbCalculations);
             this.Controls.Add(tableLayoutPanel4);
-            this.Controls.Add(groupBox2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(groupBox3);
             this.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
             this.Text = "ADF 4355";
@@ -3987,47 +3795,6 @@
             flowLayoutPanel4.ResumeLayout(false);
             flowLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPhase)).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            panel16.ResumeLayout(false);
-            panel16.PerformLayout();
-            panel15.ResumeLayout(false);
-            panel15.PerformLayout();
-            panel14.ResumeLayout(false);
-            panel14.PerformLayout();
-            panel13.ResumeLayout(false);
-            panel13.PerformLayout();
-            panel12.ResumeLayout(false);
-            panel12.PerformLayout();
-            panel11.ResumeLayout(false);
-            panel11.PerformLayout();
-            panel10.ResumeLayout(false);
-            panel10.PerformLayout();
-            panel9.ResumeLayout(false);
-            panel9.PerformLayout();
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel20.ResumeLayout(false);
-            panel20.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numReferenceInput)).EndInit();
-            panel21.ResumeLayout(false);
-            panel21.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDivider)).EndInit();
-            panel22.ResumeLayout(false);
-            panel22.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numFchsp)).EndInit();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            this.flpInputs.ResumeLayout(false);
-            this.flpInputs.PerformLayout();
             flowLayoutPanel13.ResumeLayout(false);
             flowLayoutPanel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCPBleedCurrentInt)).EndInit();
@@ -4143,6 +3910,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.hpSDLoadReset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpLDMode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpADCEnable)).EndInit();
+            tlpRegisters.ResumeLayout(false);
+            tlpRegisters.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numReferenceInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDivider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFchsp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4169,24 +3943,6 @@
         private System.Windows.Forms.CheckBox cbCPThreeState;
         private System.Windows.Forms.CheckBox cbPowerDown;
         private System.Windows.Forms.ComboBox cbCPCurrent;
-        private System.Windows.Forms.TextBox txtReg0;
-        private System.Windows.Forms.TextBox txtReg3;
-        private System.Windows.Forms.TextBox txtReg2;
-        private System.Windows.Forms.TextBox txtReg1;
-        private System.Windows.Forms.TextBox txtReg9;
-        private System.Windows.Forms.TextBox txtReg8;
-        private System.Windows.Forms.TextBox txtReg7;
-        private System.Windows.Forms.TextBox txtReg6;
-        private System.Windows.Forms.TextBox txtReg5;
-        private System.Windows.Forms.TextBox txtReg4;
-        private System.Windows.Forms.TextBox txtReg12;
-        private System.Windows.Forms.TextBox txtReg11;
-        private System.Windows.Forms.TextBox txtReg10;
-        private System.Windows.Forms.NumericUpDown numReferenceInput;
-        private System.Windows.Forms.NumericUpDown numDivider;
-        private System.Windows.Forms.CheckBox cbDoubler;
-        private System.Windows.Forms.CheckBox cbDivideby2;
-        private System.Windows.Forms.NumericUpDown numFchsp;
         private System.Windows.Forms.RadioButton rbSingle;
         private System.Windows.Forms.RadioButton rbDifferential;
         private System.Windows.Forms.RadioButton rb18;
@@ -4246,7 +4002,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpMuxout;
         private System.Windows.Forms.FlowLayoutPanel flpCPCurrent;
         private System.Windows.Forms.ErrorProvider hpCPCurrent;
-        private System.Windows.Forms.FlowLayoutPanel flpInputs;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label hlblDoublerError1;
         private System.Windows.Forms.ErrorProvider hpAutocal;
@@ -4271,6 +4026,25 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel19;
         private System.Windows.Forms.Label hlblLDModeError1;
         private System.Windows.Forms.ErrorProvider hpADCEnable;
+        private System.Windows.Forms.TextBox txtReg0;
+        private System.Windows.Forms.TextBox txtReg1;
+        private System.Windows.Forms.TextBox txtReg2;
+        private System.Windows.Forms.TextBox txtReg4;
+        private System.Windows.Forms.TextBox txtReg3;
+        private System.Windows.Forms.TextBox txtReg5;
+        private System.Windows.Forms.TextBox txtReg6;
+        private System.Windows.Forms.TextBox txtReg7;
+        private System.Windows.Forms.TextBox txtReg9;
+        private System.Windows.Forms.TextBox txtReg10;
+        private System.Windows.Forms.TextBox txtReg11;
+        private System.Windows.Forms.TextBox txtReg12;
+        private System.Windows.Forms.TextBox txtReg8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.NumericUpDown numReferenceInput;
+        private System.Windows.Forms.NumericUpDown numDivider;
+        private System.Windows.Forms.CheckBox cbDoubler;
+        private System.Windows.Forms.CheckBox cbDivideby2;
+        private System.Windows.Forms.NumericUpDown numFchsp;
     }
 }
 
