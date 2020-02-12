@@ -1,0 +1,13 @@
+C:\Users\metin\source\repos\register-programmer\register-programmer\bin\Debug\register-programmer.exe.config
+C:\Users\metin\source\repos\register-programmer\register-programmer\bin\Debug\register-programmer.exe
+C:\Users\metin\source\repos\register-programmer\register-programmer\bin\Debug\register-programmer.pdb
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\register-programmer.csprojAssemblyReference.cache
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\register_programmer.Form1.resources
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\register_programmer.Properties.Resources.resources
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\register-programmer.csproj.GenerateResource.cache
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\register-programmer.exe
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\register-programmer.pdb
+C:\Users\metin\source\repos\register-programmer\register-programmer\bin\Debug\register-programmer.exe.manifest
+C:\Users\metin\source\repos\register-programmer\register-programmer\bin\Debug\register-programmer.application
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\register-programmer.exe.manifest
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Debug\register-programmer.application

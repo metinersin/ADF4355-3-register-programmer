@@ -1,0 +1,13 @@
+C:\Users\metin\source\repos\register-programmer\register-programmer\bin\Release\register-programmer.exe.config
+C:\Users\metin\source\repos\register-programmer\register-programmer\bin\Release\register-programmer.exe.manifest
+C:\Users\metin\source\repos\register-programmer\register-programmer\bin\Release\register-programmer.application
+C:\Users\metin\source\repos\register-programmer\register-programmer\bin\Release\register-programmer.exe
+C:\Users\metin\source\repos\register-programmer\register-programmer\bin\Release\register-programmer.pdb
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Release\register-programmer.csprojAssemblyReference.cache
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Release\register_programmer.Form1.resources
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Release\register_programmer.Properties.Resources.resources
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Release\register-programmer.csproj.GenerateResource.cache
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Release\register-programmer.exe.manifest
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Release\register-programmer.application
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Release\register-programmer.exe
+C:\Users\metin\source\repos\register-programmer\register-programmer\obj\Release\register-programmer.pdb
