@@ -127,26 +127,26 @@
             System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
             System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
             System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.TableLayoutPanel tlpRegisters;
             System.Windows.Forms.Label label44;
+            System.Windows.Forms.Label label76;
             System.Windows.Forms.Label label4;
-            System.Windows.Forms.Label label66;
             System.Windows.Forms.Label label67;
             System.Windows.Forms.Label label69;
+            System.Windows.Forms.Label label66;
             System.Windows.Forms.Label label63;
             System.Windows.Forms.Label label68;
-            System.Windows.Forms.Label label70;
             System.Windows.Forms.Label label71;
-            System.Windows.Forms.Label label72;
+            System.Windows.Forms.Label label70;
             System.Windows.Forms.Label label73;
             System.Windows.Forms.Label label75;
-            System.Windows.Forms.Label label76;
+            System.Windows.Forms.Label label72;
             System.Windows.Forms.Label label21;
             System.Windows.Forms.Label label45;
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label27;
-            System.Windows.Forms.Label label22;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.Label label28;
             this.lblInt = new System.Windows.Forms.Label();
             this.numInt = new System.Windows.Forms.NumericUpDown();
             this.numFrac1 = new System.Windows.Forms.NumericUpDown();
@@ -209,6 +209,19 @@
             this.numResyncClockTimeout = new System.Windows.Forms.NumericUpDown();
             this.cbAutocal = new System.Windows.Forms.CheckBox();
             this.cbPrescaler = new System.Windows.Forms.ComboBox();
+            this.txtReg0 = new System.Windows.Forms.TextBox();
+            this.txtReg1 = new System.Windows.Forms.TextBox();
+            this.txtReg2 = new System.Windows.Forms.TextBox();
+            this.txtReg4 = new System.Windows.Forms.TextBox();
+            this.txtReg3 = new System.Windows.Forms.TextBox();
+            this.txtReg5 = new System.Windows.Forms.TextBox();
+            this.txtReg6 = new System.Windows.Forms.TextBox();
+            this.txtReg7 = new System.Windows.Forms.TextBox();
+            this.txtReg9 = new System.Windows.Forms.TextBox();
+            this.txtReg10 = new System.Windows.Forms.TextBox();
+            this.txtReg11 = new System.Windows.Forms.TextBox();
+            this.txtReg12 = new System.Windows.Forms.TextBox();
+            this.txtReg8 = new System.Windows.Forms.TextBox();
             this.gbPhaseResync = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel40 = new System.Windows.Forms.FlowLayoutPanel();
             this.hlblPhaseResync1 = new System.Windows.Forms.Label();
@@ -250,19 +263,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.hpLDMode = new System.Windows.Forms.ErrorProvider(this.components);
             this.hpADCEnable = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtReg0 = new System.Windows.Forms.TextBox();
-            this.txtReg1 = new System.Windows.Forms.TextBox();
-            this.txtReg2 = new System.Windows.Forms.TextBox();
-            this.txtReg4 = new System.Windows.Forms.TextBox();
-            this.txtReg3 = new System.Windows.Forms.TextBox();
-            this.txtReg5 = new System.Windows.Forms.TextBox();
-            this.txtReg6 = new System.Windows.Forms.TextBox();
-            this.txtReg7 = new System.Windows.Forms.TextBox();
-            this.txtReg11 = new System.Windows.Forms.TextBox();
-            this.txtReg10 = new System.Windows.Forms.TextBox();
-            this.txtReg9 = new System.Windows.Forms.TextBox();
-            this.txtReg12 = new System.Windows.Forms.TextBox();
-            this.txtReg8 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.numReferenceInput = new System.Windows.Forms.NumericUpDown();
             this.numDivider = new System.Windows.Forms.NumericUpDown();
@@ -369,23 +369,23 @@
             tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             tlpRegisters = new System.Windows.Forms.TableLayoutPanel();
             label44 = new System.Windows.Forms.Label();
+            label76 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
-            label66 = new System.Windows.Forms.Label();
             label67 = new System.Windows.Forms.Label();
             label69 = new System.Windows.Forms.Label();
+            label66 = new System.Windows.Forms.Label();
             label63 = new System.Windows.Forms.Label();
             label68 = new System.Windows.Forms.Label();
-            label70 = new System.Windows.Forms.Label();
             label71 = new System.Windows.Forms.Label();
-            label72 = new System.Windows.Forms.Label();
+            label70 = new System.Windows.Forms.Label();
             label73 = new System.Windows.Forms.Label();
             label75 = new System.Windows.Forms.Label();
-            label76 = new System.Windows.Forms.Label();
+            label72 = new System.Windows.Forms.Label();
             label21 = new System.Windows.Forms.Label();
             label45 = new System.Windows.Forms.Label();
             label26 = new System.Windows.Forms.Label();
             label27 = new System.Windows.Forms.Label();
-            label22 = new System.Windows.Forms.Label();
+            label28 = new System.Windows.Forms.Label();
             gbCalculations.SuspendLayout();
             flowLayoutPanel46.SuspendLayout();
             flowLayoutPanel44.SuspendLayout();
@@ -467,6 +467,7 @@
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
+            tlpRegisters.SuspendLayout();
             this.gbPhaseResync.SuspendLayout();
             this.flowLayoutPanel40.SuspendLayout();
             this.gbPhaseAdjust.SuspendLayout();
@@ -493,7 +494,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.hpSDLoadReset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpLDMode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpADCEnable)).BeginInit();
-            tlpRegisters.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numReferenceInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDivider)).BeginInit();
@@ -1905,7 +1905,7 @@
             "2048",
             "4096",
             "8192"});
-            this.cbLDCycleCount.Location = new System.Drawing.Point(89, 4);
+            this.cbLDCycleCount.Location = new System.Drawing.Point(89, 5);
             this.cbLDCycleCount.Name = "cbLDCycleCount";
             this.cbLDCycleCount.Size = new System.Drawing.Size(78, 23);
             this.cbLDCycleCount.TabIndex = 4;
@@ -1943,7 +1943,7 @@
             "6.0 ns",
             "8.0 ns",
             "12.0 ns"});
-            this.cbFracNPrecision.Location = new System.Drawing.Point(97, 5);
+            this.cbFracNPrecision.Location = new System.Drawing.Point(97, 4);
             this.cbFracNPrecision.Name = "cbFracNPrecision";
             this.cbFracNPrecision.Size = new System.Drawing.Size(78, 23);
             this.cbFracNPrecision.TabIndex = 4;
@@ -2699,6 +2699,443 @@
             tableLayoutPanel4.Size = new System.Drawing.Size(1088, 559);
             tableLayoutPanel4.TabIndex = 65;
             // 
+            // tlpRegisters
+            // 
+            tlpRegisters.AutoSize = true;
+            tlpRegisters.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tlpRegisters.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            tlpRegisters.ColumnCount = 2;
+            tlpRegisters.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tlpRegisters.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tlpRegisters.Controls.Add(label44, 0, 0);
+            tlpRegisters.Controls.Add(this.txtReg0, 1, 0);
+            tlpRegisters.Controls.Add(label76, 0, 1);
+            tlpRegisters.Controls.Add(label4, 0, 2);
+            tlpRegisters.Controls.Add(label67, 0, 3);
+            tlpRegisters.Controls.Add(label69, 0, 4);
+            tlpRegisters.Controls.Add(label66, 0, 5);
+            tlpRegisters.Controls.Add(label63, 0, 6);
+            tlpRegisters.Controls.Add(label68, 0, 7);
+            tlpRegisters.Controls.Add(label71, 0, 8);
+            tlpRegisters.Controls.Add(label70, 0, 9);
+            tlpRegisters.Controls.Add(label73, 0, 10);
+            tlpRegisters.Controls.Add(label75, 0, 11);
+            tlpRegisters.Controls.Add(label72, 0, 12);
+            tlpRegisters.Controls.Add(this.txtReg1, 1, 1);
+            tlpRegisters.Controls.Add(this.txtReg2, 1, 2);
+            tlpRegisters.Controls.Add(this.txtReg4, 1, 4);
+            tlpRegisters.Controls.Add(this.txtReg3, 1, 3);
+            tlpRegisters.Controls.Add(this.txtReg5, 1, 5);
+            tlpRegisters.Controls.Add(this.txtReg6, 1, 6);
+            tlpRegisters.Controls.Add(this.txtReg7, 1, 7);
+            tlpRegisters.Controls.Add(this.txtReg9, 1, 9);
+            tlpRegisters.Controls.Add(this.txtReg10, 1, 10);
+            tlpRegisters.Controls.Add(this.txtReg11, 1, 11);
+            tlpRegisters.Controls.Add(this.txtReg12, 1, 12);
+            tlpRegisters.Controls.Add(this.txtReg8, 1, 8);
+            tlpRegisters.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tlpRegisters.Location = new System.Drawing.Point(1495, 154);
+            tlpRegisters.Name = "tlpRegisters";
+            tlpRegisters.RowCount = 14;
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.Size = new System.Drawing.Size(254, 548);
+            tlpRegisters.TabIndex = 68;
+            // 
+            // label44
+            // 
+            label44.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label44.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label44.Location = new System.Drawing.Point(4, 13);
+            label44.Margin = new System.Windows.Forms.Padding(3);
+            label44.Name = "label44";
+            label44.Size = new System.Drawing.Size(64, 17);
+            label44.TabIndex = 38;
+            label44.Text = "Reg 0 :";
+            label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtReg0
+            // 
+            this.txtReg0.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg0.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg0.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg0.Location = new System.Drawing.Point(75, 4);
+            this.txtReg0.MinimumSize = new System.Drawing.Size(125, 4);
+            this.txtReg0.Name = "txtReg0";
+            this.txtReg0.ReadOnly = true;
+            this.txtReg0.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg0.Size = new System.Drawing.Size(175, 35);
+            this.txtReg0.TabIndex = 39;
+            this.txtReg0.WordWrap = false;
+            // 
+            // label76
+            // 
+            label76.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label76.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label76.Location = new System.Drawing.Point(4, 55);
+            label76.Margin = new System.Windows.Forms.Padding(3);
+            label76.Name = "label76";
+            label76.Size = new System.Drawing.Size(64, 17);
+            label76.TabIndex = 54;
+            label76.Text = "Reg 1 :";
+            label76.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.Location = new System.Drawing.Point(4, 97);
+            label4.Margin = new System.Windows.Forms.Padding(3);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(64, 17);
+            label4.TabIndex = 40;
+            label4.Text = "Reg 2 :";
+            label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label67
+            // 
+            label67.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label67.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label67.Location = new System.Drawing.Point(4, 139);
+            label67.Margin = new System.Windows.Forms.Padding(3);
+            label67.Name = "label67";
+            label67.Size = new System.Drawing.Size(64, 17);
+            label67.TabIndex = 43;
+            label67.Text = "Reg 3 :";
+            label67.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label69
+            // 
+            label69.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label69.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label69.Location = new System.Drawing.Point(4, 181);
+            label69.Margin = new System.Windows.Forms.Padding(3);
+            label69.Name = "label69";
+            label69.Size = new System.Drawing.Size(64, 17);
+            label69.TabIndex = 45;
+            label69.Text = "Reg 4 :";
+            label69.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label66
+            // 
+            label66.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label66.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label66.Location = new System.Drawing.Point(4, 223);
+            label66.Margin = new System.Windows.Forms.Padding(3);
+            label66.Name = "label66";
+            label66.Size = new System.Drawing.Size(64, 17);
+            label66.TabIndex = 42;
+            label66.Text = "Reg 5 :";
+            label66.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label63
+            // 
+            label63.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label63.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label63.Location = new System.Drawing.Point(4, 265);
+            label63.Margin = new System.Windows.Forms.Padding(3);
+            label63.Name = "label63";
+            label63.Size = new System.Drawing.Size(64, 17);
+            label63.TabIndex = 46;
+            label63.Text = "Reg 6 :";
+            label63.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label68
+            // 
+            label68.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label68.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label68.Location = new System.Drawing.Point(4, 307);
+            label68.Margin = new System.Windows.Forms.Padding(3);
+            label68.Name = "label68";
+            label68.Size = new System.Drawing.Size(64, 17);
+            label68.TabIndex = 47;
+            label68.Text = "Reg 7 :";
+            label68.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label71
+            // 
+            label71.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label71.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label71.Location = new System.Drawing.Point(4, 349);
+            label71.Margin = new System.Windows.Forms.Padding(3);
+            label71.Name = "label71";
+            label71.Size = new System.Drawing.Size(64, 17);
+            label71.TabIndex = 49;
+            label71.Text = "Reg 8 :";
+            label71.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label70
+            // 
+            label70.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label70.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label70.Location = new System.Drawing.Point(4, 391);
+            label70.Margin = new System.Windows.Forms.Padding(3);
+            label70.Name = "label70";
+            label70.Size = new System.Drawing.Size(64, 17);
+            label70.TabIndex = 48;
+            label70.Text = "Reg 9 :";
+            label70.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label73
+            // 
+            label73.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label73.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label73.Location = new System.Drawing.Point(4, 433);
+            label73.Margin = new System.Windows.Forms.Padding(3);
+            label73.Name = "label73";
+            label73.Size = new System.Drawing.Size(64, 17);
+            label73.TabIndex = 51;
+            label73.Text = "Reg 10:";
+            label73.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label75
+            // 
+            label75.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label75.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label75.Location = new System.Drawing.Point(4, 475);
+            label75.Margin = new System.Windows.Forms.Padding(3);
+            label75.Name = "label75";
+            label75.Size = new System.Drawing.Size(64, 17);
+            label75.TabIndex = 53;
+            label75.Text = "Reg 11:";
+            label75.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label72
+            // 
+            label72.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label72.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label72.Location = new System.Drawing.Point(4, 517);
+            label72.Margin = new System.Windows.Forms.Padding(3);
+            label72.Name = "label72";
+            label72.Size = new System.Drawing.Size(64, 17);
+            label72.TabIndex = 50;
+            label72.Text = "Reg 12:";
+            label72.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtReg1
+            // 
+            this.txtReg1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg1.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg1.Location = new System.Drawing.Point(75, 46);
+            this.txtReg1.MinimumSize = new System.Drawing.Size(125, 4);
+            this.txtReg1.Name = "txtReg1";
+            this.txtReg1.ReadOnly = true;
+            this.txtReg1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg1.Size = new System.Drawing.Size(175, 35);
+            this.txtReg1.TabIndex = 55;
+            this.txtReg1.WordWrap = false;
+            // 
+            // txtReg2
+            // 
+            this.txtReg2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg2.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg2.Location = new System.Drawing.Point(75, 88);
+            this.txtReg2.MinimumSize = new System.Drawing.Size(125, 4);
+            this.txtReg2.Name = "txtReg2";
+            this.txtReg2.ReadOnly = true;
+            this.txtReg2.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg2.Size = new System.Drawing.Size(175, 35);
+            this.txtReg2.TabIndex = 56;
+            this.txtReg2.WordWrap = false;
+            // 
+            // txtReg4
+            // 
+            this.txtReg4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg4.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg4.Location = new System.Drawing.Point(75, 172);
+            this.txtReg4.MinimumSize = new System.Drawing.Size(125, 4);
+            this.txtReg4.Name = "txtReg4";
+            this.txtReg4.ReadOnly = true;
+            this.txtReg4.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg4.Size = new System.Drawing.Size(175, 35);
+            this.txtReg4.TabIndex = 57;
+            this.txtReg4.WordWrap = false;
+            // 
+            // txtReg3
+            // 
+            this.txtReg3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg3.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg3.Location = new System.Drawing.Point(75, 130);
+            this.txtReg3.MinimumSize = new System.Drawing.Size(125, 4);
+            this.txtReg3.Name = "txtReg3";
+            this.txtReg3.ReadOnly = true;
+            this.txtReg3.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg3.Size = new System.Drawing.Size(175, 35);
+            this.txtReg3.TabIndex = 58;
+            this.txtReg3.WordWrap = false;
+            // 
+            // txtReg5
+            // 
+            this.txtReg5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg5.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg5.Location = new System.Drawing.Point(75, 214);
+            this.txtReg5.MinimumSize = new System.Drawing.Size(125, 4);
+            this.txtReg5.Name = "txtReg5";
+            this.txtReg5.ReadOnly = true;
+            this.txtReg5.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg5.Size = new System.Drawing.Size(175, 35);
+            this.txtReg5.TabIndex = 59;
+            this.txtReg5.WordWrap = false;
+            // 
+            // txtReg6
+            // 
+            this.txtReg6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg6.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg6.Location = new System.Drawing.Point(75, 256);
+            this.txtReg6.MinimumSize = new System.Drawing.Size(125, 4);
+            this.txtReg6.Name = "txtReg6";
+            this.txtReg6.ReadOnly = true;
+            this.txtReg6.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg6.Size = new System.Drawing.Size(175, 35);
+            this.txtReg6.TabIndex = 60;
+            this.txtReg6.WordWrap = false;
+            // 
+            // txtReg7
+            // 
+            this.txtReg7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg7.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg7.Location = new System.Drawing.Point(75, 298);
+            this.txtReg7.MinimumSize = new System.Drawing.Size(125, 4);
+            this.txtReg7.Name = "txtReg7";
+            this.txtReg7.ReadOnly = true;
+            this.txtReg7.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg7.Size = new System.Drawing.Size(175, 35);
+            this.txtReg7.TabIndex = 61;
+            this.txtReg7.WordWrap = false;
+            // 
+            // txtReg9
+            // 
+            this.txtReg9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg9.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg9.Location = new System.Drawing.Point(75, 382);
+            this.txtReg9.MinimumSize = new System.Drawing.Size(125, 4);
+            this.txtReg9.Name = "txtReg9";
+            this.txtReg9.ReadOnly = true;
+            this.txtReg9.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg9.Size = new System.Drawing.Size(175, 35);
+            this.txtReg9.TabIndex = 64;
+            this.txtReg9.WordWrap = false;
+            // 
+            // txtReg10
+            // 
+            this.txtReg10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg10.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg10.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg10.Location = new System.Drawing.Point(75, 424);
+            this.txtReg10.MinimumSize = new System.Drawing.Size(125, 4);
+            this.txtReg10.Name = "txtReg10";
+            this.txtReg10.ReadOnly = true;
+            this.txtReg10.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg10.Size = new System.Drawing.Size(175, 35);
+            this.txtReg10.TabIndex = 63;
+            this.txtReg10.WordWrap = false;
+            // 
+            // txtReg11
+            // 
+            this.txtReg11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg11.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg11.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg11.Location = new System.Drawing.Point(75, 466);
+            this.txtReg11.MinimumSize = new System.Drawing.Size(125, 4);
+            this.txtReg11.Name = "txtReg11";
+            this.txtReg11.ReadOnly = true;
+            this.txtReg11.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg11.Size = new System.Drawing.Size(175, 35);
+            this.txtReg11.TabIndex = 62;
+            this.txtReg11.WordWrap = false;
+            // 
+            // txtReg12
+            // 
+            this.txtReg12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg12.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg12.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg12.Location = new System.Drawing.Point(75, 508);
+            this.txtReg12.MinimumSize = new System.Drawing.Size(125, 4);
+            this.txtReg12.Name = "txtReg12";
+            this.txtReg12.ReadOnly = true;
+            this.txtReg12.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg12.Size = new System.Drawing.Size(175, 35);
+            this.txtReg12.TabIndex = 65;
+            this.txtReg12.WordWrap = false;
+            // 
+            // txtReg8
+            // 
+            this.txtReg8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReg8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtReg8.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReg8.Location = new System.Drawing.Point(75, 340);
+            this.txtReg8.MinimumSize = new System.Drawing.Size(125, 4);
+            this.txtReg8.Name = "txtReg8";
+            this.txtReg8.ReadOnly = true;
+            this.txtReg8.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtReg8.Size = new System.Drawing.Size(175, 35);
+            this.txtReg8.TabIndex = 66;
+            this.txtReg8.WordWrap = false;
+            // 
+            // label21
+            // 
+            label21.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label21.AutoSize = true;
+            label21.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label21.Location = new System.Drawing.Point(3, 6);
+            label21.Name = "label21";
+            label21.Size = new System.Drawing.Size(96, 18);
+            label21.TabIndex = 0;
+            label21.Text = "Ref. Input:";
+            // 
+            // label45
+            // 
+            label45.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label45.AutoSize = true;
+            label45.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label45.Location = new System.Drawing.Point(265, 6);
+            label45.Name = "label45";
+            label45.Size = new System.Drawing.Size(72, 18);
+            label45.TabIndex = 3;
+            label45.Text = "Divider:";
+            // 
+            // label26
+            // 
+            label26.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label26.AutoSize = true;
+            label26.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label26.Location = new System.Drawing.Point(227, 6);
+            label26.Name = "label26";
+            label26.Size = new System.Drawing.Size(32, 18);
+            label26.TabIndex = 18;
+            label26.Text = "MHz";
+            // 
+            // label27
+            // 
+            label27.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label27.AutoSize = true;
+            label27.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label27.Location = new System.Drawing.Point(569, 6);
+            label27.Name = "label27";
+            label27.Size = new System.Drawing.Size(104, 18);
+            label27.TabIndex = 19;
+            label27.Text = "Ch. Spacing:";
+            // 
             // gbPhaseResync
             // 
             this.gbPhaseResync.AutoSize = true;
@@ -3131,399 +3568,6 @@
             this.hpADCEnable.ContainerControl = this;
             this.hpADCEnable.Icon = ((System.Drawing.Icon)(resources.GetObject("hpADCEnable.Icon")));
             // 
-            // tlpRegisters
-            // 
-            tlpRegisters.AutoSize = true;
-            tlpRegisters.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            tlpRegisters.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            tlpRegisters.ColumnCount = 2;
-            tlpRegisters.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            tlpRegisters.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            tlpRegisters.Controls.Add(label44, 0, 0);
-            tlpRegisters.Controls.Add(this.txtReg0, 1, 0);
-            tlpRegisters.Controls.Add(label76, 0, 1);
-            tlpRegisters.Controls.Add(label4, 0, 2);
-            tlpRegisters.Controls.Add(label67, 0, 3);
-            tlpRegisters.Controls.Add(label69, 0, 4);
-            tlpRegisters.Controls.Add(label66, 0, 5);
-            tlpRegisters.Controls.Add(label63, 0, 6);
-            tlpRegisters.Controls.Add(label68, 0, 7);
-            tlpRegisters.Controls.Add(label71, 0, 8);
-            tlpRegisters.Controls.Add(label70, 0, 9);
-            tlpRegisters.Controls.Add(label73, 0, 10);
-            tlpRegisters.Controls.Add(label75, 0, 11);
-            tlpRegisters.Controls.Add(label72, 0, 12);
-            tlpRegisters.Controls.Add(this.txtReg1, 1, 1);
-            tlpRegisters.Controls.Add(this.txtReg2, 1, 2);
-            tlpRegisters.Controls.Add(this.txtReg4, 1, 4);
-            tlpRegisters.Controls.Add(this.txtReg3, 1, 3);
-            tlpRegisters.Controls.Add(this.txtReg5, 1, 5);
-            tlpRegisters.Controls.Add(this.txtReg6, 1, 6);
-            tlpRegisters.Controls.Add(this.txtReg7, 1, 7);
-            tlpRegisters.Controls.Add(this.txtReg9, 1, 9);
-            tlpRegisters.Controls.Add(this.txtReg10, 1, 10);
-            tlpRegisters.Controls.Add(this.txtReg11, 1, 11);
-            tlpRegisters.Controls.Add(this.txtReg12, 1, 12);
-            tlpRegisters.Controls.Add(this.txtReg8, 1, 8);
-            tlpRegisters.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tlpRegisters.Location = new System.Drawing.Point(1495, 154);
-            tlpRegisters.Name = "tlpRegisters";
-            tlpRegisters.RowCount = 14;
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.Size = new System.Drawing.Size(254, 548);
-            tlpRegisters.TabIndex = 68;
-            // 
-            // label44
-            // 
-            label44.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label44.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label44.Location = new System.Drawing.Point(4, 13);
-            label44.Margin = new System.Windows.Forms.Padding(3);
-            label44.Name = "label44";
-            label44.Size = new System.Drawing.Size(64, 17);
-            label44.TabIndex = 38;
-            label44.Text = "Reg 0 :";
-            label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtReg0
-            // 
-            this.txtReg0.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReg0.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReg0.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg0.Location = new System.Drawing.Point(75, 4);
-            this.txtReg0.MinimumSize = new System.Drawing.Size(125, 0);
-            this.txtReg0.Name = "txtReg0";
-            this.txtReg0.ReadOnly = true;
-            this.txtReg0.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg0.Size = new System.Drawing.Size(175, 35);
-            this.txtReg0.TabIndex = 39;
-            this.txtReg0.WordWrap = false;
-            // 
-            // label4
-            // 
-            label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(4, 97);
-            label4.Margin = new System.Windows.Forms.Padding(3);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(64, 17);
-            label4.TabIndex = 40;
-            label4.Text = "Reg 2 :";
-            label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label66
-            // 
-            label66.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label66.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label66.Location = new System.Drawing.Point(4, 223);
-            label66.Margin = new System.Windows.Forms.Padding(3);
-            label66.Name = "label66";
-            label66.Size = new System.Drawing.Size(64, 17);
-            label66.TabIndex = 42;
-            label66.Text = "Reg 5 :";
-            label66.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label67
-            // 
-            label67.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label67.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label67.Location = new System.Drawing.Point(4, 139);
-            label67.Margin = new System.Windows.Forms.Padding(3);
-            label67.Name = "label67";
-            label67.Size = new System.Drawing.Size(64, 17);
-            label67.TabIndex = 43;
-            label67.Text = "Reg 3 :";
-            label67.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label69
-            // 
-            label69.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label69.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label69.Location = new System.Drawing.Point(4, 181);
-            label69.Margin = new System.Windows.Forms.Padding(3);
-            label69.Name = "label69";
-            label69.Size = new System.Drawing.Size(64, 17);
-            label69.TabIndex = 45;
-            label69.Text = "Reg 4 :";
-            label69.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label63
-            // 
-            label63.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label63.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label63.Location = new System.Drawing.Point(4, 265);
-            label63.Margin = new System.Windows.Forms.Padding(3);
-            label63.Name = "label63";
-            label63.Size = new System.Drawing.Size(64, 17);
-            label63.TabIndex = 46;
-            label63.Text = "Reg 6 :";
-            label63.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label68
-            // 
-            label68.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label68.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label68.Location = new System.Drawing.Point(4, 307);
-            label68.Margin = new System.Windows.Forms.Padding(3);
-            label68.Name = "label68";
-            label68.Size = new System.Drawing.Size(64, 17);
-            label68.TabIndex = 47;
-            label68.Text = "Reg 7 :";
-            label68.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label70
-            // 
-            label70.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label70.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label70.Location = new System.Drawing.Point(4, 391);
-            label70.Margin = new System.Windows.Forms.Padding(3);
-            label70.Name = "label70";
-            label70.Size = new System.Drawing.Size(64, 17);
-            label70.TabIndex = 48;
-            label70.Text = "Reg 9 :";
-            label70.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label71
-            // 
-            label71.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label71.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label71.Location = new System.Drawing.Point(4, 349);
-            label71.Margin = new System.Windows.Forms.Padding(3);
-            label71.Name = "label71";
-            label71.Size = new System.Drawing.Size(64, 17);
-            label71.TabIndex = 49;
-            label71.Text = "Reg 8 :";
-            label71.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label72
-            // 
-            label72.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label72.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label72.Location = new System.Drawing.Point(4, 517);
-            label72.Margin = new System.Windows.Forms.Padding(3);
-            label72.Name = "label72";
-            label72.Size = new System.Drawing.Size(64, 17);
-            label72.TabIndex = 50;
-            label72.Text = "Reg 12:";
-            label72.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label73
-            // 
-            label73.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label73.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label73.Location = new System.Drawing.Point(4, 433);
-            label73.Margin = new System.Windows.Forms.Padding(3);
-            label73.Name = "label73";
-            label73.Size = new System.Drawing.Size(64, 17);
-            label73.TabIndex = 51;
-            label73.Text = "Reg 10:";
-            label73.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label75
-            // 
-            label75.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label75.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label75.Location = new System.Drawing.Point(4, 475);
-            label75.Margin = new System.Windows.Forms.Padding(3);
-            label75.Name = "label75";
-            label75.Size = new System.Drawing.Size(64, 17);
-            label75.TabIndex = 53;
-            label75.Text = "Reg 11:";
-            label75.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label76
-            // 
-            label76.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label76.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label76.Location = new System.Drawing.Point(4, 55);
-            label76.Margin = new System.Windows.Forms.Padding(3);
-            label76.Name = "label76";
-            label76.Size = new System.Drawing.Size(64, 17);
-            label76.TabIndex = 54;
-            label76.Text = "Reg 1 :";
-            label76.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtReg1
-            // 
-            this.txtReg1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReg1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReg1.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg1.Location = new System.Drawing.Point(75, 46);
-            this.txtReg1.MinimumSize = new System.Drawing.Size(125, 0);
-            this.txtReg1.Name = "txtReg1";
-            this.txtReg1.ReadOnly = true;
-            this.txtReg1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg1.Size = new System.Drawing.Size(175, 35);
-            this.txtReg1.TabIndex = 55;
-            this.txtReg1.WordWrap = false;
-            // 
-            // txtReg2
-            // 
-            this.txtReg2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReg2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReg2.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg2.Location = new System.Drawing.Point(75, 88);
-            this.txtReg2.MinimumSize = new System.Drawing.Size(125, 0);
-            this.txtReg2.Name = "txtReg2";
-            this.txtReg2.ReadOnly = true;
-            this.txtReg2.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg2.Size = new System.Drawing.Size(175, 35);
-            this.txtReg2.TabIndex = 56;
-            this.txtReg2.WordWrap = false;
-            // 
-            // txtReg4
-            // 
-            this.txtReg4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReg4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReg4.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg4.Location = new System.Drawing.Point(75, 172);
-            this.txtReg4.MinimumSize = new System.Drawing.Size(125, 0);
-            this.txtReg4.Name = "txtReg4";
-            this.txtReg4.ReadOnly = true;
-            this.txtReg4.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg4.Size = new System.Drawing.Size(175, 35);
-            this.txtReg4.TabIndex = 57;
-            this.txtReg4.WordWrap = false;
-            // 
-            // txtReg3
-            // 
-            this.txtReg3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReg3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReg3.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg3.Location = new System.Drawing.Point(75, 130);
-            this.txtReg3.MinimumSize = new System.Drawing.Size(125, 0);
-            this.txtReg3.Name = "txtReg3";
-            this.txtReg3.ReadOnly = true;
-            this.txtReg3.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg3.Size = new System.Drawing.Size(175, 35);
-            this.txtReg3.TabIndex = 58;
-            this.txtReg3.WordWrap = false;
-            // 
-            // txtReg5
-            // 
-            this.txtReg5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReg5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReg5.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg5.Location = new System.Drawing.Point(75, 214);
-            this.txtReg5.MinimumSize = new System.Drawing.Size(125, 0);
-            this.txtReg5.Name = "txtReg5";
-            this.txtReg5.ReadOnly = true;
-            this.txtReg5.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg5.Size = new System.Drawing.Size(175, 35);
-            this.txtReg5.TabIndex = 59;
-            this.txtReg5.WordWrap = false;
-            // 
-            // txtReg6
-            // 
-            this.txtReg6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReg6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReg6.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg6.Location = new System.Drawing.Point(75, 256);
-            this.txtReg6.MinimumSize = new System.Drawing.Size(125, 0);
-            this.txtReg6.Name = "txtReg6";
-            this.txtReg6.ReadOnly = true;
-            this.txtReg6.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg6.Size = new System.Drawing.Size(175, 35);
-            this.txtReg6.TabIndex = 60;
-            this.txtReg6.WordWrap = false;
-            // 
-            // txtReg7
-            // 
-            this.txtReg7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReg7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReg7.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg7.Location = new System.Drawing.Point(75, 298);
-            this.txtReg7.MinimumSize = new System.Drawing.Size(125, 0);
-            this.txtReg7.Name = "txtReg7";
-            this.txtReg7.ReadOnly = true;
-            this.txtReg7.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg7.Size = new System.Drawing.Size(175, 35);
-            this.txtReg7.TabIndex = 61;
-            this.txtReg7.WordWrap = false;
-            // 
-            // txtReg11
-            // 
-            this.txtReg11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReg11.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReg11.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg11.Location = new System.Drawing.Point(75, 466);
-            this.txtReg11.MinimumSize = new System.Drawing.Size(125, 0);
-            this.txtReg11.Name = "txtReg11";
-            this.txtReg11.ReadOnly = true;
-            this.txtReg11.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg11.Size = new System.Drawing.Size(175, 35);
-            this.txtReg11.TabIndex = 62;
-            this.txtReg11.WordWrap = false;
-            // 
-            // txtReg10
-            // 
-            this.txtReg10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReg10.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReg10.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg10.Location = new System.Drawing.Point(75, 424);
-            this.txtReg10.MinimumSize = new System.Drawing.Size(125, 0);
-            this.txtReg10.Name = "txtReg10";
-            this.txtReg10.ReadOnly = true;
-            this.txtReg10.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg10.Size = new System.Drawing.Size(175, 35);
-            this.txtReg10.TabIndex = 63;
-            this.txtReg10.WordWrap = false;
-            // 
-            // txtReg9
-            // 
-            this.txtReg9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReg9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReg9.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg9.Location = new System.Drawing.Point(75, 382);
-            this.txtReg9.MinimumSize = new System.Drawing.Size(125, 0);
-            this.txtReg9.Name = "txtReg9";
-            this.txtReg9.ReadOnly = true;
-            this.txtReg9.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg9.Size = new System.Drawing.Size(175, 35);
-            this.txtReg9.TabIndex = 64;
-            this.txtReg9.WordWrap = false;
-            // 
-            // txtReg12
-            // 
-            this.txtReg12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReg12.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReg12.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg12.Location = new System.Drawing.Point(75, 508);
-            this.txtReg12.MinimumSize = new System.Drawing.Size(125, 0);
-            this.txtReg12.Name = "txtReg12";
-            this.txtReg12.ReadOnly = true;
-            this.txtReg12.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg12.Size = new System.Drawing.Size(175, 35);
-            this.txtReg12.TabIndex = 65;
-            this.txtReg12.WordWrap = false;
-            // 
-            // txtReg8
-            // 
-            this.txtReg8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReg8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtReg8.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg8.Location = new System.Drawing.Point(75, 340);
-            this.txtReg8.MinimumSize = new System.Drawing.Size(125, 0);
-            this.txtReg8.Name = "txtReg8";
-            this.txtReg8.ReadOnly = true;
-            this.txtReg8.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg8.Size = new System.Drawing.Size(175, 35);
-            this.txtReg8.TabIndex = 66;
-            this.txtReg8.WordWrap = false;
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.AutoSize = true;
@@ -3540,35 +3584,23 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Controls.Add(this.numReferenceInput, 0, 0);
             this.tableLayoutPanel5.Controls.Add(label21, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.numDivider, 3, 0);
-            this.tableLayoutPanel5.Controls.Add(label45, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.cbDoubler, 4, 0);
             this.tableLayoutPanel5.Controls.Add(this.cbDivideby2, 5, 0);
             this.tableLayoutPanel5.Controls.Add(label27, 7, 0);
-            this.tableLayoutPanel5.Controls.Add(label26, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.numFchsp, 8, 0);
-            this.tableLayoutPanel5.Controls.Add(label22, 9, 0);
+            this.tableLayoutPanel5.Controls.Add(label45, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(label26, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(label28, 9, 0);
             this.tableLayoutPanel5.Font = new System.Drawing.Font("Consolas", 9F);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(12, 24);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(908, 31);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(836, 31);
             this.tableLayoutPanel5.TabIndex = 69;
-            // 
-            // label21
-            // 
-            label21.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label21.AutoSize = true;
-            label21.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label21.Location = new System.Drawing.Point(3, 6);
-            label21.Name = "label21";
-            label21.Size = new System.Drawing.Size(96, 18);
-            label21.TabIndex = 0;
-            label21.Text = "Ref. Input:";
             // 
             // numReferenceInput
             // 
@@ -3591,17 +3623,6 @@
             0,
             0,
             131072});
-            // 
-            // label45
-            // 
-            label45.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label45.AutoSize = true;
-            label45.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label45.Location = new System.Drawing.Point(227, 6);
-            label45.Name = "label45";
-            label45.Size = new System.Drawing.Size(72, 18);
-            label45.TabIndex = 3;
-            label45.Text = "Divider:";
             // 
             // numDivider
             // 
@@ -3657,28 +3678,6 @@
             this.cbDivideby2.Text = "/2:";
             this.cbDivideby2.UseVisualStyleBackColor = true;
             // 
-            // label26
-            // 
-            label26.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label26.AutoSize = true;
-            label26.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label26.Location = new System.Drawing.Point(305, 6);
-            label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(32, 18);
-            label26.TabIndex = 18;
-            label26.Text = "MHz";
-            // 
-            // label27
-            // 
-            label27.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label27.AutoSize = true;
-            label27.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label27.Location = new System.Drawing.Point(569, 6);
-            label27.Name = "label27";
-            label27.Size = new System.Drawing.Size(104, 18);
-            label27.TabIndex = 19;
-            label27.Text = "Ch. Spacing:";
-            // 
             // numFchsp
             // 
             this.numFchsp.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -3701,16 +3700,16 @@
             0,
             0});
             // 
-            // label22
+            // label28
             // 
-            label22.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label22.AutoSize = true;
-            label22.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label22.Location = new System.Drawing.Point(801, 6);
-            label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(104, 18);
-            label22.TabIndex = 25;
-            label22.Text = "Ch. Spacing:";
+            label28.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label28.AutoSize = true;
+            label28.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label28.Location = new System.Drawing.Point(801, 6);
+            label28.Name = "label28";
+            label28.Size = new System.Drawing.Size(32, 18);
+            label28.TabIndex = 26;
+            label28.Text = "MHz";
             // 
             // Form1
             // 
@@ -3869,6 +3868,8 @@
             tableLayoutPanel3.PerformLayout();
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
+            tlpRegisters.ResumeLayout(false);
+            tlpRegisters.PerformLayout();
             this.gbPhaseResync.ResumeLayout(false);
             this.gbPhaseResync.PerformLayout();
             this.flowLayoutPanel40.ResumeLayout(false);
@@ -3910,8 +3911,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.hpSDLoadReset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpLDMode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpADCEnable)).EndInit();
-            tlpRegisters.ResumeLayout(false);
-            tlpRegisters.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numReferenceInput)).EndInit();
