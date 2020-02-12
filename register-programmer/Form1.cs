@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Management;
 using PCEArgs = System.ComponentModel.PropertyChangedEventArgs;
 using PCEHandler = System.ComponentModel.PropertyChangedEventHandler;
+
 
 namespace register_programmer
 {
@@ -1694,7 +1696,48 @@ namespace register_programmer
         // control event methods
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this.SynthLockTimeoutInt.ToString());
+            string arduinoPort = AutodetectArduinoPort();
+            string fileName = @"C:\Users\metin\Downloads\arduino-1.8.11\writepll\writepll.ino";
+
+
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo.FileName = @"C:\Users\metin\Downloads\arduino-1.8.11\arduino_debug.exe";
+            process.StartInfo.Arguments = @"--upload C:\Users\metin\Downloads\arduino-1.8.11\writepll\writepll.ino";
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            process.StartInfo.CreateNoWindow = true;
+            process.Start();
+            string output = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            MessageBox.Show(output);
+            MessageBox.Show("exit code = " + process.ExitCode.ToString());
+        }
+        static private string AutodetectArduinoPort()
+        {
+            ManagementScope connectionScope = new ManagementScope();
+            SelectQuery serialQuery = new SelectQuery("SELECT * FROM Win32_SerialPort");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(connectionScope, serialQuery);
+
+            try
+            {
+                foreach (ManagementObject item in searcher.Get())
+                {
+                    string desc = item["Description"].ToString();
+                    string deviceId = item["DeviceID"].ToString();
+
+                    if (desc.Contains("Arduino"))
+                    {
+                        return deviceId;
+                    }
+                }
+            }
+            catch (ManagementException e)
+            {
+                /* Do Nothing */
+            }
+
+            return null;
         }
         private void numN_ValueChanged(object sender, EventArgs e)
         {
