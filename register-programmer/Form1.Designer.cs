@@ -145,8 +145,8 @@
             System.Windows.Forms.Label label45;
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label27;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label label28;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblInt = new System.Windows.Forms.Label();
             this.numInt = new System.Windows.Forms.NumericUpDown();
             this.numFrac1 = new System.Windows.Forms.NumericUpDown();
@@ -2751,7 +2751,7 @@
             tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.Size = new System.Drawing.Size(254, 548);
+            tlpRegisters.Size = new System.Drawing.Size(214, 548);
             tlpRegisters.TabIndex = 68;
             // 
             // label44
@@ -2776,7 +2776,7 @@
             this.txtReg0.Name = "txtReg0";
             this.txtReg0.ReadOnly = true;
             this.txtReg0.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg0.Size = new System.Drawing.Size(175, 35);
+            this.txtReg0.Size = new System.Drawing.Size(135, 35);
             this.txtReg0.TabIndex = 39;
             this.txtReg0.WordWrap = false;
             // 
@@ -2934,7 +2934,7 @@
             this.txtReg1.Name = "txtReg1";
             this.txtReg1.ReadOnly = true;
             this.txtReg1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg1.Size = new System.Drawing.Size(175, 35);
+            this.txtReg1.Size = new System.Drawing.Size(135, 35);
             this.txtReg1.TabIndex = 55;
             this.txtReg1.WordWrap = false;
             // 
@@ -2948,7 +2948,7 @@
             this.txtReg2.Name = "txtReg2";
             this.txtReg2.ReadOnly = true;
             this.txtReg2.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg2.Size = new System.Drawing.Size(175, 35);
+            this.txtReg2.Size = new System.Drawing.Size(135, 35);
             this.txtReg2.TabIndex = 56;
             this.txtReg2.WordWrap = false;
             // 
@@ -2962,7 +2962,7 @@
             this.txtReg4.Name = "txtReg4";
             this.txtReg4.ReadOnly = true;
             this.txtReg4.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg4.Size = new System.Drawing.Size(175, 35);
+            this.txtReg4.Size = new System.Drawing.Size(135, 35);
             this.txtReg4.TabIndex = 57;
             this.txtReg4.WordWrap = false;
             // 
@@ -2976,7 +2976,7 @@
             this.txtReg3.Name = "txtReg3";
             this.txtReg3.ReadOnly = true;
             this.txtReg3.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg3.Size = new System.Drawing.Size(175, 35);
+            this.txtReg3.Size = new System.Drawing.Size(135, 35);
             this.txtReg3.TabIndex = 58;
             this.txtReg3.WordWrap = false;
             // 
@@ -2990,7 +2990,7 @@
             this.txtReg5.Name = "txtReg5";
             this.txtReg5.ReadOnly = true;
             this.txtReg5.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg5.Size = new System.Drawing.Size(175, 35);
+            this.txtReg5.Size = new System.Drawing.Size(135, 35);
             this.txtReg5.TabIndex = 59;
             this.txtReg5.WordWrap = false;
             // 
@@ -3004,7 +3004,7 @@
             this.txtReg6.Name = "txtReg6";
             this.txtReg6.ReadOnly = true;
             this.txtReg6.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg6.Size = new System.Drawing.Size(175, 35);
+            this.txtReg6.Size = new System.Drawing.Size(135, 35);
             this.txtReg6.TabIndex = 60;
             this.txtReg6.WordWrap = false;
             // 
@@ -3018,7 +3018,7 @@
             this.txtReg7.Name = "txtReg7";
             this.txtReg7.ReadOnly = true;
             this.txtReg7.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg7.Size = new System.Drawing.Size(175, 35);
+            this.txtReg7.Size = new System.Drawing.Size(135, 35);
             this.txtReg7.TabIndex = 61;
             this.txtReg7.WordWrap = false;
             // 
@@ -3032,7 +3032,7 @@
             this.txtReg9.Name = "txtReg9";
             this.txtReg9.ReadOnly = true;
             this.txtReg9.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg9.Size = new System.Drawing.Size(175, 35);
+            this.txtReg9.Size = new System.Drawing.Size(135, 35);
             this.txtReg9.TabIndex = 64;
             this.txtReg9.WordWrap = false;
             // 
@@ -3046,7 +3046,7 @@
             this.txtReg10.Name = "txtReg10";
             this.txtReg10.ReadOnly = true;
             this.txtReg10.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg10.Size = new System.Drawing.Size(175, 35);
+            this.txtReg10.Size = new System.Drawing.Size(135, 35);
             this.txtReg10.TabIndex = 63;
             this.txtReg10.WordWrap = false;
             // 
@@ -3060,7 +3060,7 @@
             this.txtReg11.Name = "txtReg11";
             this.txtReg11.ReadOnly = true;
             this.txtReg11.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg11.Size = new System.Drawing.Size(175, 35);
+            this.txtReg11.Size = new System.Drawing.Size(135, 35);
             this.txtReg11.TabIndex = 62;
             this.txtReg11.WordWrap = false;
             // 
@@ -3074,7 +3074,7 @@
             this.txtReg12.Name = "txtReg12";
             this.txtReg12.ReadOnly = true;
             this.txtReg12.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg12.Size = new System.Drawing.Size(175, 35);
+            this.txtReg12.Size = new System.Drawing.Size(135, 35);
             this.txtReg12.TabIndex = 65;
             this.txtReg12.WordWrap = false;
             // 
@@ -3088,7 +3088,7 @@
             this.txtReg8.Name = "txtReg8";
             this.txtReg8.ReadOnly = true;
             this.txtReg8.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtReg8.Size = new System.Drawing.Size(175, 35);
+            this.txtReg8.Size = new System.Drawing.Size(135, 35);
             this.txtReg8.TabIndex = 66;
             this.txtReg8.WordWrap = false;
             // 
@@ -3108,7 +3108,7 @@
             label45.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label45.AutoSize = true;
             label45.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label45.Location = new System.Drawing.Point(265, 6);
+            label45.Location = new System.Drawing.Point(295, 6);
             label45.Name = "label45";
             label45.Size = new System.Drawing.Size(72, 18);
             label45.TabIndex = 3;
@@ -3119,7 +3119,7 @@
             label26.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label26.AutoSize = true;
             label26.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label26.Location = new System.Drawing.Point(227, 6);
+            label26.Location = new System.Drawing.Point(257, 6);
             label26.Name = "label26";
             label26.Size = new System.Drawing.Size(32, 18);
             label26.TabIndex = 18;
@@ -3130,11 +3130,22 @@
             label27.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label27.AutoSize = true;
             label27.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label27.Location = new System.Drawing.Point(569, 6);
+            label27.Location = new System.Drawing.Point(629, 6);
             label27.Name = "label27";
             label27.Size = new System.Drawing.Size(104, 18);
             label27.TabIndex = 19;
             label27.Text = "Ch. Spacing:";
+            // 
+            // label28
+            // 
+            label28.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label28.AutoSize = true;
+            label28.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label28.Location = new System.Drawing.Point(891, 6);
+            label28.Name = "label28";
+            label28.Size = new System.Drawing.Size(32, 18);
+            label28.TabIndex = 26;
+            label28.Text = "MHz";
             // 
             // gbPhaseResync
             // 
@@ -3586,26 +3597,25 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Controls.Add(this.numReferenceInput, 0, 0);
             this.tableLayoutPanel5.Controls.Add(label21, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.numDivider, 3, 0);
-            this.tableLayoutPanel5.Controls.Add(this.cbDoubler, 4, 0);
             this.tableLayoutPanel5.Controls.Add(this.cbDivideby2, 5, 0);
             this.tableLayoutPanel5.Controls.Add(label27, 7, 0);
             this.tableLayoutPanel5.Controls.Add(this.numFchsp, 8, 0);
             this.tableLayoutPanel5.Controls.Add(label45, 3, 0);
             this.tableLayoutPanel5.Controls.Add(label26, 2, 0);
             this.tableLayoutPanel5.Controls.Add(label28, 9, 0);
+            this.tableLayoutPanel5.Controls.Add(this.numDivider, 4, 0);
+            this.tableLayoutPanel5.Controls.Add(this.cbDoubler, 5, 0);
             this.tableLayoutPanel5.Font = new System.Drawing.Font("Consolas", 9F);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(12, 24);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(21, 24);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(836, 31);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(926, 31);
             this.tableLayoutPanel5.TabIndex = 69;
             // 
             // numReferenceInput
             // 
             this.numReferenceInput.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numReferenceInput.AutoSize = true;
             this.numReferenceInput.DecimalPlaces = 6;
             this.numReferenceInput.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numReferenceInput.Location = new System.Drawing.Point(105, 3);
@@ -3614,8 +3624,9 @@
             0,
             0,
             0});
+            this.numReferenceInput.MinimumSize = new System.Drawing.Size(116, 0);
             this.numReferenceInput.Name = "numReferenceInput";
-            this.numReferenceInput.Size = new System.Drawing.Size(116, 25);
+            this.numReferenceInput.Size = new System.Drawing.Size(146, 25);
             this.numReferenceInput.TabIndex = 2;
             this.numReferenceInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numReferenceInput.Value = new decimal(new int[] {
@@ -3627,9 +3638,8 @@
             // numDivider
             // 
             this.numDivider.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numDivider.AutoSize = true;
             this.numDivider.Font = new System.Drawing.Font("Consolas", 9F);
-            this.numDivider.Location = new System.Drawing.Point(343, 3);
+            this.numDivider.Location = new System.Drawing.Point(373, 3);
             this.numDivider.Maximum = new decimal(new int[] {
             1023,
             0,
@@ -3640,8 +3650,9 @@
             0,
             0,
             0});
+            this.numDivider.MinimumSize = new System.Drawing.Size(60, 0);
             this.numDivider.Name = "numDivider";
-            this.numDivider.Size = new System.Drawing.Size(60, 25);
+            this.numDivider.Size = new System.Drawing.Size(90, 25);
             this.numDivider.TabIndex = 5;
             this.numDivider.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numDivider.Value = new decimal(new int[] {
@@ -3656,7 +3667,7 @@
             this.cbDoubler.AutoSize = true;
             this.cbDoubler.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbDoubler.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDoubler.Location = new System.Drawing.Point(409, 4);
+            this.cbDoubler.Location = new System.Drawing.Point(529, 4);
             this.cbDoubler.Name = "cbDoubler";
             this.cbDoubler.Size = new System.Drawing.Size(94, 22);
             this.cbDoubler.TabIndex = 16;
@@ -3671,7 +3682,7 @@
             this.cbDivideby2.Checked = true;
             this.cbDivideby2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDivideby2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDivideby2.Location = new System.Drawing.Point(509, 4);
+            this.cbDivideby2.Location = new System.Drawing.Point(469, 4);
             this.cbDivideby2.Name = "cbDivideby2";
             this.cbDivideby2.Size = new System.Drawing.Size(54, 22);
             this.cbDivideby2.TabIndex = 17;
@@ -3681,17 +3692,17 @@
             // numFchsp
             // 
             this.numFchsp.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numFchsp.AutoSize = true;
             this.numFchsp.DecimalPlaces = 6;
             this.numFchsp.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numFchsp.Location = new System.Drawing.Point(679, 3);
+            this.numFchsp.Location = new System.Drawing.Point(739, 3);
             this.numFchsp.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
+            this.numFchsp.MinimumSize = new System.Drawing.Size(116, 0);
             this.numFchsp.Name = "numFchsp";
-            this.numFchsp.Size = new System.Drawing.Size(116, 25);
+            this.numFchsp.Size = new System.Drawing.Size(146, 25);
             this.numFchsp.TabIndex = 24;
             this.numFchsp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numFchsp.Value = new decimal(new int[] {
@@ -3699,17 +3710,6 @@
             0,
             0,
             0});
-            // 
-            // label28
-            // 
-            label28.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label28.AutoSize = true;
-            label28.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label28.Location = new System.Drawing.Point(801, 6);
-            label28.Name = "label28";
-            label28.Size = new System.Drawing.Size(32, 18);
-            label28.TabIndex = 26;
-            label28.Text = "MHz";
             // 
             // Form1
             // 
