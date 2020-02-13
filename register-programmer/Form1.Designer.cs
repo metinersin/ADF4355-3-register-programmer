@@ -265,10 +265,11 @@
             this.hpADCEnable = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.numReferenceInput = new System.Windows.Forms.NumericUpDown();
-            this.numDivider = new System.Windows.Forms.NumericUpDown();
-            this.cbDoubler = new System.Windows.Forms.CheckBox();
             this.cbDivideby2 = new System.Windows.Forms.CheckBox();
             this.numFchsp = new System.Windows.Forms.NumericUpDown();
+            this.numDivider = new System.Windows.Forms.NumericUpDown();
+            this.cbDoubler = new System.Windows.Forms.CheckBox();
+            this.btnIde = new System.Windows.Forms.Button();
             gbCalculations = new System.Windows.Forms.GroupBox();
             flowLayoutPanel46 = new System.Windows.Forms.FlowLayoutPanel();
             flowLayoutPanel44 = new System.Windows.Forms.FlowLayoutPanel();
@@ -496,8 +497,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.hpADCEnable)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numReferenceInput)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDivider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFchsp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDivider)).BeginInit();
             this.SuspendLayout();
             // 
             // gbCalculations
@@ -1905,7 +1906,7 @@
             "2048",
             "4096",
             "8192"});
-            this.cbLDCycleCount.Location = new System.Drawing.Point(89, 5);
+            this.cbLDCycleCount.Location = new System.Drawing.Point(89, 4);
             this.cbLDCycleCount.Name = "cbLDCycleCount";
             this.cbLDCycleCount.Size = new System.Drawing.Size(78, 23);
             this.cbLDCycleCount.TabIndex = 4;
@@ -1943,7 +1944,7 @@
             "6.0 ns",
             "8.0 ns",
             "12.0 ns"});
-            this.cbFracNPrecision.Location = new System.Drawing.Point(97, 4);
+            this.cbFracNPrecision.Location = new System.Drawing.Point(97, 5);
             this.cbFracNPrecision.Name = "cbFracNPrecision";
             this.cbFracNPrecision.Size = new System.Drawing.Size(78, 23);
             this.cbFracNPrecision.TabIndex = 4;
@@ -3635,6 +3636,43 @@
             0,
             131072});
             // 
+            // cbDivideby2
+            // 
+            this.cbDivideby2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbDivideby2.AutoSize = true;
+            this.cbDivideby2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbDivideby2.Checked = true;
+            this.cbDivideby2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDivideby2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDivideby2.Location = new System.Drawing.Point(469, 4);
+            this.cbDivideby2.Name = "cbDivideby2";
+            this.cbDivideby2.Size = new System.Drawing.Size(54, 22);
+            this.cbDivideby2.TabIndex = 17;
+            this.cbDivideby2.Text = "/2:";
+            this.cbDivideby2.UseVisualStyleBackColor = true;
+            // 
+            // numFchsp
+            // 
+            this.numFchsp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numFchsp.DecimalPlaces = 6;
+            this.numFchsp.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numFchsp.Location = new System.Drawing.Point(739, 3);
+            this.numFchsp.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numFchsp.MinimumSize = new System.Drawing.Size(116, 0);
+            this.numFchsp.Name = "numFchsp";
+            this.numFchsp.Size = new System.Drawing.Size(146, 25);
+            this.numFchsp.TabIndex = 24;
+            this.numFchsp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numFchsp.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // numDivider
             // 
             this.numDivider.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -3674,42 +3712,15 @@
             this.cbDoubler.Text = "Doubler:";
             this.cbDoubler.UseVisualStyleBackColor = true;
             // 
-            // cbDivideby2
+            // btnIde
             // 
-            this.cbDivideby2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbDivideby2.AutoSize = true;
-            this.cbDivideby2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbDivideby2.Checked = true;
-            this.cbDivideby2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbDivideby2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDivideby2.Location = new System.Drawing.Point(469, 4);
-            this.cbDivideby2.Name = "cbDivideby2";
-            this.cbDivideby2.Size = new System.Drawing.Size(54, 22);
-            this.cbDivideby2.TabIndex = 17;
-            this.cbDivideby2.Text = "/2:";
-            this.cbDivideby2.UseVisualStyleBackColor = true;
-            // 
-            // numFchsp
-            // 
-            this.numFchsp.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numFchsp.DecimalPlaces = 6;
-            this.numFchsp.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numFchsp.Location = new System.Drawing.Point(739, 3);
-            this.numFchsp.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.numFchsp.MinimumSize = new System.Drawing.Size(116, 0);
-            this.numFchsp.Name = "numFchsp";
-            this.numFchsp.Size = new System.Drawing.Size(146, 25);
-            this.numFchsp.TabIndex = 24;
-            this.numFchsp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numFchsp.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.btnIde.Location = new System.Drawing.Point(1358, 330);
+            this.btnIde.Name = "btnIde";
+            this.btnIde.Size = new System.Drawing.Size(110, 49);
+            this.btnIde.TabIndex = 70;
+            this.btnIde.Text = "Open With Ide";
+            this.btnIde.UseVisualStyleBackColor = true;
+            this.btnIde.Click += new System.EventHandler(this.btnIde_Click);
             // 
             // Form1
             // 
@@ -3717,6 +3728,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1924, 831);
+            this.Controls.Add(this.btnIde);
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(tlpRegisters);
             this.Controls.Add(this.flpErrors);
@@ -3914,8 +3926,8 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numReferenceInput)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDivider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFchsp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDivider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4044,6 +4056,7 @@
         private System.Windows.Forms.CheckBox cbDoubler;
         private System.Windows.Forms.CheckBox cbDivideby2;
         private System.Windows.Forms.NumericUpDown numFchsp;
+        private System.Windows.Forms.Button btnIde;
     }
 }
 

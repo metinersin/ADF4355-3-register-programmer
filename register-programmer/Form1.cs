@@ -16,6 +16,10 @@ namespace register_programmer
 {
     public partial class Form1 : Form
     {
+        static string TASLAK_FILE_PATH = @"C:\Users\metin\Downloads\arduino-1.8.11\pll\pll.ino";
+        static string INO_FILE_PATH = @"C:\Users\metin\Downloads\arduino-1.8.11\code\code.ino";
+        static string ARDUINO_PATH = @"C:\Users\metin\Downloads\arduino-1.8.11\arduino_debug.exe";
+        System.Diagnostics.Process ARDUINO_PROCESS;
         #region constants
 
         #region macros
@@ -413,6 +417,14 @@ namespace register_programmer
         public Form1()
         {
             InitializeComponent();
+
+            ARDUINO_PROCESS = new System.Diagnostics.Process();
+            ARDUINO_PROCESS.StartInfo.FileName = ARDUINO_PATH;
+            ARDUINO_PROCESS.StartInfo.UseShellExecute = false;
+            ARDUINO_PROCESS.StartInfo.RedirectStandardOutput = true;
+            ARDUINO_PROCESS.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            ARDUINO_PROCESS.StartInfo.CreateNoWindow = true;
+
 
             #region active variable initializations
             this._referenceInput = new ActiveVar<decimal>();
@@ -1696,22 +1708,17 @@ namespace register_programmer
         // control event methods
         private void button1_Click(object sender, EventArgs e)
         {
-            string arduinoPort = AutodetectArduinoPort();
-            string fileName = @"C:\Users\metin\Downloads\arduino-1.8.11\writepll\writepll.ino";
+            createInoFile();
+            //choose at form
+            string portName = "COM5";
 
+            ARDUINO_PROCESS.StartInfo.Arguments = "--port " + portName + " --upload " + INO_FILE_PATH;
+            ARDUINO_PROCESS.Start();
+            string arduinoOutput = ARDUINO_PROCESS.StandardOutput.ReadToEnd();
+            ARDUINO_PROCESS.WaitForExit();
 
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            process.StartInfo.FileName = @"C:\Users\metin\Downloads\arduino-1.8.11\arduino_debug.exe";
-            process.StartInfo.Arguments = @"--upload C:\Users\metin\Downloads\arduino-1.8.11\writepll\writepll.ino";
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            process.StartInfo.CreateNoWindow = true;
-            process.Start();
-            string output = process.StandardOutput.ReadToEnd();
-            process.WaitForExit();
-            MessageBox.Show(output);
-            MessageBox.Show("exit code = " + process.ExitCode.ToString());
+            MessageBox.Show(arduinoOutput);
+            MessageBox.Show("exit code = " + ARDUINO_PROCESS.ExitCode.ToString());
         }
         static private string AutodetectArduinoPort()
         {
@@ -1756,6 +1763,145 @@ namespace register_programmer
         {
             //MessageBox.Show(this.rbNegative.Checked.ToString());
             this.rbPositive.Checked = !this.rbNegative.Checked;
+        }
+
+        private void btnIde_Click(object sender, EventArgs e)
+        {
+            ARDUINO_PROCESS.StartInfo.Arguments = INO_FILE_PATH;
+            ARDUINO_PROCESS.Start();
+            string arduinoOutput = ARDUINO_PROCESS.StandardOutput.ReadToEnd();
+            ARDUINO_PROCESS.WaitForExit();
+
+            MessageBox.Show(arduinoOutput);
+            MessageBox.Show("exit code = " + ARDUINO_PROCESS.ExitCode.ToString());
+        }
+
+        private void createInoFile()
+        {
+            string[] pllLines = System.IO.File.ReadAllLines(TASLAK_FILE_PATH);
+
+            string[,] registers = new string[13,4];
+            #region reg0
+            registers[0, 0] = this.Register0_HexStr.Substring(0, 2);
+            registers[0, 1] = this.Register0_HexStr.Substring(2, 2);
+            registers[0, 2] = this.Register0_HexStr.Substring(4, 2);
+            registers[0, 3] = this.Register0_HexStr.Substring(6, 2);
+            #endregion
+            #region reg1
+            registers[1, 0] = this.Register1_HexStr.Substring(0, 2);
+            registers[1, 1] = this.Register1_HexStr.Substring(2, 2);
+            registers[1, 2] = this.Register1_HexStr.Substring(4, 2);
+            registers[1, 3] = this.Register1_HexStr.Substring(6, 2);
+            #endregion
+            #region reg2
+            registers[2, 0] = this.Register2_HexStr.Substring(0, 2);
+            registers[2, 1] = this.Register2_HexStr.Substring(2, 2);
+            registers[2, 2] = this.Register2_HexStr.Substring(4, 2);
+            registers[2, 3] = this.Register2_HexStr.Substring(6, 2);
+            #endregion
+            #region reg3
+            registers[3, 0] = this.Register3_HexStr.Substring(0, 2);
+            registers[3, 1] = this.Register3_HexStr.Substring(2, 2);
+            registers[3, 2] = this.Register3_HexStr.Substring(4, 2);
+            registers[3, 3] = this.Register3_HexStr.Substring(6, 2);
+            #endregion
+            #region reg4
+            registers[4, 0] = this.Register4HexStr.Substring(0, 2);
+            registers[4, 1] = this.Register4HexStr.Substring(2, 2);
+            registers[4, 2] = this.Register4HexStr.Substring(4, 2);
+            registers[4, 3] = this.Register4HexStr.Substring(6, 2);
+            #endregion
+            #region reg5
+            registers[5, 0] = this.Register5HexStr.Substring(0, 2);
+            registers[5, 1] = this.Register5HexStr.Substring(2, 2);
+            registers[5, 2] = this.Register5HexStr.Substring(4, 2);
+            registers[5, 3] = this.Register5HexStr.Substring(6, 2);
+            #endregion
+            #region reg6
+            registers[6, 0] = this.Register6HexStr.Substring(0, 2);
+            registers[6, 1] = this.Register6HexStr.Substring(2, 2);
+            registers[6, 2] = this.Register6HexStr.Substring(4, 2);
+            registers[6, 3] = this.Register6HexStr.Substring(6, 2);
+            #endregion
+            #region reg7
+            registers[7, 0] = this.Register7HexStr.Substring(0, 2);
+            registers[7, 1] = this.Register7HexStr.Substring(2, 2);
+            registers[7, 2] = this.Register7HexStr.Substring(4, 2);
+            registers[7, 3] = this.Register7HexStr.Substring(6, 2);
+            #endregion
+            #region reg8
+            registers[8, 0] = this.Register8HexStr.Substring(0, 2);
+            registers[8, 1] = this.Register8HexStr.Substring(2, 2);
+            registers[8, 2] = this.Register8HexStr.Substring(4, 2);
+            registers[8, 3] = this.Register8HexStr.Substring(6, 2);
+            #endregion
+            #region reg9
+            registers[9, 0] = this.Register9HexStr.Substring(0, 2);
+            registers[9, 1] = this.Register9HexStr.Substring(2, 2);
+            registers[9, 2] = this.Register9HexStr.Substring(4, 2);
+            registers[9, 3] = this.Register9HexStr.Substring(6, 2);
+            #endregion
+            #region reg10
+            registers[10, 0] = this.Register10HexStr.Substring(0, 2);
+            registers[10, 1] = this.Register10HexStr.Substring(2, 2);
+            registers[10, 2] = this.Register10HexStr.Substring(4, 2);
+            registers[10, 3] = this.Register10HexStr.Substring(6, 2);
+            #endregion
+            #region reg11
+            registers[11, 0] = this.Register11HexStr.Substring(0, 2);
+            registers[11, 1] = this.Register11HexStr.Substring(2, 2);
+            registers[11, 2] = this.Register11HexStr.Substring(4, 2);
+            registers[11, 3] = this.Register11HexStr.Substring(6, 2);
+            #endregion
+            #region reg12
+            registers[12, 0] = this.Register12HexStr.Substring(0, 2);
+            registers[12, 1] = this.Register12HexStr.Substring(2, 2);
+            registers[12, 2] = this.Register12HexStr.Substring(4, 2);
+            registers[12, 3] = this.Register12HexStr.Substring(6, 2);
+            #endregion
+
+            #region line modify
+            pllLines[43] = "  WriteADF(0x" + registers[12, 0] + ", 0x" + registers[12, 1] 
+                + ", 0x" + registers[12, 2] + ", 0x" + registers[12, 3] + "); //Reg12";
+
+            pllLines[45] = "  WriteADF(0x" + registers[11, 0] + ", 0x" + registers[11, 1]
+                + ", 0x" + registers[11, 2] + ", 0x" + registers[11, 3] + "); //Reg11";
+
+            pllLines[47] = "  WriteADF(0x" + registers[10, 0] + ", 0x" + registers[10, 1]
+                + ", 0x" + registers[10, 2] + ", 0x" + registers[10, 3] + "); //Reg10";
+
+            pllLines[49] = "  WriteADF(0x" + registers[9, 0] + ", 0x" + registers[9, 1]
+                + ", 0x" + registers[9, 2] + ", 0x" + registers[9, 3] + "); //Reg9";
+
+            pllLines[51] = "  WriteADF(0x" + registers[8, 0] + ", 0x" + registers[8, 1]
+                + ", 0x" + registers[8, 2] + ", 0x" + registers[8, 3] + "); //Reg8";
+
+            pllLines[53] = "  WriteADF(0x" + registers[7, 0] + ", 0x" + registers[7, 1]
+                + ", 0x" + registers[7, 2] + ", 0x" + registers[7, 3] + "); //Reg7";
+
+            pllLines[55] = "  WriteADF(0x" + registers[6, 0] + ", 0x" + registers[6, 1]
+                + ", 0x" + registers[6, 2] + ", 0x" + registers[6, 3] + "); //Reg6";
+
+            pllLines[57] = "  WriteADF(0x" + registers[5, 0] + ", 0x" + registers[5, 1]
+                + ", 0x" + registers[5, 2] + ", 0x" + registers[5, 3] + "); //Reg5";
+
+            pllLines[59] = "  WriteADF(0x" + registers[4, 0] + ", 0x" + registers[4, 1]
+                + ", 0x" + registers[4, 2] + ", 0x" + registers[4, 3] + "); //Reg4";
+
+            pllLines[61] = "  WriteADF(0x" + registers[3, 0] + ", 0x" + registers[3, 1]
+                + ", 0x" + registers[3, 2] + ", 0x" + registers[3, 3] + "); //Reg3";
+
+            pllLines[63] = "  WriteADF(0x" + registers[2, 0] + ", 0x" + registers[2, 1]
+                + ", 0x" + registers[2, 2] + ", 0x" + registers[2, 3] + "); //Reg2";
+
+            pllLines[65] = "  WriteADF(0x" + registers[1, 0] + ", 0x" + registers[1, 1]
+                + ", 0x" + registers[1, 2] + ", 0x" + registers[1, 3] + "); //Reg1";
+
+            pllLines[67] = "  WriteADF(0x" + registers[0, 0] + ", 0x" + registers[0, 1]
+                + ", 0x" + registers[0, 2] + ", 0x" + registers[0, 3] + "); //Reg0";
+            #endregion
+
+            System.IO.File.WriteAllLines(INO_FILE_PATH, pllLines);
         }
     }
 
