@@ -1906,7 +1906,7 @@
             "2048",
             "4096",
             "8192"});
-            this.cbLDCycleCount.Location = new System.Drawing.Point(89, 4);
+            this.cbLDCycleCount.Location = new System.Drawing.Point(89, 5);
             this.cbLDCycleCount.Name = "cbLDCycleCount";
             this.cbLDCycleCount.Size = new System.Drawing.Size(78, 23);
             this.cbLDCycleCount.TabIndex = 4;
@@ -1944,7 +1944,7 @@
             "6.0 ns",
             "8.0 ns",
             "12.0 ns"});
-            this.cbFracNPrecision.Location = new System.Drawing.Point(97, 5);
+            this.cbFracNPrecision.Location = new System.Drawing.Point(97, 4);
             this.cbFracNPrecision.Name = "cbFracNPrecision";
             this.cbFracNPrecision.Size = new System.Drawing.Size(78, 23);
             this.cbFracNPrecision.TabIndex = 4;

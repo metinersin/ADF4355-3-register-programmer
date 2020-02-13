@@ -16,9 +16,9 @@ namespace register_programmer
 {
     public partial class Form1 : Form
     {
-        static string TASLAK_FILE_PATH = @"C:\Users\metin\Downloads\arduino-1.8.11\pll\pll.ino";
-        static string INO_FILE_PATH = @"C:\Users\metin\Downloads\arduino-1.8.11\code\code.ino";
-        static string ARDUINO_PATH = @"C:\Users\metin\Downloads\arduino-1.8.11\arduino_debug.exe";
+        static string TASLAK_FILE_PATH = @"arduino-1.8.11\pll\pll.ino";
+        static string INO_FILE_PATH = @"arduino-1.8.11\code\code.ino";
+        static string ARDUINO_PATH = @"arduino-1.8.11\arduino_debug.exe";
         System.Diagnostics.Process ARDUINO_PROCESS;
         #region constants
 
