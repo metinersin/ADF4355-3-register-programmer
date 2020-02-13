@@ -236,7 +236,7 @@
             this.gbDoubler = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.hlblDoublerError1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUpload = new System.Windows.Forms.Button();
             this.erpInt = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpMod2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpVco = new System.Windows.Forms.ErrorProvider(this.components);
@@ -270,6 +270,7 @@
             this.numDivider = new System.Windows.Forms.NumericUpDown();
             this.cbDoubler = new System.Windows.Forms.CheckBox();
             this.btnIde = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             gbCalculations = new System.Windows.Forms.GroupBox();
             flowLayoutPanel46 = new System.Windows.Forms.FlowLayoutPanel();
             flowLayoutPanel44 = new System.Windows.Forms.FlowLayoutPanel();
@@ -2709,12 +2710,14 @@
             tlpRegisters.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             tlpRegisters.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             tlpRegisters.Controls.Add(label44, 0, 0);
+            tlpRegisters.Controls.Add(this.btnIde, 1, 14);
             tlpRegisters.Controls.Add(this.txtReg0, 1, 0);
             tlpRegisters.Controls.Add(label76, 0, 1);
             tlpRegisters.Controls.Add(label4, 0, 2);
             tlpRegisters.Controls.Add(label67, 0, 3);
             tlpRegisters.Controls.Add(label69, 0, 4);
             tlpRegisters.Controls.Add(label66, 0, 5);
+            tlpRegisters.Controls.Add(this.btnUpload, 0, 14);
             tlpRegisters.Controls.Add(label63, 0, 6);
             tlpRegisters.Controls.Add(label68, 0, 7);
             tlpRegisters.Controls.Add(label71, 0, 8);
@@ -2737,7 +2740,7 @@
             tlpRegisters.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             tlpRegisters.Location = new System.Drawing.Point(1495, 154);
             tlpRegisters.Name = "tlpRegisters";
-            tlpRegisters.RowCount = 14;
+            tlpRegisters.RowCount = 15;
             tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -2752,14 +2755,15 @@
             tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tlpRegisters.Size = new System.Drawing.Size(214, 548);
+            tlpRegisters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tlpRegisters.Size = new System.Drawing.Size(260, 605);
             tlpRegisters.TabIndex = 68;
             // 
             // label44
             // 
             label44.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label44.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label44.Location = new System.Drawing.Point(4, 13);
+            label44.Location = new System.Drawing.Point(50, 13);
             label44.Margin = new System.Windows.Forms.Padding(3);
             label44.Name = "label44";
             label44.Size = new System.Drawing.Size(64, 17);
@@ -2772,7 +2776,7 @@
             this.txtReg0.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReg0.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReg0.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg0.Location = new System.Drawing.Point(75, 4);
+            this.txtReg0.Location = new System.Drawing.Point(121, 4);
             this.txtReg0.MinimumSize = new System.Drawing.Size(125, 4);
             this.txtReg0.Name = "txtReg0";
             this.txtReg0.ReadOnly = true;
@@ -2785,7 +2789,7 @@
             // 
             label76.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label76.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label76.Location = new System.Drawing.Point(4, 55);
+            label76.Location = new System.Drawing.Point(50, 55);
             label76.Margin = new System.Windows.Forms.Padding(3);
             label76.Name = "label76";
             label76.Size = new System.Drawing.Size(64, 17);
@@ -2797,7 +2801,7 @@
             // 
             label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(4, 97);
+            label4.Location = new System.Drawing.Point(50, 97);
             label4.Margin = new System.Windows.Forms.Padding(3);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(64, 17);
@@ -2809,7 +2813,7 @@
             // 
             label67.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label67.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label67.Location = new System.Drawing.Point(4, 139);
+            label67.Location = new System.Drawing.Point(50, 139);
             label67.Margin = new System.Windows.Forms.Padding(3);
             label67.Name = "label67";
             label67.Size = new System.Drawing.Size(64, 17);
@@ -2821,7 +2825,7 @@
             // 
             label69.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label69.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label69.Location = new System.Drawing.Point(4, 181);
+            label69.Location = new System.Drawing.Point(50, 181);
             label69.Margin = new System.Windows.Forms.Padding(3);
             label69.Name = "label69";
             label69.Size = new System.Drawing.Size(64, 17);
@@ -2833,7 +2837,7 @@
             // 
             label66.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label66.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label66.Location = new System.Drawing.Point(4, 223);
+            label66.Location = new System.Drawing.Point(50, 223);
             label66.Margin = new System.Windows.Forms.Padding(3);
             label66.Name = "label66";
             label66.Size = new System.Drawing.Size(64, 17);
@@ -2845,7 +2849,7 @@
             // 
             label63.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label63.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label63.Location = new System.Drawing.Point(4, 265);
+            label63.Location = new System.Drawing.Point(50, 265);
             label63.Margin = new System.Windows.Forms.Padding(3);
             label63.Name = "label63";
             label63.Size = new System.Drawing.Size(64, 17);
@@ -2857,7 +2861,7 @@
             // 
             label68.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label68.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label68.Location = new System.Drawing.Point(4, 307);
+            label68.Location = new System.Drawing.Point(50, 307);
             label68.Margin = new System.Windows.Forms.Padding(3);
             label68.Name = "label68";
             label68.Size = new System.Drawing.Size(64, 17);
@@ -2869,7 +2873,7 @@
             // 
             label71.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label71.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label71.Location = new System.Drawing.Point(4, 349);
+            label71.Location = new System.Drawing.Point(50, 349);
             label71.Margin = new System.Windows.Forms.Padding(3);
             label71.Name = "label71";
             label71.Size = new System.Drawing.Size(64, 17);
@@ -2881,7 +2885,7 @@
             // 
             label70.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label70.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label70.Location = new System.Drawing.Point(4, 391);
+            label70.Location = new System.Drawing.Point(50, 391);
             label70.Margin = new System.Windows.Forms.Padding(3);
             label70.Name = "label70";
             label70.Size = new System.Drawing.Size(64, 17);
@@ -2893,7 +2897,7 @@
             // 
             label73.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label73.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label73.Location = new System.Drawing.Point(4, 433);
+            label73.Location = new System.Drawing.Point(50, 433);
             label73.Margin = new System.Windows.Forms.Padding(3);
             label73.Name = "label73";
             label73.Size = new System.Drawing.Size(64, 17);
@@ -2905,7 +2909,7 @@
             // 
             label75.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label75.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label75.Location = new System.Drawing.Point(4, 475);
+            label75.Location = new System.Drawing.Point(50, 475);
             label75.Margin = new System.Windows.Forms.Padding(3);
             label75.Name = "label75";
             label75.Size = new System.Drawing.Size(64, 17);
@@ -2917,7 +2921,7 @@
             // 
             label72.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label72.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label72.Location = new System.Drawing.Point(4, 517);
+            label72.Location = new System.Drawing.Point(50, 517);
             label72.Margin = new System.Windows.Forms.Padding(3);
             label72.Name = "label72";
             label72.Size = new System.Drawing.Size(64, 17);
@@ -2930,7 +2934,7 @@
             this.txtReg1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReg1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReg1.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg1.Location = new System.Drawing.Point(75, 46);
+            this.txtReg1.Location = new System.Drawing.Point(121, 46);
             this.txtReg1.MinimumSize = new System.Drawing.Size(125, 4);
             this.txtReg1.Name = "txtReg1";
             this.txtReg1.ReadOnly = true;
@@ -2944,7 +2948,7 @@
             this.txtReg2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReg2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReg2.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg2.Location = new System.Drawing.Point(75, 88);
+            this.txtReg2.Location = new System.Drawing.Point(121, 88);
             this.txtReg2.MinimumSize = new System.Drawing.Size(125, 4);
             this.txtReg2.Name = "txtReg2";
             this.txtReg2.ReadOnly = true;
@@ -2958,7 +2962,7 @@
             this.txtReg4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReg4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReg4.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg4.Location = new System.Drawing.Point(75, 172);
+            this.txtReg4.Location = new System.Drawing.Point(121, 172);
             this.txtReg4.MinimumSize = new System.Drawing.Size(125, 4);
             this.txtReg4.Name = "txtReg4";
             this.txtReg4.ReadOnly = true;
@@ -2972,7 +2976,7 @@
             this.txtReg3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReg3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReg3.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg3.Location = new System.Drawing.Point(75, 130);
+            this.txtReg3.Location = new System.Drawing.Point(121, 130);
             this.txtReg3.MinimumSize = new System.Drawing.Size(125, 4);
             this.txtReg3.Name = "txtReg3";
             this.txtReg3.ReadOnly = true;
@@ -2986,7 +2990,7 @@
             this.txtReg5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReg5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReg5.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg5.Location = new System.Drawing.Point(75, 214);
+            this.txtReg5.Location = new System.Drawing.Point(121, 214);
             this.txtReg5.MinimumSize = new System.Drawing.Size(125, 4);
             this.txtReg5.Name = "txtReg5";
             this.txtReg5.ReadOnly = true;
@@ -3000,7 +3004,7 @@
             this.txtReg6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReg6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReg6.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg6.Location = new System.Drawing.Point(75, 256);
+            this.txtReg6.Location = new System.Drawing.Point(121, 256);
             this.txtReg6.MinimumSize = new System.Drawing.Size(125, 4);
             this.txtReg6.Name = "txtReg6";
             this.txtReg6.ReadOnly = true;
@@ -3014,7 +3018,7 @@
             this.txtReg7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReg7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReg7.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg7.Location = new System.Drawing.Point(75, 298);
+            this.txtReg7.Location = new System.Drawing.Point(121, 298);
             this.txtReg7.MinimumSize = new System.Drawing.Size(125, 4);
             this.txtReg7.Name = "txtReg7";
             this.txtReg7.ReadOnly = true;
@@ -3028,7 +3032,7 @@
             this.txtReg9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReg9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReg9.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg9.Location = new System.Drawing.Point(75, 382);
+            this.txtReg9.Location = new System.Drawing.Point(121, 382);
             this.txtReg9.MinimumSize = new System.Drawing.Size(125, 4);
             this.txtReg9.Name = "txtReg9";
             this.txtReg9.ReadOnly = true;
@@ -3042,7 +3046,7 @@
             this.txtReg10.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReg10.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReg10.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg10.Location = new System.Drawing.Point(75, 424);
+            this.txtReg10.Location = new System.Drawing.Point(121, 424);
             this.txtReg10.MinimumSize = new System.Drawing.Size(125, 4);
             this.txtReg10.Name = "txtReg10";
             this.txtReg10.ReadOnly = true;
@@ -3056,7 +3060,7 @@
             this.txtReg11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReg11.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReg11.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg11.Location = new System.Drawing.Point(75, 466);
+            this.txtReg11.Location = new System.Drawing.Point(121, 466);
             this.txtReg11.MinimumSize = new System.Drawing.Size(125, 4);
             this.txtReg11.Name = "txtReg11";
             this.txtReg11.ReadOnly = true;
@@ -3070,7 +3074,7 @@
             this.txtReg12.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReg12.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReg12.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg12.Location = new System.Drawing.Point(75, 508);
+            this.txtReg12.Location = new System.Drawing.Point(121, 508);
             this.txtReg12.MinimumSize = new System.Drawing.Size(125, 4);
             this.txtReg12.Name = "txtReg12";
             this.txtReg12.ReadOnly = true;
@@ -3084,7 +3088,7 @@
             this.txtReg8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReg8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtReg8.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg8.Location = new System.Drawing.Point(75, 340);
+            this.txtReg8.Location = new System.Drawing.Point(121, 340);
             this.txtReg8.MinimumSize = new System.Drawing.Size(125, 4);
             this.txtReg8.Name = "txtReg8";
             this.txtReg8.ReadOnly = true;
@@ -3327,15 +3331,17 @@
             this.hlblDoublerError1.Text = "DoublerError1";
             this.hlblDoublerError1.Visible = false;
             // 
-            // button1
+            // btnUpload
             // 
-            this.button1.Location = new System.Drawing.Point(1358, 92);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 22);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnUpload.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpload.Font = new System.Drawing.Font("Consolas", 8F);
+            this.btnUpload.Location = new System.Drawing.Point(4, 551);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(110, 50);
+            this.btnUpload.TabIndex = 4;
+            this.btnUpload.Text = "Upload to arduino";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // erpInt
             // 
@@ -3714,13 +3720,25 @@
             // 
             // btnIde
             // 
-            this.btnIde.Location = new System.Drawing.Point(1358, 330);
+            this.btnIde.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnIde.Font = new System.Drawing.Font("Consolas", 8F);
+            this.btnIde.Location = new System.Drawing.Point(133, 551);
             this.btnIde.Name = "btnIde";
-            this.btnIde.Size = new System.Drawing.Size(110, 49);
+            this.btnIde.Size = new System.Drawing.Size(110, 50);
             this.btnIde.TabIndex = 70;
             this.btnIde.Text = "Open With Ide";
             this.btnIde.UseVisualStyleBackColor = true;
             this.btnIde.Click += new System.EventHandler(this.btnIde_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1213, 484);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 71;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -3728,16 +3746,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1924, 831);
-            this.Controls.Add(this.btnIde);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(tlpRegisters);
             this.Controls.Add(this.flpErrors);
             this.Controls.Add(gbCalculations);
             this.Controls.Add(tableLayoutPanel4);
-            this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "ADF 4355";
+            this.Text = "ADF 4355-3 Programmer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             gbCalculations.ResumeLayout(false);
             gbCalculations.PerformLayout();
@@ -3943,7 +3961,7 @@
         private System.Windows.Forms.NumericUpDown numFrac1;
         private System.Windows.Forms.NumericUpDown numInt;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.NumericUpDown numFpfd;
         private System.Windows.Forms.CheckBox cbPhaseAdjust;
         private System.Windows.Forms.CheckBox cbSDLoadReset;
@@ -4057,6 +4075,7 @@
         private System.Windows.Forms.CheckBox cbDivideby2;
         private System.Windows.Forms.NumericUpDown numFchsp;
         private System.Windows.Forms.Button btnIde;
+        private System.Windows.Forms.Button button2;
     }
 }
 
