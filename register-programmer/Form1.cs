@@ -42,16 +42,7 @@ namespace register_programmer
                     else
                         continue;
 
-                string[] dirHierarchy = filePath.Split('\\');
-
-                if(dirHierarchy.Length <= 1)
-                    if (MessageBox.Show(errorMessage, errorCaption, MessageBoxButtons.YesNo, icon)
-                    == buttonToExit)
-                        return null;
-                    else
-                        continue;
-
-                string fileName = dirHierarchy[dirHierarchy.Length - 1];
+                string fileName = Path.GetFileName(filePath);
 
                 if (string.IsNullOrEmpty(fileName) || string.IsNullOrWhiteSpace(fileName))
                     if (MessageBox.Show(errorMessage, errorCaption, MessageBoxButtons.YesNo, icon)
@@ -72,30 +63,30 @@ namespace register_programmer
         }
         static private string GET_ARDUINO_PATH_FROM_ENVPATH()
         {
-            string pathVar =  System.Environment.GetEnvironmentVariable("PATH");
+            string pathVar =  System.Environment.GetEnvironmentVariable(ENV_VAR_NAME
+                , EnvironmentVariableTarget.User);
 
             if (string.IsNullOrEmpty(pathVar) || string.IsNullOrWhiteSpace(pathVar))
             {
                 string tempmsg, tempcap;
                 if (pathVar is null)
                 {
-                    tempmsg = "There is no environment variable named PATH in your system. To use "
-                        + PROGRAM_NAME + " you need to create an environment variable named PATH"
-                        + " and then add the path of your arduino.exe or arduino_debug.exe to the PATH."
+                    tempmsg = "There is no environment variable named " + ENV_VAR_NAME +" in your system. To use "
+                        + PROGRAM_NAME + " you need to create an environment variable named " + ENV_VAR_NAME
+                        + " and then add the path of your arduino.exe or arduino_debug.exe to the " + ENV_VAR_NAME +"."
                         + " Do you want to create one?";
-                    tempcap = "No PATH!";
+                    tempcap = "No " + ENV_VAR_NAME +"!";
                 }
                 else
                 {
-                    tempmsg = "Your PATH environment variable is empty. You need to add the path of your"
-                        + " arduino.exe or arduino_debug.exe to the PATH. Do you want to add?";
-                    tempcap = "PATH is empty!";
+                    tempmsg = "Your " + ENV_VAR_NAME + " environment variable is empty. You need to add the"
+                        + " path of your arduino.exe or arduino_debug.exe to the " + ENV_VAR_NAME +". Do you"
+                        + " want to add?";
+                    tempcap = ENV_VAR_NAME + " is empty!";
                 }
 
-                DialogResult doYouWantToCreatePath = MessageBox.Show(tempmsg, tempcap
-                    , MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-
-                if (doYouWantToCreatePath == DialogResult.Yes)
+                if (MessageBox.Show(tempmsg, tempcap
+                    , MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
                 {
                     string filePath = CHOOSE_FILE_CERTAINLY(
                         Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "You have not"
@@ -107,14 +98,12 @@ namespace register_programmer
                     if (string.IsNullOrEmpty(filePath))
                         return null;
 
-                    string[] dirHierarchy = filePath.Split('\\');
-                    string fileName = dirHierarchy[dirHierarchy.Length - 1];
+                    string fileName = Path.GetFileName(filePath);
                     bool wantsToContinue = false;
 
                     if (fileName != "arduino.exe" && fileName != "arduino_debug.exe")
                     {
-                        string temp = CHOOSE_FILE_CERTAINLY(Environment.GetFolderPath(
-                            Environment.SpecialFolder.ProgramFiles), "Your file's name (" + fileName
+                        string temp = CHOOSE_FILE_CERTAINLY(Path.GetDirectoryName(filePath), "Your file's name (" + fileName
                             + ") is not arduino.exe or arduino_debug.exe (arduino_debug.exe is"
                             + " strongly recommended for more functionality.). Do you want to still continue?"
                             + " Click No to replace the file.", "The file has an unexpected name"
@@ -124,16 +113,14 @@ namespace register_programmer
                         if (!string.IsNullOrEmpty(temp))
                         {
                             filePath = temp;
-                            dirHierarchy = filePath.Split('\\');
-                            fileName = dirHierarchy[dirHierarchy.Length - 1];
+                            fileName = Path.GetFileName(filePath);
                             wantsToContinue = true;
                         }
                     }
 
                     if (fileName == "arduino.exe" && !wantsToContinue)
                     {
-                        string temp = CHOOSE_FILE_CERTAINLY(Environment.GetFolderPath(
-                            Environment.SpecialFolder.ProgramFiles), "arduino_debug.exe is strongly"
+                        string temp = CHOOSE_FILE_CERTAINLY(Path.GetDirectoryName(filePath), "arduino_debug.exe is strongly"
                             + " recommended for more functionality. Do you want to still continue? Click No"
                             + " to replace the file.", "arduino_debug.exe is recommended"
                             , MessageBoxIcon.Warning, true, DialogResult.Yes, (string name)
@@ -142,13 +129,13 @@ namespace register_programmer
                         if (!string.IsNullOrEmpty(temp))
                         {
                             filePath = temp;
-                            dirHierarchy = filePath.Split('\\');
-                            fileName = dirHierarchy[dirHierarchy.Length - 1];
+                            fileName = Path.GetFileName(filePath);
                         }
                     }
 
                     //filePath is ok
-                    System.Environment.SetEnvironmentVariable("PATH", filePath);
+                    System.Environment.SetEnvironmentVariable("Path", filePath
+                        , EnvironmentVariableTarget.User);
                     return filePath;
                 }
                 else
@@ -156,49 +143,98 @@ namespace register_programmer
             }
             else
             {
-                string[] paths = pathVar.Split('\\');
-
-                //arduino_debug.exe search
-                foreach(string path in paths)
+                string candidate1 = null, candidate2 = null, candidate3 = null;
+                foreach(string path in pathVar.Split(';'))
                 {
-                    string[] dirHierarchy = path.Split('\\');
+                    string fileName = Path.GetFileName(path);
 
-                    if (dirHierarchy is null) continue;
-                    if (dirHierarchy.Length <= 0) continue;
+                    if (File.GetAttributes(path).HasFlag(FileAttributes.Directory))
+                    {
+                        foreach(string memberFile in Directory.EnumerateFiles(path))
+                        {
+                            if (fileName == "arduino_debug.exe")
+                                candidate2 = path;
+                            else if (fileName == "arduino.exe")
+                                candidate3 = path;
+                        }
+                    }
+                    else
+                    {
+                        if (fileName == "arduino_debug.exe")
+                            return path;
 
-                    if (dirHierarchy[dirHierarchy.Length - 1] == "arduino_debug.exe") return path;
+                        if (fileName == "arduino.exe")
+                            candidate1 = path;
+                    }
                 }
-                //arduino.exe search
-                foreach (string path in paths)
-                {
-                    string[] dirHierarchy = path.Split('\\');
-
-                    if (dirHierarchy is null) continue;
-                    if (dirHierarchy.Length <= 0) continue;
-
-                    if (dirHierarchy[dirHierarchy.Length - 1] == "arduino.exe") return path;
-                }
-                //arduino_debug.exe search in folders
-                foreach (string path in paths)
-                    foreach(string file in Directory.EnumerateFiles(path))
-                        if (file == "arduino_debug.exe")
-                            return path + "\\" + file;
-                //arduino.exe search in folders
-                foreach (string path in paths)
-                    foreach (string file in Directory.EnumerateFiles(path))
-                        if (file == "arduino.exe")
-                            return path + "\\" + file;
+                if (!string.IsNullOrEmpty(candidate1)) return candidate1;
+                if (!string.IsNullOrEmpty(candidate2)) return candidate2;
+                if (!string.IsNullOrEmpty(candidate3)) return candidate3;
 
                 //no arduino open a file dialog
+                string filePath = null;
+                if (MessageBox.Show("We could not locate arduino_debug.exe or arduino.exe in your " 
+                    + ENV_VAR_NAME + ". Do you want to add it now?", "No arduino_debug.exe or arduino.exe in "
+                    + ENV_VAR_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+                    filePath = CHOOSE_FILE_CERTAINLY(
+                        Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "You have not"
+                        + " choosen any file. You should choose the arduino.exe file in your system. If you"
+                        + " do not have Arduino IDE, install Arduino IDE and try again. You can do this"
+                        + " later but we recommend you to do now. Click Yes if you want to choose now."
+                        , "Choose arduino.exe", MessageBoxIcon.Error, false, DialogResult.No, (string name)
+                        => true);
+                if (string.IsNullOrEmpty(filePath))
+                    return null;
+
+                string _fileName = Path.GetFileName(filePath);
+                bool wantsToContinue = false;
+
+                if (_fileName != "arduino.exe" && _fileName != "arduino_debug.exe")
+                {
+                    string temp = CHOOSE_FILE_CERTAINLY(Environment.GetFolderPath(
+                        Environment.SpecialFolder.ProgramFiles), "Your file's name (" + _fileName
+                        + ") is not arduino.exe or arduino_debug.exe (arduino_debug.exe is"
+                        + " strongly recommended for more functionality.). Do you want to still continue?"
+                        + " Click No to replace the file.", "The file has an unexpected name"
+                        , MessageBoxIcon.Warning, true, DialogResult.Yes, (string name)
+                        => name == "arduino.exe" || name == "arduino_debug.exe");
+
+                    if (!string.IsNullOrEmpty(temp))
+                    {
+                        filePath = temp;
+                        _fileName = Path.GetFileName(filePath);
+                        wantsToContinue = true;
+                    }
+                }
+
+                if (_fileName == "arduino.exe" && !wantsToContinue)
+                {
+                    string temp = CHOOSE_FILE_CERTAINLY(Path.GetDirectoryName(filePath), "arduino_debug.exe is strongly"
+                        + " recommended for more functionality. Do you want to still continue? Click No"
+                        + " to replace the file.", "arduino_debug.exe is recommended"
+                        , MessageBoxIcon.Warning, true, DialogResult.Yes, (string name)
+                        => _fileName == "arduino_debug.exe");
+
+                    if (!string.IsNullOrEmpty(temp))
+                    {
+                        filePath = temp;
+                        _fileName = Path.GetFileName(filePath);
+                    }
+                }
+
+                Environment.SetEnvironmentVariable("Path", pathVar + ";" + filePath
+                    , EnvironmentVariableTarget.User);
+                return filePath;
             }
         }
 
-        //static private readonly string NO_FILE = "NO FILE";
-        static private string PROGRAM_NAME = "ADF4355-3 Programmer";
+        readonly static private string PROGRAM_NAME = "ADF4355-3 Programmer";
+
+        static string ENV_VAR_NAME = "Path";
         static private string TASLAK_FILE_PATH = @"arduino-1.8.11\pll\pll.ino";
         static private string INO_FILE_PATH = @"arduino-1.8.11\code\code.ino";
-        //static private string ARDUINO_PATH = @"arduino-1.8.11\arduino_debug.exe";
-        Process ARDUINO_PROCESS;
+        static private Process ARDUINO_PROCESS;
+
         #region constants
 
         #region macros
@@ -2089,11 +2125,7 @@ namespace register_programmer
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (GET_ARDUINO_PATH() is null)
-                MessageBox.Show("is null");
-            if (GET_ARDUINO_PATH() == null)
-                MessageBox.Show("== null");
-            MessageBox.Show(GET_ARDUINO_PATH());
+            MessageBox.Show(GET_ARDUINO_PATH_FROM_ENVPATH());
         }
     }
 

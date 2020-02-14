@@ -209,7 +209,9 @@
             this.numResyncClockTimeout = new System.Windows.Forms.NumericUpDown();
             this.cbAutocal = new System.Windows.Forms.CheckBox();
             this.cbPrescaler = new System.Windows.Forms.ComboBox();
+            this.btnIde = new System.Windows.Forms.Button();
             this.txtReg0 = new System.Windows.Forms.TextBox();
+            this.btnUpload = new System.Windows.Forms.Button();
             this.txtReg1 = new System.Windows.Forms.TextBox();
             this.txtReg2 = new System.Windows.Forms.TextBox();
             this.txtReg4 = new System.Windows.Forms.TextBox();
@@ -236,7 +238,6 @@
             this.gbDoubler = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.hlblDoublerError1 = new System.Windows.Forms.Label();
-            this.btnUpload = new System.Windows.Forms.Button();
             this.erpInt = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpMod2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpVco = new System.Windows.Forms.ErrorProvider(this.components);
@@ -269,7 +270,6 @@
             this.numFchsp = new System.Windows.Forms.NumericUpDown();
             this.numDivider = new System.Windows.Forms.NumericUpDown();
             this.cbDoubler = new System.Windows.Forms.CheckBox();
-            this.btnIde = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             gbCalculations = new System.Windows.Forms.GroupBox();
             flowLayoutPanel46 = new System.Windows.Forms.FlowLayoutPanel();
@@ -2771,6 +2771,18 @@
             label44.Text = "Reg 0 :";
             label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnIde
+            // 
+            this.btnIde.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnIde.Font = new System.Drawing.Font("Consolas", 8F);
+            this.btnIde.Location = new System.Drawing.Point(133, 551);
+            this.btnIde.Name = "btnIde";
+            this.btnIde.Size = new System.Drawing.Size(110, 50);
+            this.btnIde.TabIndex = 70;
+            this.btnIde.Text = "Open With Ide";
+            this.btnIde.UseVisualStyleBackColor = true;
+            this.btnIde.Click += new System.EventHandler(this.btnIde_Click);
+            // 
             // txtReg0
             // 
             this.txtReg0.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -2844,6 +2856,18 @@
             label66.TabIndex = 42;
             label66.Text = "Reg 5 :";
             label66.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpload.Font = new System.Drawing.Font("Consolas", 8F);
+            this.btnUpload.Location = new System.Drawing.Point(4, 551);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(110, 50);
+            this.btnUpload.TabIndex = 4;
+            this.btnUpload.Text = "Upload to arduino";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // label63
             // 
@@ -3331,18 +3355,6 @@
             this.hlblDoublerError1.Text = "DoublerError1";
             this.hlblDoublerError1.Visible = false;
             // 
-            // btnUpload
-            // 
-            this.btnUpload.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnUpload.Font = new System.Drawing.Font("Consolas", 8F);
-            this.btnUpload.Location = new System.Drawing.Point(4, 551);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(110, 50);
-            this.btnUpload.TabIndex = 4;
-            this.btnUpload.Text = "Upload to arduino";
-            this.btnUpload.UseVisualStyleBackColor = true;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
-            // 
             // erpInt
             // 
             this.erpInt.ContainerControl = this.numInt;
@@ -3717,18 +3729,6 @@
             this.cbDoubler.TabIndex = 16;
             this.cbDoubler.Text = "Doubler:";
             this.cbDoubler.UseVisualStyleBackColor = true;
-            // 
-            // btnIde
-            // 
-            this.btnIde.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnIde.Font = new System.Drawing.Font("Consolas", 8F);
-            this.btnIde.Location = new System.Drawing.Point(133, 551);
-            this.btnIde.Name = "btnIde";
-            this.btnIde.Size = new System.Drawing.Size(110, 50);
-            this.btnIde.TabIndex = 70;
-            this.btnIde.Text = "Open With Ide";
-            this.btnIde.UseVisualStyleBackColor = true;
-            this.btnIde.Click += new System.EventHandler(this.btnIde_Click);
             // 
             // button2
             // 
