@@ -65,6 +65,16 @@
             System.Windows.Forms.Label label81;
             System.Windows.Forms.Label label82;
             System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+            System.Windows.Forms.Label label83;
+            System.Windows.Forms.Label label23;
+            System.Windows.Forms.Label label37;
+            System.Windows.Forms.Label label34;
+            System.Windows.Forms.Label label29;
+            System.Windows.Forms.Label label24;
+            System.Windows.Forms.Label label20;
+            System.Windows.Forms.Label label19;
+            System.Windows.Forms.Label label18;
+            System.Windows.Forms.Label label17;
             System.Windows.Forms.Label label16;
             System.Windows.Forms.Label label15;
             System.Windows.Forms.Label label3;
@@ -80,28 +90,18 @@
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label8;
-            System.Windows.Forms.Label label17;
-            System.Windows.Forms.Label label18;
-            System.Windows.Forms.Label label19;
-            System.Windows.Forms.Label label20;
-            System.Windows.Forms.Label label24;
-            System.Windows.Forms.Label label29;
-            System.Windows.Forms.Label label34;
-            System.Windows.Forms.Label label37;
-            System.Windows.Forms.Label label23;
-            System.Windows.Forms.Label label25;
-            System.Windows.Forms.Label label30;
-            System.Windows.Forms.Label label31;
-            System.Windows.Forms.Label label32;
-            System.Windows.Forms.Label label33;
-            System.Windows.Forms.Label label35;
-            System.Windows.Forms.Label label36;
-            System.Windows.Forms.Label label38;
-            System.Windows.Forms.Label label39;
-            System.Windows.Forms.Label label40;
             System.Windows.Forms.Label label53;
             System.Windows.Forms.Label label74;
-            System.Windows.Forms.Label label83;
+            System.Windows.Forms.Label label40;
+            System.Windows.Forms.Label label39;
+            System.Windows.Forms.Label label36;
+            System.Windows.Forms.Label label38;
+            System.Windows.Forms.Label label35;
+            System.Windows.Forms.Label label33;
+            System.Windows.Forms.Label label31;
+            System.Windows.Forms.Label label32;
+            System.Windows.Forms.Label label30;
+            System.Windows.Forms.Label label25;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnIde = new System.Windows.Forms.Button();
             this.txtReg0 = new System.Windows.Forms.TextBox();
@@ -118,6 +118,17 @@
             this.txtReg11 = new System.Windows.Forms.TextBox();
             this.txtReg12 = new System.Windows.Forms.TextBox();
             this.txtReg8 = new System.Windows.Forms.TextBox();
+            this.numVCOBandDivision = new System.Windows.Forms.NumericUpDown();
+            this.cbLDMode = new System.Windows.Forms.ComboBox();
+            this.cbFracNPrecision = new System.Windows.Forms.ComboBox();
+            this.cbLOLMode = new System.Windows.Forms.CheckBox();
+            this.cbLDCycleCount = new System.Windows.Forms.ComboBox();
+            this.cbLESync = new System.Windows.Forms.CheckBox();
+            this.cbGatedBleed = new System.Windows.Forms.CheckBox();
+            this.cbNegativeBleed = new System.Windows.Forms.CheckBox();
+            this.numRfOutPower = new System.Windows.Forms.NumericUpDown();
+            this.cbRfOutEnable = new System.Windows.Forms.CheckBox();
+            this.cbAuxOutEnable = new System.Windows.Forms.CheckBox();
             this.numCPBleedCurrentValue = new System.Windows.Forms.NumericUpDown();
             this.numCPBleedCurrentInt = new System.Windows.Forms.NumericUpDown();
             this.cbCounterReset = new System.Windows.Forms.CheckBox();
@@ -140,6 +151,18 @@
             this.cbAutocal = new System.Windows.Forms.CheckBox();
             this.cbFeedback = new System.Windows.Forms.ComboBox();
             this.cbMuteTillLockDetect = new System.Windows.Forms.CheckBox();
+            this.numAuxOutPower = new System.Windows.Forms.NumericUpDown();
+            this.cbAutosetFastestCalibration = new System.Windows.Forms.CheckBox();
+            this.numResyncClockTimeout = new System.Windows.Forms.NumericUpDown();
+            this.numResyncClock = new System.Windows.Forms.NumericUpDown();
+            this.cbADCEnable = new System.Windows.Forms.CheckBox();
+            this.cbADCConversion = new System.Windows.Forms.CheckBox();
+            this.numFrequency = new System.Windows.Forms.NumericUpDown();
+            this.numADCClockDivider = new System.Windows.Forms.NumericUpDown();
+            this.cbADCClockDividerAutoset = new System.Windows.Forms.CheckBox();
+            this.numTotalCalculatedTime = new System.Windows.Forms.NumericUpDown();
+            this.numSynthTimeout = new System.Windows.Forms.NumericUpDown();
+            this.numTimeout = new System.Windows.Forms.NumericUpDown();
             this.gbPhaseResync = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel40 = new System.Windows.Forms.FlowLayoutPanel();
             this.hlblPhaseResync1 = new System.Windows.Forms.Label();
@@ -199,29 +222,6 @@
             this.numMod2 = new System.Windows.Forms.NumericUpDown();
             this.numFrac1 = new System.Windows.Forms.NumericUpDown();
             this.numN = new System.Windows.Forms.NumericUpDown();
-            this.cbAuxOutEnable = new System.Windows.Forms.CheckBox();
-            this.numAuxOutPower = new System.Windows.Forms.NumericUpDown();
-            this.cbRfOutEnable = new System.Windows.Forms.CheckBox();
-            this.numRfOutPower = new System.Windows.Forms.NumericUpDown();
-            this.cbNegativeBleed = new System.Windows.Forms.CheckBox();
-            this.cbGatedBleed = new System.Windows.Forms.CheckBox();
-            this.cbLESync = new System.Windows.Forms.CheckBox();
-            this.cbLDCycleCount = new System.Windows.Forms.ComboBox();
-            this.cbLOLMode = new System.Windows.Forms.CheckBox();
-            this.cbFracNPrecision = new System.Windows.Forms.ComboBox();
-            this.cbLDMode = new System.Windows.Forms.ComboBox();
-            this.cbAutosetFastestCalibration = new System.Windows.Forms.CheckBox();
-            this.numTimeout = new System.Windows.Forms.NumericUpDown();
-            this.numSynthTimeout = new System.Windows.Forms.NumericUpDown();
-            this.numTotalCalculatedTime = new System.Windows.Forms.NumericUpDown();
-            this.numADCClockDivider = new System.Windows.Forms.NumericUpDown();
-            this.cbADCClockDividerAutoset = new System.Windows.Forms.CheckBox();
-            this.numFrequency = new System.Windows.Forms.NumericUpDown();
-            this.cbADCConversion = new System.Windows.Forms.CheckBox();
-            this.cbADCEnable = new System.Windows.Forms.CheckBox();
-            this.numResyncClock = new System.Windows.Forms.NumericUpDown();
-            this.numResyncClockTimeout = new System.Windows.Forms.NumericUpDown();
-            this.numVCOBandDivision = new System.Windows.Forms.NumericUpDown();
             tlpRegisters = new System.Windows.Forms.TableLayoutPanel();
             label44 = new System.Windows.Forms.Label();
             label76 = new System.Windows.Forms.Label();
@@ -258,6 +258,16 @@
             label81 = new System.Windows.Forms.Label();
             label82 = new System.Windows.Forms.Label();
             tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            label83 = new System.Windows.Forms.Label();
+            label23 = new System.Windows.Forms.Label();
+            label37 = new System.Windows.Forms.Label();
+            label34 = new System.Windows.Forms.Label();
+            label29 = new System.Windows.Forms.Label();
+            label24 = new System.Windows.Forms.Label();
+            label20 = new System.Windows.Forms.Label();
+            label19 = new System.Windows.Forms.Label();
+            label18 = new System.Windows.Forms.Label();
+            label17 = new System.Windows.Forms.Label();
             label16 = new System.Windows.Forms.Label();
             label15 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -273,33 +283,33 @@
             label6 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
-            label17 = new System.Windows.Forms.Label();
-            label18 = new System.Windows.Forms.Label();
-            label19 = new System.Windows.Forms.Label();
-            label20 = new System.Windows.Forms.Label();
-            label24 = new System.Windows.Forms.Label();
-            label29 = new System.Windows.Forms.Label();
-            label34 = new System.Windows.Forms.Label();
-            label37 = new System.Windows.Forms.Label();
-            label23 = new System.Windows.Forms.Label();
-            label25 = new System.Windows.Forms.Label();
-            label30 = new System.Windows.Forms.Label();
-            label31 = new System.Windows.Forms.Label();
-            label32 = new System.Windows.Forms.Label();
-            label33 = new System.Windows.Forms.Label();
-            label35 = new System.Windows.Forms.Label();
-            label36 = new System.Windows.Forms.Label();
-            label38 = new System.Windows.Forms.Label();
-            label39 = new System.Windows.Forms.Label();
-            label40 = new System.Windows.Forms.Label();
             label53 = new System.Windows.Forms.Label();
             label74 = new System.Windows.Forms.Label();
-            label83 = new System.Windows.Forms.Label();
+            label40 = new System.Windows.Forms.Label();
+            label39 = new System.Windows.Forms.Label();
+            label36 = new System.Windows.Forms.Label();
+            label38 = new System.Windows.Forms.Label();
+            label35 = new System.Windows.Forms.Label();
+            label33 = new System.Windows.Forms.Label();
+            label31 = new System.Windows.Forms.Label();
+            label32 = new System.Windows.Forms.Label();
+            label30 = new System.Windows.Forms.Label();
+            label25 = new System.Windows.Forms.Label();
             tlpRegisters.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numVCOBandDivision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRfOutPower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCPBleedCurrentValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCPBleedCurrentInt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPhase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAuxOutPower)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numResyncClockTimeout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numResyncClock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFrequency)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numADCClockDivider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTotalCalculatedTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSynthTimeout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimeout)).BeginInit();
             this.gbPhaseResync.SuspendLayout();
             this.flowLayoutPanel40.SuspendLayout();
             this.gbPhaseAdjust.SuspendLayout();
@@ -339,16 +349,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numMod2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFrac1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numAuxOutPower)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numRfOutPower)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTimeout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numSynthTimeout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTotalCalculatedTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numADCClockDivider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numFrequency)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numResyncClock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numResyncClockTimeout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numVCOBandDivision)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpRegisters
@@ -1143,6 +1143,312 @@
             tableLayoutPanel7.Size = new System.Drawing.Size(1152, 572);
             tableLayoutPanel7.TabIndex = 74;
             // 
+            // numVCOBandDivision
+            // 
+            this.numVCOBandDivision.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            tableLayoutPanel7.SetColumnSpan(this.numVCOBandDivision, 2);
+            this.numVCOBandDivision.Location = new System.Drawing.Point(1009, 56);
+            this.numVCOBandDivision.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numVCOBandDivision.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numVCOBandDivision.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numVCOBandDivision.MinimumSize = new System.Drawing.Size(52, 0);
+            this.numVCOBandDivision.Name = "numVCOBandDivision";
+            this.numVCOBandDivision.Size = new System.Drawing.Size(62, 25);
+            this.numVCOBandDivision.TabIndex = 10;
+            this.numVCOBandDivision.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label83
+            // 
+            label83.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label83.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label83, 2);
+            label83.Font = new System.Drawing.Font("Consolas", 9F);
+            label83.Location = new System.Drawing.Point(793, 60);
+            label83.Name = "label83";
+            label83.Size = new System.Drawing.Size(152, 18);
+            label83.TabIndex = 23;
+            label83.Text = "VCO Band Division:";
+            // 
+            // label23
+            // 
+            label23.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label23.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label23, 4);
+            label23.Font = new System.Drawing.Font("Consolas", 9F);
+            label23.Location = new System.Drawing.Point(793, 0);
+            label23.Name = "label23";
+            label23.Size = new System.Drawing.Size(88, 18);
+            label23.TabIndex = 24;
+            label23.Text = "Register 9";
+            // 
+            // cbLDMode
+            // 
+            this.cbLDMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            tableLayoutPanel7.SetColumnSpan(this.cbLDMode, 4);
+            this.cbLDMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLDMode.FormattingEnabled = true;
+            this.cbLDMode.Items.AddRange(new object[] {
+            "Fractional-N",
+            "Integer-N (2.9 ns)"});
+            this.cbLDMode.Location = new System.Drawing.Point(501, 483);
+            this.cbLDMode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbLDMode.MinimumSize = new System.Drawing.Size(114, 0);
+            this.cbLDMode.Name = "cbLDMode";
+            this.cbLDMode.Size = new System.Drawing.Size(151, 26);
+            this.cbLDMode.TabIndex = 10;
+            // 
+            // label37
+            // 
+            label37.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label37.AutoSize = true;
+            label37.Font = new System.Drawing.Font("Consolas", 9F);
+            label37.Location = new System.Drawing.Point(367, 486);
+            label37.Name = "label37";
+            label37.Size = new System.Drawing.Size(72, 18);
+            label37.TabIndex = 26;
+            label37.Text = "LD Mode:";
+            // 
+            // cbFracNPrecision
+            // 
+            this.cbFracNPrecision.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            tableLayoutPanel7.SetColumnSpan(this.cbFracNPrecision, 3);
+            this.cbFracNPrecision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFracNPrecision.FormattingEnabled = true;
+            this.cbFracNPrecision.Items.AddRange(new object[] {
+            "5.0 ns",
+            "6.0 ns",
+            "8.0 ns",
+            "12.0 ns"});
+            this.cbFracNPrecision.Location = new System.Drawing.Point(569, 450);
+            this.cbFracNPrecision.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbFracNPrecision.Name = "cbFracNPrecision";
+            this.cbFracNPrecision.Size = new System.Drawing.Size(110, 26);
+            this.cbFracNPrecision.TabIndex = 10;
+            // 
+            // label34
+            // 
+            label34.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label34.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label34, 2);
+            label34.Font = new System.Drawing.Font("Consolas", 9F);
+            label34.Location = new System.Drawing.Point(367, 453);
+            label34.Name = "label34";
+            label34.Size = new System.Drawing.Size(168, 18);
+            label34.TabIndex = 25;
+            label34.Text = "Frac-N LD Precision:";
+            // 
+            // cbLOLMode
+            // 
+            this.cbLOLMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbLOLMode.AutoSize = true;
+            this.cbLOLMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            tableLayoutPanel7.SetColumnSpan(this.cbLOLMode, 5);
+            this.cbLOLMode.Location = new System.Drawing.Point(367, 418);
+            this.cbLOLMode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbLOLMode.Name = "cbLOLMode";
+            this.cbLOLMode.Size = new System.Drawing.Size(102, 22);
+            this.cbLOLMode.TabIndex = 51;
+            this.cbLOLMode.Text = "LOL Mode:";
+            this.cbLOLMode.UseVisualStyleBackColor = true;
+            // 
+            // cbLDCycleCount
+            // 
+            this.cbLDCycleCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            tableLayoutPanel7.SetColumnSpan(this.cbLDCycleCount, 3);
+            this.cbLDCycleCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLDCycleCount.FormattingEnabled = true;
+            this.cbLDCycleCount.Items.AddRange(new object[] {
+            "1024",
+            "2048",
+            "4096",
+            "8192"});
+            this.cbLDCycleCount.Location = new System.Drawing.Point(569, 383);
+            this.cbLDCycleCount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbLDCycleCount.Name = "cbLDCycleCount";
+            this.cbLDCycleCount.Size = new System.Drawing.Size(110, 26);
+            this.cbLDCycleCount.TabIndex = 10;
+            // 
+            // label29
+            // 
+            label29.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label29.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label29, 2);
+            label29.Font = new System.Drawing.Font("Consolas", 9F);
+            label29.Location = new System.Drawing.Point(367, 387);
+            label29.Name = "label29";
+            label29.Size = new System.Drawing.Size(128, 18);
+            label29.TabIndex = 24;
+            label29.Text = "LD Cycle Count:";
+            // 
+            // cbLESync
+            // 
+            this.cbLESync.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbLESync.AutoSize = true;
+            this.cbLESync.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            tableLayoutPanel7.SetColumnSpan(this.cbLESync, 5);
+            this.cbLESync.Location = new System.Drawing.Point(367, 351);
+            this.cbLESync.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbLESync.Name = "cbLESync";
+            this.cbLESync.Size = new System.Drawing.Size(94, 22);
+            this.cbLESync.TabIndex = 49;
+            this.cbLESync.Text = "LE Sync:";
+            this.cbLESync.UseVisualStyleBackColor = true;
+            // 
+            // label24
+            // 
+            label24.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label24.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label24, 5);
+            label24.Font = new System.Drawing.Font("Consolas", 9F);
+            label24.Location = new System.Drawing.Point(367, 321);
+            label24.Name = "label24";
+            label24.Size = new System.Drawing.Size(88, 18);
+            label24.TabIndex = 24;
+            label24.Text = "Register 7";
+            // 
+            // cbGatedBleed
+            // 
+            this.cbGatedBleed.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbGatedBleed.AutoSize = true;
+            this.cbGatedBleed.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            tableLayoutPanel7.SetColumnSpan(this.cbGatedBleed, 5);
+            this.cbGatedBleed.Location = new System.Drawing.Point(367, 287);
+            this.cbGatedBleed.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbGatedBleed.Name = "cbGatedBleed";
+            this.cbGatedBleed.Size = new System.Drawing.Size(126, 22);
+            this.cbGatedBleed.TabIndex = 38;
+            this.cbGatedBleed.Text = "Gated Bleed:";
+            this.cbGatedBleed.UseVisualStyleBackColor = true;
+            // 
+            // cbNegativeBleed
+            // 
+            this.cbNegativeBleed.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbNegativeBleed.AutoSize = true;
+            this.cbNegativeBleed.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbNegativeBleed.Checked = true;
+            this.cbNegativeBleed.CheckState = System.Windows.Forms.CheckState.Checked;
+            tableLayoutPanel7.SetColumnSpan(this.cbNegativeBleed, 5);
+            this.cbNegativeBleed.Location = new System.Drawing.Point(367, 253);
+            this.cbNegativeBleed.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbNegativeBleed.Name = "cbNegativeBleed";
+            this.cbNegativeBleed.Size = new System.Drawing.Size(150, 22);
+            this.cbNegativeBleed.TabIndex = 39;
+            this.cbNegativeBleed.Text = "Negative Bleed:";
+            this.cbNegativeBleed.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label20.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label20, 3);
+            label20.Font = new System.Drawing.Font("Consolas", 9F);
+            label20.Location = new System.Drawing.Point(569, 222);
+            label20.Name = "label20";
+            label20.Size = new System.Drawing.Size(32, 18);
+            label20.TabIndex = 28;
+            label20.Text = "dBm";
+            // 
+            // numRfOutPower
+            // 
+            this.numRfOutPower.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numRfOutPower.Increment = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numRfOutPower.Location = new System.Drawing.Point(501, 219);
+            this.numRfOutPower.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numRfOutPower.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numRfOutPower.Minimum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            -2147483648});
+            this.numRfOutPower.MinimumSize = new System.Drawing.Size(48, 0);
+            this.numRfOutPower.Name = "numRfOutPower";
+            this.numRfOutPower.Size = new System.Drawing.Size(58, 25);
+            this.numRfOutPower.TabIndex = 10;
+            // 
+            // label19
+            // 
+            label19.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label19.AutoSize = true;
+            label19.Font = new System.Drawing.Font("Consolas", 9F);
+            label19.Location = new System.Drawing.Point(367, 222);
+            label19.Name = "label19";
+            label19.Size = new System.Drawing.Size(120, 18);
+            label19.TabIndex = 25;
+            label19.Text = "Rf Out. Power:";
+            // 
+            // cbRfOutEnable
+            // 
+            this.cbRfOutEnable.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbRfOutEnable.AutoSize = true;
+            this.cbRfOutEnable.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbRfOutEnable.Checked = true;
+            this.cbRfOutEnable.CheckState = System.Windows.Forms.CheckState.Checked;
+            tableLayoutPanel7.SetColumnSpan(this.cbRfOutEnable, 5);
+            this.cbRfOutEnable.Location = new System.Drawing.Point(367, 189);
+            this.cbRfOutEnable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbRfOutEnable.Name = "cbRfOutEnable";
+            this.cbRfOutEnable.Size = new System.Drawing.Size(166, 22);
+            this.cbRfOutEnable.TabIndex = 43;
+            this.cbRfOutEnable.Text = "Rf Output Enable:";
+            this.cbRfOutEnable.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label18.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label18, 3);
+            label18.Font = new System.Drawing.Font("Consolas", 9F);
+            label18.Location = new System.Drawing.Point(569, 159);
+            label18.Name = "label18";
+            label18.Size = new System.Drawing.Size(32, 18);
+            label18.TabIndex = 27;
+            label18.Text = "dBm";
+            // 
+            // label17
+            // 
+            label17.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label17.AutoSize = true;
+            label17.Font = new System.Drawing.Font("Consolas", 9F);
+            label17.Location = new System.Drawing.Point(367, 159);
+            label17.Name = "label17";
+            label17.Size = new System.Drawing.Size(128, 18);
+            label17.TabIndex = 24;
+            label17.Text = "Aux Out. Power:";
+            // 
+            // cbAuxOutEnable
+            // 
+            this.cbAuxOutEnable.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbAuxOutEnable.AutoSize = true;
+            this.cbAuxOutEnable.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            tableLayoutPanel7.SetColumnSpan(this.cbAuxOutEnable, 5);
+            this.cbAuxOutEnable.Location = new System.Drawing.Point(367, 124);
+            this.cbAuxOutEnable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbAuxOutEnable.Name = "cbAuxOutEnable";
+            this.cbAuxOutEnable.Size = new System.Drawing.Size(174, 22);
+            this.cbAuxOutEnable.TabIndex = 41;
+            this.cbAuxOutEnable.Text = "Aux Output Enable:";
+            this.cbAuxOutEnable.UseVisualStyleBackColor = true;
+            // 
             // label16
             // 
             label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -1307,7 +1613,7 @@
             this.rbPositive.AutoSize = true;
             this.rbPositive.Checked = true;
             this.rbPositive.Enabled = false;
-            this.rbPositive.Location = new System.Drawing.Point(236, 450);
+            this.rbPositive.Location = new System.Drawing.Point(236, 451);
             this.rbPositive.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbPositive.Name = "rbPositive";
             this.rbPositive.Size = new System.Drawing.Size(93, 22);
@@ -1321,7 +1627,7 @@
             this.rbNegative.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbNegative.AutoSize = true;
             this.rbNegative.Enabled = false;
-            this.rbNegative.Location = new System.Drawing.Point(137, 450);
+            this.rbNegative.Location = new System.Drawing.Point(137, 451);
             this.rbNegative.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbNegative.Name = "rbNegative";
             this.rbNegative.Size = new System.Drawing.Size(93, 22);
@@ -1334,7 +1640,7 @@
             label14.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label14.AutoSize = true;
             label14.Font = new System.Drawing.Font("Consolas", 9F);
-            label14.Location = new System.Drawing.Point(3, 452);
+            label14.Location = new System.Drawing.Point(3, 453);
             label14.Name = "label14";
             label14.Size = new System.Drawing.Size(104, 18);
             label14.TabIndex = 26;
@@ -1344,7 +1650,7 @@
             // 
             this.rb33.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rb33.AutoSize = true;
-            this.rb33.Location = new System.Drawing.Point(236, 416);
+            this.rb33.Location = new System.Drawing.Point(236, 418);
             this.rb33.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rb33.Name = "rb33";
             this.rb33.Size = new System.Drawing.Size(69, 22);
@@ -1357,7 +1663,7 @@
             this.rb18.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rb18.AutoSize = true;
             this.rb18.Checked = true;
-            this.rb18.Location = new System.Drawing.Point(137, 416);
+            this.rb18.Location = new System.Drawing.Point(137, 418);
             this.rb18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rb18.Name = "rb18";
             this.rb18.Size = new System.Drawing.Size(69, 22);
@@ -1371,7 +1677,7 @@
             label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label13.AutoSize = true;
             label13.Font = new System.Drawing.Font("Consolas", 9F);
-            label13.Location = new System.Drawing.Point(3, 418);
+            label13.Location = new System.Drawing.Point(3, 420);
             label13.Name = "label13";
             label13.Size = new System.Drawing.Size(88, 18);
             label13.TabIndex = 25;
@@ -1381,7 +1687,7 @@
             // 
             this.rbDifferential.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbDifferential.AutoSize = true;
-            this.rbDifferential.Location = new System.Drawing.Point(236, 383);
+            this.rbDifferential.Location = new System.Drawing.Point(236, 385);
             this.rbDifferential.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbDifferential.Name = "rbDifferential";
             this.rbDifferential.Size = new System.Drawing.Size(125, 22);
@@ -1394,7 +1700,7 @@
             this.rbSingle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rbSingle.AutoSize = true;
             this.rbSingle.Checked = true;
-            this.rbSingle.Location = new System.Drawing.Point(137, 383);
+            this.rbSingle.Location = new System.Drawing.Point(137, 385);
             this.rbSingle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbSingle.Name = "rbSingle";
             this.rbSingle.Size = new System.Drawing.Size(77, 22);
@@ -1408,7 +1714,7 @@
             label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             label12.AutoSize = true;
             label12.Font = new System.Drawing.Font("Consolas", 9F);
-            label12.Location = new System.Drawing.Point(3, 385);
+            label12.Location = new System.Drawing.Point(3, 387);
             label12.Name = "label12";
             label12.Size = new System.Drawing.Size(128, 18);
             label12.TabIndex = 24;
@@ -1437,7 +1743,7 @@
             "4.200",
             "4.500",
             "4.800"});
-            this.cbCPCurrent.Location = new System.Drawing.Point(137, 348);
+            this.cbCPCurrent.Location = new System.Drawing.Point(137, 349);
             this.cbCPCurrent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbCPCurrent.Name = "cbCPCurrent";
             this.cbCPCurrent.Size = new System.Drawing.Size(110, 26);
@@ -1448,7 +1754,7 @@
             label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label11.AutoSize = true;
             label11.Font = new System.Drawing.Font("Consolas", 9F);
-            label11.Location = new System.Drawing.Point(3, 351);
+            label11.Location = new System.Drawing.Point(3, 353);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(96, 18);
             label11.TabIndex = 25;
@@ -1460,7 +1766,7 @@
             this.cbDoubleBuffer.AutoSize = true;
             this.cbDoubleBuffer.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             tableLayoutPanel7.SetColumnSpan(this.cbDoubleBuffer, 3);
-            this.cbDoubleBuffer.Location = new System.Drawing.Point(3, 318);
+            this.cbDoubleBuffer.Location = new System.Drawing.Point(3, 319);
             this.cbDoubleBuffer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbDoubleBuffer.Name = "cbDoubleBuffer";
             this.cbDoubleBuffer.Size = new System.Drawing.Size(142, 22);
@@ -1493,7 +1799,7 @@
             label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label10.AutoSize = true;
             label10.Font = new System.Drawing.Font("Consolas", 9F);
-            label10.Location = new System.Drawing.Point(3, 288);
+            label10.Location = new System.Drawing.Point(3, 289);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(72, 18);
             label10.TabIndex = 23;
@@ -1675,6 +1981,392 @@
             this.cbMuteTillLockDetect.TabIndex = 40;
             this.cbMuteTillLockDetect.Text = "Mute Till Lock Detect:";
             this.cbMuteTillLockDetect.UseVisualStyleBackColor = true;
+            // 
+            // numAuxOutPower
+            // 
+            this.numAuxOutPower.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numAuxOutPower.Increment = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numAuxOutPower.Location = new System.Drawing.Point(501, 156);
+            this.numAuxOutPower.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numAuxOutPower.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numAuxOutPower.Minimum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            -2147483648});
+            this.numAuxOutPower.MinimumSize = new System.Drawing.Size(48, 0);
+            this.numAuxOutPower.Name = "numAuxOutPower";
+            this.numAuxOutPower.Size = new System.Drawing.Size(58, 25);
+            this.numAuxOutPower.TabIndex = 10;
+            // 
+            // cbAutosetFastestCalibration
+            // 
+            this.cbAutosetFastestCalibration.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbAutosetFastestCalibration.AutoSize = true;
+            this.cbAutosetFastestCalibration.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            tableLayoutPanel7.SetColumnSpan(this.cbAutosetFastestCalibration, 4);
+            this.cbAutosetFastestCalibration.Location = new System.Drawing.Point(793, 24);
+            this.cbAutosetFastestCalibration.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbAutosetFastestCalibration.Name = "cbAutosetFastestCalibration";
+            this.cbAutosetFastestCalibration.Size = new System.Drawing.Size(254, 22);
+            this.cbAutosetFastestCalibration.TabIndex = 52;
+            this.cbAutosetFastestCalibration.Text = "Autoset Fastest Calibration:";
+            this.cbAutosetFastestCalibration.UseVisualStyleBackColor = true;
+            // 
+            // label53
+            // 
+            label53.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label53.AutoSize = true;
+            label53.Font = new System.Drawing.Font("Consolas", 9F);
+            label53.Location = new System.Drawing.Point(793, 420);
+            label53.Name = "label53";
+            label53.Size = new System.Drawing.Size(72, 18);
+            label53.TabIndex = 25;
+            label53.Text = "Timeout:";
+            // 
+            // numResyncClockTimeout
+            // 
+            this.numResyncClockTimeout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numResyncClockTimeout.DecimalPlaces = 3;
+            this.numResyncClockTimeout.Enabled = false;
+            this.numResyncClockTimeout.Location = new System.Drawing.Point(911, 417);
+            this.numResyncClockTimeout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numResyncClockTimeout.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numResyncClockTimeout.Name = "numResyncClockTimeout";
+            this.numResyncClockTimeout.Size = new System.Drawing.Size(92, 25);
+            this.numResyncClockTimeout.TabIndex = 10;
+            this.numResyncClockTimeout.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label74
+            // 
+            label74.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label74.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label74, 2);
+            label74.Font = new System.Drawing.Font("Consolas", 9F);
+            label74.Location = new System.Drawing.Point(1009, 420);
+            label74.Name = "label74";
+            label74.Size = new System.Drawing.Size(24, 18);
+            label74.TabIndex = 29;
+            label74.Text = "us";
+            // 
+            // label40
+            // 
+            label40.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label40.AutoSize = true;
+            label40.Font = new System.Drawing.Font("Consolas", 9F);
+            label40.Location = new System.Drawing.Point(793, 387);
+            label40.Name = "label40";
+            label40.Size = new System.Drawing.Size(112, 18);
+            label40.TabIndex = 26;
+            label40.Text = "Phase Resync:";
+            // 
+            // numResyncClock
+            // 
+            this.numResyncClock.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            tableLayoutPanel7.SetColumnSpan(this.numResyncClock, 3);
+            this.numResyncClock.Location = new System.Drawing.Point(911, 383);
+            this.numResyncClock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numResyncClock.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.numResyncClock.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numResyncClock.MinimumSize = new System.Drawing.Size(68, 0);
+            this.numResyncClock.Name = "numResyncClock";
+            this.numResyncClock.Size = new System.Drawing.Size(78, 25);
+            this.numResyncClock.TabIndex = 10;
+            this.numResyncClock.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label39
+            // 
+            label39.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label39.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label39, 4);
+            label39.Font = new System.Drawing.Font("Consolas", 9F);
+            label39.Location = new System.Drawing.Point(793, 353);
+            label39.Name = "label39";
+            label39.Size = new System.Drawing.Size(96, 18);
+            label39.TabIndex = 26;
+            label39.Text = "Register 12";
+            // 
+            // cbADCEnable
+            // 
+            this.cbADCEnable.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbADCEnable.AutoSize = true;
+            this.cbADCEnable.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            tableLayoutPanel7.SetColumnSpan(this.cbADCEnable, 4);
+            this.cbADCEnable.Location = new System.Drawing.Point(793, 319);
+            this.cbADCEnable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbADCEnable.Name = "cbADCEnable";
+            this.cbADCEnable.Size = new System.Drawing.Size(118, 22);
+            this.cbADCEnable.TabIndex = 57;
+            this.cbADCEnable.Text = "ADC Enable:";
+            this.cbADCEnable.UseVisualStyleBackColor = true;
+            // 
+            // cbADCConversion
+            // 
+            this.cbADCConversion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbADCConversion.AutoSize = true;
+            this.cbADCConversion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            tableLayoutPanel7.SetColumnSpan(this.cbADCConversion, 4);
+            this.cbADCConversion.Location = new System.Drawing.Point(793, 287);
+            this.cbADCConversion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbADCConversion.Name = "cbADCConversion";
+            this.cbADCConversion.Size = new System.Drawing.Size(150, 22);
+            this.cbADCConversion.TabIndex = 56;
+            this.cbADCConversion.Text = "ADC Conversion:";
+            this.cbADCConversion.UseVisualStyleBackColor = true;
+            // 
+            // label36
+            // 
+            label36.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label36.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label36, 2);
+            label36.Font = new System.Drawing.Font("Consolas", 9F);
+            label36.Location = new System.Drawing.Point(793, 255);
+            label36.Name = "label36";
+            label36.Size = new System.Drawing.Size(152, 18);
+            label36.TabIndex = 25;
+            label36.Text = "Frequency (Wrong):";
+            // 
+            // numFrequency
+            // 
+            this.numFrequency.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numFrequency.DecimalPlaces = 3;
+            this.numFrequency.Enabled = false;
+            this.numFrequency.Location = new System.Drawing.Point(1009, 252);
+            this.numFrequency.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numFrequency.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numFrequency.MinimumSize = new System.Drawing.Size(92, 0);
+            this.numFrequency.Name = "numFrequency";
+            this.numFrequency.Size = new System.Drawing.Size(102, 25);
+            this.numFrequency.TabIndex = 10;
+            this.numFrequency.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label38
+            // 
+            label38.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label38.AutoSize = true;
+            label38.Font = new System.Drawing.Font("Consolas", 9F);
+            label38.Location = new System.Drawing.Point(1117, 255);
+            label38.Name = "label38";
+            label38.Size = new System.Drawing.Size(32, 18);
+            label38.TabIndex = 29;
+            label38.Text = "kHz";
+            // 
+            // label35
+            // 
+            label35.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label35.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label35, 2);
+            label35.Font = new System.Drawing.Font("Consolas", 9F);
+            label35.Location = new System.Drawing.Point(793, 222);
+            label35.Name = "label35";
+            label35.Size = new System.Drawing.Size(152, 18);
+            label35.TabIndex = 27;
+            label35.Text = "ADC Clock Divider:";
+            // 
+            // numADCClockDivider
+            // 
+            this.numADCClockDivider.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numADCClockDivider.Location = new System.Drawing.Point(1009, 219);
+            this.numADCClockDivider.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numADCClockDivider.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numADCClockDivider.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numADCClockDivider.MinimumSize = new System.Drawing.Size(52, 0);
+            this.numADCClockDivider.Name = "numADCClockDivider";
+            this.numADCClockDivider.Size = new System.Drawing.Size(62, 25);
+            this.numADCClockDivider.TabIndex = 10;
+            this.numADCClockDivider.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // cbADCClockDividerAutoset
+            // 
+            this.cbADCClockDividerAutoset.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbADCClockDividerAutoset.AutoSize = true;
+            this.cbADCClockDividerAutoset.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbADCClockDividerAutoset.Location = new System.Drawing.Point(1117, 223);
+            this.cbADCClockDividerAutoset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbADCClockDividerAutoset.Name = "cbADCClockDividerAutoset";
+            this.cbADCClockDividerAutoset.Size = new System.Drawing.Size(18, 17);
+            this.cbADCClockDividerAutoset.TabIndex = 57;
+            this.cbADCClockDividerAutoset.UseVisualStyleBackColor = true;
+            // 
+            // label33
+            // 
+            label33.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label33.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label33, 4);
+            label33.Font = new System.Drawing.Font("Consolas", 9F);
+            label33.Location = new System.Drawing.Point(793, 191);
+            label33.Name = "label33";
+            label33.Size = new System.Drawing.Size(96, 18);
+            label33.TabIndex = 25;
+            label33.Text = "Register 10";
+            // 
+            // label31
+            // 
+            label31.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label31.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label31, 2);
+            label31.Font = new System.Drawing.Font("Consolas", 9F);
+            label31.Location = new System.Drawing.Point(793, 159);
+            label31.Name = "label31";
+            label31.Size = new System.Drawing.Size(184, 18);
+            label31.TabIndex = 26;
+            label31.Text = "Total Calculated Time:";
+            // 
+            // numTotalCalculatedTime
+            // 
+            this.numTotalCalculatedTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numTotalCalculatedTime.DecimalPlaces = 3;
+            this.numTotalCalculatedTime.Enabled = false;
+            this.numTotalCalculatedTime.Location = new System.Drawing.Point(1009, 156);
+            this.numTotalCalculatedTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numTotalCalculatedTime.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numTotalCalculatedTime.MinimumSize = new System.Drawing.Size(92, 0);
+            this.numTotalCalculatedTime.Name = "numTotalCalculatedTime";
+            this.numTotalCalculatedTime.Size = new System.Drawing.Size(102, 25);
+            this.numTotalCalculatedTime.TabIndex = 10;
+            this.numTotalCalculatedTime.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label32
+            // 
+            label32.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label32.AutoSize = true;
+            label32.Font = new System.Drawing.Font("Consolas", 9F);
+            label32.Location = new System.Drawing.Point(1117, 159);
+            label32.Name = "label32";
+            label32.Size = new System.Drawing.Size(24, 18);
+            label32.TabIndex = 28;
+            label32.Text = "us";
+            // 
+            // label30
+            // 
+            label30.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label30.AutoSize = true;
+            tableLayoutPanel7.SetColumnSpan(label30, 2);
+            label30.Font = new System.Drawing.Font("Consolas", 9F);
+            label30.Location = new System.Drawing.Point(793, 126);
+            label30.Name = "label30";
+            label30.Size = new System.Drawing.Size(168, 18);
+            label30.TabIndex = 25;
+            label30.Text = "Synth. Lock Timeout:";
+            // 
+            // numSynthTimeout
+            // 
+            this.numSynthTimeout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            tableLayoutPanel7.SetColumnSpan(this.numSynthTimeout, 2);
+            this.numSynthTimeout.Location = new System.Drawing.Point(1009, 123);
+            this.numSynthTimeout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numSynthTimeout.Maximum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.numSynthTimeout.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numSynthTimeout.MinimumSize = new System.Drawing.Size(44, 0);
+            this.numSynthTimeout.Name = "numSynthTimeout";
+            this.numSynthTimeout.Size = new System.Drawing.Size(54, 25);
+            this.numSynthTimeout.TabIndex = 10;
+            this.numSynthTimeout.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label25
+            // 
+            label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label25.AutoSize = true;
+            label25.Font = new System.Drawing.Font("Consolas", 9F);
+            label25.Location = new System.Drawing.Point(793, 93);
+            label25.Name = "label25";
+            label25.Size = new System.Drawing.Size(72, 18);
+            label25.TabIndex = 24;
+            label25.Text = "Timeout:";
+            // 
+            // numTimeout
+            // 
+            this.numTimeout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            tableLayoutPanel7.SetColumnSpan(this.numTimeout, 3);
+            this.numTimeout.Location = new System.Drawing.Point(911, 90);
+            this.numTimeout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numTimeout.Maximum = new decimal(new int[] {
+            1023,
+            0,
+            0,
+            0});
+            this.numTimeout.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numTimeout.MinimumSize = new System.Drawing.Size(60, 0);
+            this.numTimeout.Name = "numTimeout";
+            this.numTimeout.Size = new System.Drawing.Size(70, 25);
+            this.numTimeout.TabIndex = 10;
+            this.numTimeout.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // gbPhaseResync
             // 
@@ -2588,699 +3280,6 @@
             0,
             0,
             327680});
-            this.numN.ValueChanged += new System.EventHandler(this.numN_ValueChanged_1);
-            // 
-            // cbAuxOutEnable
-            // 
-            this.cbAuxOutEnable.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbAuxOutEnable.AutoSize = true;
-            this.cbAuxOutEnable.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            tableLayoutPanel7.SetColumnSpan(this.cbAuxOutEnable, 5);
-            this.cbAuxOutEnable.Location = new System.Drawing.Point(367, 124);
-            this.cbAuxOutEnable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbAuxOutEnable.Name = "cbAuxOutEnable";
-            this.cbAuxOutEnable.Size = new System.Drawing.Size(174, 22);
-            this.cbAuxOutEnable.TabIndex = 41;
-            this.cbAuxOutEnable.Text = "Aux Output Enable:";
-            this.cbAuxOutEnable.UseVisualStyleBackColor = true;
-            // 
-            // label17
-            // 
-            label17.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label17.AutoSize = true;
-            label17.Font = new System.Drawing.Font("Consolas", 9F);
-            label17.Location = new System.Drawing.Point(367, 159);
-            label17.Name = "label17";
-            label17.Size = new System.Drawing.Size(128, 18);
-            label17.TabIndex = 24;
-            label17.Text = "Aux Out. Power:";
-            // 
-            // numAuxOutPower
-            // 
-            this.numAuxOutPower.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numAuxOutPower.Increment = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numAuxOutPower.Location = new System.Drawing.Point(501, 156);
-            this.numAuxOutPower.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numAuxOutPower.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numAuxOutPower.Minimum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            -2147483648});
-            this.numAuxOutPower.MinimumSize = new System.Drawing.Size(48, 0);
-            this.numAuxOutPower.Name = "numAuxOutPower";
-            this.numAuxOutPower.Size = new System.Drawing.Size(58, 25);
-            this.numAuxOutPower.TabIndex = 10;
-            // 
-            // label18
-            // 
-            label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label18.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label18, 3);
-            label18.Font = new System.Drawing.Font("Consolas", 9F);
-            label18.Location = new System.Drawing.Point(569, 159);
-            label18.Name = "label18";
-            label18.Size = new System.Drawing.Size(32, 18);
-            label18.TabIndex = 27;
-            label18.Text = "dBm";
-            // 
-            // cbRfOutEnable
-            // 
-            this.cbRfOutEnable.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbRfOutEnable.AutoSize = true;
-            this.cbRfOutEnable.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbRfOutEnable.Checked = true;
-            this.cbRfOutEnable.CheckState = System.Windows.Forms.CheckState.Checked;
-            tableLayoutPanel7.SetColumnSpan(this.cbRfOutEnable, 5);
-            this.cbRfOutEnable.Location = new System.Drawing.Point(367, 189);
-            this.cbRfOutEnable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbRfOutEnable.Name = "cbRfOutEnable";
-            this.cbRfOutEnable.Size = new System.Drawing.Size(166, 22);
-            this.cbRfOutEnable.TabIndex = 43;
-            this.cbRfOutEnable.Text = "Rf Output Enable:";
-            this.cbRfOutEnable.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            label19.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label19.AutoSize = true;
-            label19.Font = new System.Drawing.Font("Consolas", 9F);
-            label19.Location = new System.Drawing.Point(367, 222);
-            label19.Name = "label19";
-            label19.Size = new System.Drawing.Size(120, 18);
-            label19.TabIndex = 25;
-            label19.Text = "Rf Out. Power:";
-            // 
-            // numRfOutPower
-            // 
-            this.numRfOutPower.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numRfOutPower.Increment = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numRfOutPower.Location = new System.Drawing.Point(501, 219);
-            this.numRfOutPower.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numRfOutPower.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numRfOutPower.Minimum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            -2147483648});
-            this.numRfOutPower.MinimumSize = new System.Drawing.Size(48, 0);
-            this.numRfOutPower.Name = "numRfOutPower";
-            this.numRfOutPower.Size = new System.Drawing.Size(58, 25);
-            this.numRfOutPower.TabIndex = 10;
-            // 
-            // label20
-            // 
-            label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label20.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label20, 3);
-            label20.Font = new System.Drawing.Font("Consolas", 9F);
-            label20.Location = new System.Drawing.Point(569, 222);
-            label20.Name = "label20";
-            label20.Size = new System.Drawing.Size(32, 18);
-            label20.TabIndex = 28;
-            label20.Text = "dBm";
-            // 
-            // cbNegativeBleed
-            // 
-            this.cbNegativeBleed.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbNegativeBleed.AutoSize = true;
-            this.cbNegativeBleed.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbNegativeBleed.Checked = true;
-            this.cbNegativeBleed.CheckState = System.Windows.Forms.CheckState.Checked;
-            tableLayoutPanel7.SetColumnSpan(this.cbNegativeBleed, 5);
-            this.cbNegativeBleed.Location = new System.Drawing.Point(367, 253);
-            this.cbNegativeBleed.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbNegativeBleed.Name = "cbNegativeBleed";
-            this.cbNegativeBleed.Size = new System.Drawing.Size(150, 22);
-            this.cbNegativeBleed.TabIndex = 39;
-            this.cbNegativeBleed.Text = "Negative Bleed:";
-            this.cbNegativeBleed.UseVisualStyleBackColor = true;
-            // 
-            // cbGatedBleed
-            // 
-            this.cbGatedBleed.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbGatedBleed.AutoSize = true;
-            this.cbGatedBleed.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            tableLayoutPanel7.SetColumnSpan(this.cbGatedBleed, 5);
-            this.cbGatedBleed.Location = new System.Drawing.Point(367, 286);
-            this.cbGatedBleed.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbGatedBleed.Name = "cbGatedBleed";
-            this.cbGatedBleed.Size = new System.Drawing.Size(126, 22);
-            this.cbGatedBleed.TabIndex = 38;
-            this.cbGatedBleed.Text = "Gated Bleed:";
-            this.cbGatedBleed.UseVisualStyleBackColor = true;
-            // 
-            // label24
-            // 
-            label24.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label24.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label24, 5);
-            label24.Font = new System.Drawing.Font("Consolas", 9F);
-            label24.Location = new System.Drawing.Point(367, 320);
-            label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(88, 18);
-            label24.TabIndex = 24;
-            label24.Text = "Register 7";
-            // 
-            // cbLESync
-            // 
-            this.cbLESync.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbLESync.AutoSize = true;
-            this.cbLESync.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            tableLayoutPanel7.SetColumnSpan(this.cbLESync, 5);
-            this.cbLESync.Location = new System.Drawing.Point(367, 349);
-            this.cbLESync.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbLESync.Name = "cbLESync";
-            this.cbLESync.Size = new System.Drawing.Size(94, 22);
-            this.cbLESync.TabIndex = 49;
-            this.cbLESync.Text = "LE Sync:";
-            this.cbLESync.UseVisualStyleBackColor = true;
-            // 
-            // label29
-            // 
-            label29.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label29.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label29, 2);
-            label29.Font = new System.Drawing.Font("Consolas", 9F);
-            label29.Location = new System.Drawing.Point(367, 385);
-            label29.Name = "label29";
-            label29.Size = new System.Drawing.Size(128, 18);
-            label29.TabIndex = 24;
-            label29.Text = "LD Cycle Count:";
-            // 
-            // cbLDCycleCount
-            // 
-            this.cbLDCycleCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            tableLayoutPanel7.SetColumnSpan(this.cbLDCycleCount, 3);
-            this.cbLDCycleCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLDCycleCount.FormattingEnabled = true;
-            this.cbLDCycleCount.Items.AddRange(new object[] {
-            "1024",
-            "2048",
-            "4096",
-            "8192"});
-            this.cbLDCycleCount.Location = new System.Drawing.Point(569, 381);
-            this.cbLDCycleCount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbLDCycleCount.Name = "cbLDCycleCount";
-            this.cbLDCycleCount.Size = new System.Drawing.Size(110, 26);
-            this.cbLDCycleCount.TabIndex = 10;
-            // 
-            // cbLOLMode
-            // 
-            this.cbLOLMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbLOLMode.AutoSize = true;
-            this.cbLOLMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            tableLayoutPanel7.SetColumnSpan(this.cbLOLMode, 5);
-            this.cbLOLMode.Location = new System.Drawing.Point(367, 416);
-            this.cbLOLMode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbLOLMode.Name = "cbLOLMode";
-            this.cbLOLMode.Size = new System.Drawing.Size(102, 22);
-            this.cbLOLMode.TabIndex = 51;
-            this.cbLOLMode.Text = "LOL Mode:";
-            this.cbLOLMode.UseVisualStyleBackColor = true;
-            // 
-            // label34
-            // 
-            label34.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label34.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label34, 2);
-            label34.Font = new System.Drawing.Font("Consolas", 9F);
-            label34.Location = new System.Drawing.Point(367, 452);
-            label34.Name = "label34";
-            label34.Size = new System.Drawing.Size(168, 18);
-            label34.TabIndex = 25;
-            label34.Text = "Frac-N LD Precision:";
-            // 
-            // cbFracNPrecision
-            // 
-            this.cbFracNPrecision.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            tableLayoutPanel7.SetColumnSpan(this.cbFracNPrecision, 3);
-            this.cbFracNPrecision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFracNPrecision.FormattingEnabled = true;
-            this.cbFracNPrecision.Items.AddRange(new object[] {
-            "5.0 ns",
-            "6.0 ns",
-            "8.0 ns",
-            "12.0 ns"});
-            this.cbFracNPrecision.Location = new System.Drawing.Point(569, 448);
-            this.cbFracNPrecision.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbFracNPrecision.Name = "cbFracNPrecision";
-            this.cbFracNPrecision.Size = new System.Drawing.Size(110, 26);
-            this.cbFracNPrecision.TabIndex = 10;
-            // 
-            // label37
-            // 
-            label37.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label37.AutoSize = true;
-            label37.Font = new System.Drawing.Font("Consolas", 9F);
-            label37.Location = new System.Drawing.Point(367, 486);
-            label37.Name = "label37";
-            label37.Size = new System.Drawing.Size(72, 18);
-            label37.TabIndex = 26;
-            label37.Text = "LD Mode:";
-            // 
-            // cbLDMode
-            // 
-            this.cbLDMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            tableLayoutPanel7.SetColumnSpan(this.cbLDMode, 4);
-            this.cbLDMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLDMode.FormattingEnabled = true;
-            this.cbLDMode.Items.AddRange(new object[] {
-            "Fractional-N",
-            "Integer-N (2.9 ns)"});
-            this.cbLDMode.Location = new System.Drawing.Point(501, 482);
-            this.cbLDMode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbLDMode.MinimumSize = new System.Drawing.Size(114, 0);
-            this.cbLDMode.Name = "cbLDMode";
-            this.cbLDMode.Size = new System.Drawing.Size(151, 26);
-            this.cbLDMode.TabIndex = 10;
-            // 
-            // label23
-            // 
-            label23.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label23.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label23, 4);
-            label23.Font = new System.Drawing.Font("Consolas", 9F);
-            label23.Location = new System.Drawing.Point(793, 0);
-            label23.Name = "label23";
-            label23.Size = new System.Drawing.Size(88, 18);
-            label23.TabIndex = 24;
-            label23.Text = "Register 9";
-            // 
-            // cbAutosetFastestCalibration
-            // 
-            this.cbAutosetFastestCalibration.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbAutosetFastestCalibration.AutoSize = true;
-            this.cbAutosetFastestCalibration.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            tableLayoutPanel7.SetColumnSpan(this.cbAutosetFastestCalibration, 4);
-            this.cbAutosetFastestCalibration.Location = new System.Drawing.Point(793, 24);
-            this.cbAutosetFastestCalibration.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbAutosetFastestCalibration.Name = "cbAutosetFastestCalibration";
-            this.cbAutosetFastestCalibration.Size = new System.Drawing.Size(254, 22);
-            this.cbAutosetFastestCalibration.TabIndex = 52;
-            this.cbAutosetFastestCalibration.Text = "Autoset Fastest Calibration:";
-            this.cbAutosetFastestCalibration.UseVisualStyleBackColor = true;
-            // 
-            // label25
-            // 
-            label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label25.AutoSize = true;
-            label25.Font = new System.Drawing.Font("Consolas", 9F);
-            label25.Location = new System.Drawing.Point(793, 93);
-            label25.Name = "label25";
-            label25.Size = new System.Drawing.Size(72, 18);
-            label25.TabIndex = 24;
-            label25.Text = "Timeout:";
-            // 
-            // numTimeout
-            // 
-            this.numTimeout.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            tableLayoutPanel7.SetColumnSpan(this.numTimeout, 3);
-            this.numTimeout.Location = new System.Drawing.Point(911, 90);
-            this.numTimeout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numTimeout.Maximum = new decimal(new int[] {
-            1023,
-            0,
-            0,
-            0});
-            this.numTimeout.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numTimeout.MinimumSize = new System.Drawing.Size(60, 0);
-            this.numTimeout.Name = "numTimeout";
-            this.numTimeout.Size = new System.Drawing.Size(70, 25);
-            this.numTimeout.TabIndex = 10;
-            this.numTimeout.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label30
-            // 
-            label30.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label30.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label30, 2);
-            label30.Font = new System.Drawing.Font("Consolas", 9F);
-            label30.Location = new System.Drawing.Point(793, 126);
-            label30.Name = "label30";
-            label30.Size = new System.Drawing.Size(168, 18);
-            label30.TabIndex = 25;
-            label30.Text = "Synth. Lock Timeout:";
-            // 
-            // numSynthTimeout
-            // 
-            this.numSynthTimeout.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            tableLayoutPanel7.SetColumnSpan(this.numSynthTimeout, 2);
-            this.numSynthTimeout.Location = new System.Drawing.Point(1009, 123);
-            this.numSynthTimeout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numSynthTimeout.Maximum = new decimal(new int[] {
-            31,
-            0,
-            0,
-            0});
-            this.numSynthTimeout.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numSynthTimeout.MinimumSize = new System.Drawing.Size(44, 0);
-            this.numSynthTimeout.Name = "numSynthTimeout";
-            this.numSynthTimeout.Size = new System.Drawing.Size(54, 25);
-            this.numSynthTimeout.TabIndex = 10;
-            this.numSynthTimeout.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label31
-            // 
-            label31.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label31.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label31, 2);
-            label31.Font = new System.Drawing.Font("Consolas", 9F);
-            label31.Location = new System.Drawing.Point(793, 159);
-            label31.Name = "label31";
-            label31.Size = new System.Drawing.Size(184, 18);
-            label31.TabIndex = 26;
-            label31.Text = "Total Calculated Time:";
-            // 
-            // numTotalCalculatedTime
-            // 
-            this.numTotalCalculatedTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numTotalCalculatedTime.DecimalPlaces = 3;
-            this.numTotalCalculatedTime.Enabled = false;
-            this.numTotalCalculatedTime.Location = new System.Drawing.Point(1009, 156);
-            this.numTotalCalculatedTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numTotalCalculatedTime.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.numTotalCalculatedTime.MinimumSize = new System.Drawing.Size(92, 0);
-            this.numTotalCalculatedTime.Name = "numTotalCalculatedTime";
-            this.numTotalCalculatedTime.Size = new System.Drawing.Size(102, 25);
-            this.numTotalCalculatedTime.TabIndex = 10;
-            this.numTotalCalculatedTime.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label32
-            // 
-            label32.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label32.AutoSize = true;
-            label32.Font = new System.Drawing.Font("Consolas", 9F);
-            label32.Location = new System.Drawing.Point(1117, 159);
-            label32.Name = "label32";
-            label32.Size = new System.Drawing.Size(24, 18);
-            label32.TabIndex = 28;
-            label32.Text = "us";
-            // 
-            // label33
-            // 
-            label33.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label33.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label33, 4);
-            label33.Font = new System.Drawing.Font("Consolas", 9F);
-            label33.Location = new System.Drawing.Point(793, 191);
-            label33.Name = "label33";
-            label33.Size = new System.Drawing.Size(96, 18);
-            label33.TabIndex = 25;
-            label33.Text = "Register 10";
-            // 
-            // label35
-            // 
-            label35.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label35.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label35, 2);
-            label35.Font = new System.Drawing.Font("Consolas", 9F);
-            label35.Location = new System.Drawing.Point(793, 222);
-            label35.Name = "label35";
-            label35.Size = new System.Drawing.Size(152, 18);
-            label35.TabIndex = 27;
-            label35.Text = "ADC Clock Divider:";
-            // 
-            // numADCClockDivider
-            // 
-            this.numADCClockDivider.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numADCClockDivider.Location = new System.Drawing.Point(1009, 219);
-            this.numADCClockDivider.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numADCClockDivider.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numADCClockDivider.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numADCClockDivider.MinimumSize = new System.Drawing.Size(52, 0);
-            this.numADCClockDivider.Name = "numADCClockDivider";
-            this.numADCClockDivider.Size = new System.Drawing.Size(62, 25);
-            this.numADCClockDivider.TabIndex = 10;
-            this.numADCClockDivider.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // cbADCClockDividerAutoset
-            // 
-            this.cbADCClockDividerAutoset.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbADCClockDividerAutoset.AutoSize = true;
-            this.cbADCClockDividerAutoset.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbADCClockDividerAutoset.Location = new System.Drawing.Point(1117, 223);
-            this.cbADCClockDividerAutoset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbADCClockDividerAutoset.Name = "cbADCClockDividerAutoset";
-            this.cbADCClockDividerAutoset.Size = new System.Drawing.Size(18, 17);
-            this.cbADCClockDividerAutoset.TabIndex = 57;
-            this.cbADCClockDividerAutoset.UseVisualStyleBackColor = true;
-            // 
-            // label36
-            // 
-            label36.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label36.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label36, 2);
-            label36.Font = new System.Drawing.Font("Consolas", 9F);
-            label36.Location = new System.Drawing.Point(793, 255);
-            label36.Name = "label36";
-            label36.Size = new System.Drawing.Size(152, 18);
-            label36.TabIndex = 25;
-            label36.Text = "Frequency (Wrong):";
-            // 
-            // numFrequency
-            // 
-            this.numFrequency.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numFrequency.DecimalPlaces = 3;
-            this.numFrequency.Enabled = false;
-            this.numFrequency.Location = new System.Drawing.Point(1009, 252);
-            this.numFrequency.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numFrequency.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.numFrequency.MinimumSize = new System.Drawing.Size(92, 0);
-            this.numFrequency.Name = "numFrequency";
-            this.numFrequency.Size = new System.Drawing.Size(102, 25);
-            this.numFrequency.TabIndex = 10;
-            this.numFrequency.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label38
-            // 
-            label38.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label38.AutoSize = true;
-            label38.Font = new System.Drawing.Font("Consolas", 9F);
-            label38.Location = new System.Drawing.Point(1117, 255);
-            label38.Name = "label38";
-            label38.Size = new System.Drawing.Size(32, 18);
-            label38.TabIndex = 29;
-            label38.Text = "kHz";
-            // 
-            // cbADCConversion
-            // 
-            this.cbADCConversion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbADCConversion.AutoSize = true;
-            this.cbADCConversion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            tableLayoutPanel7.SetColumnSpan(this.cbADCConversion, 4);
-            this.cbADCConversion.Location = new System.Drawing.Point(793, 286);
-            this.cbADCConversion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbADCConversion.Name = "cbADCConversion";
-            this.cbADCConversion.Size = new System.Drawing.Size(150, 22);
-            this.cbADCConversion.TabIndex = 56;
-            this.cbADCConversion.Text = "ADC Conversion:";
-            this.cbADCConversion.UseVisualStyleBackColor = true;
-            // 
-            // cbADCEnable
-            // 
-            this.cbADCEnable.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbADCEnable.AutoSize = true;
-            this.cbADCEnable.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            tableLayoutPanel7.SetColumnSpan(this.cbADCEnable, 4);
-            this.cbADCEnable.Location = new System.Drawing.Point(793, 318);
-            this.cbADCEnable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbADCEnable.Name = "cbADCEnable";
-            this.cbADCEnable.Size = new System.Drawing.Size(118, 22);
-            this.cbADCEnable.TabIndex = 57;
-            this.cbADCEnable.Text = "ADC Enable:";
-            this.cbADCEnable.UseVisualStyleBackColor = true;
-            // 
-            // label39
-            // 
-            label39.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label39.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label39, 4);
-            label39.Font = new System.Drawing.Font("Consolas", 9F);
-            label39.Location = new System.Drawing.Point(793, 351);
-            label39.Name = "label39";
-            label39.Size = new System.Drawing.Size(96, 18);
-            label39.TabIndex = 26;
-            label39.Text = "Register 12";
-            // 
-            // label40
-            // 
-            label40.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label40.AutoSize = true;
-            label40.Font = new System.Drawing.Font("Consolas", 9F);
-            label40.Location = new System.Drawing.Point(793, 385);
-            label40.Name = "label40";
-            label40.Size = new System.Drawing.Size(112, 18);
-            label40.TabIndex = 26;
-            label40.Text = "Phase Resync:";
-            // 
-            // numResyncClock
-            // 
-            this.numResyncClock.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            tableLayoutPanel7.SetColumnSpan(this.numResyncClock, 3);
-            this.numResyncClock.Location = new System.Drawing.Point(911, 381);
-            this.numResyncClock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numResyncClock.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.numResyncClock.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numResyncClock.MinimumSize = new System.Drawing.Size(68, 0);
-            this.numResyncClock.Name = "numResyncClock";
-            this.numResyncClock.Size = new System.Drawing.Size(78, 25);
-            this.numResyncClock.TabIndex = 10;
-            this.numResyncClock.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label53
-            // 
-            label53.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label53.AutoSize = true;
-            label53.Font = new System.Drawing.Font("Consolas", 9F);
-            label53.Location = new System.Drawing.Point(793, 418);
-            label53.Name = "label53";
-            label53.Size = new System.Drawing.Size(72, 18);
-            label53.TabIndex = 25;
-            label53.Text = "Timeout:";
-            // 
-            // numResyncClockTimeout
-            // 
-            this.numResyncClockTimeout.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numResyncClockTimeout.DecimalPlaces = 3;
-            this.numResyncClockTimeout.Enabled = false;
-            this.numResyncClockTimeout.Location = new System.Drawing.Point(911, 415);
-            this.numResyncClockTimeout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numResyncClockTimeout.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.numResyncClockTimeout.Name = "numResyncClockTimeout";
-            this.numResyncClockTimeout.Size = new System.Drawing.Size(92, 25);
-            this.numResyncClockTimeout.TabIndex = 10;
-            this.numResyncClockTimeout.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label74
-            // 
-            label74.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label74.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label74, 2);
-            label74.Font = new System.Drawing.Font("Consolas", 9F);
-            label74.Location = new System.Drawing.Point(1009, 418);
-            label74.Name = "label74";
-            label74.Size = new System.Drawing.Size(24, 18);
-            label74.TabIndex = 29;
-            label74.Text = "us";
-            // 
-            // label83
-            // 
-            label83.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label83.AutoSize = true;
-            tableLayoutPanel7.SetColumnSpan(label83, 2);
-            label83.Font = new System.Drawing.Font("Consolas", 9F);
-            label83.Location = new System.Drawing.Point(793, 60);
-            label83.Name = "label83";
-            label83.Size = new System.Drawing.Size(152, 18);
-            label83.TabIndex = 23;
-            label83.Text = "VCO Band Division:";
-            // 
-            // numVCOBandDivision
-            // 
-            this.numVCOBandDivision.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            tableLayoutPanel7.SetColumnSpan(this.numVCOBandDivision, 2);
-            this.numVCOBandDivision.Location = new System.Drawing.Point(1009, 56);
-            this.numVCOBandDivision.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numVCOBandDivision.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numVCOBandDivision.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numVCOBandDivision.MinimumSize = new System.Drawing.Size(52, 0);
-            this.numVCOBandDivision.Name = "numVCOBandDivision";
-            this.numVCOBandDivision.Size = new System.Drawing.Size(62, 25);
-            this.numVCOBandDivision.TabIndex = 10;
-            this.numVCOBandDivision.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // Form1
             // 
@@ -3304,9 +3303,19 @@
             tlpRegisters.PerformLayout();
             tableLayoutPanel7.ResumeLayout(false);
             tableLayoutPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numVCOBandDivision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRfOutPower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCPBleedCurrentValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCPBleedCurrentInt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPhase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAuxOutPower)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numResyncClockTimeout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numResyncClock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFrequency)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numADCClockDivider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTotalCalculatedTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSynthTimeout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimeout)).EndInit();
             this.gbPhaseResync.ResumeLayout(false);
             this.gbPhaseResync.PerformLayout();
             this.flowLayoutPanel40.ResumeLayout(false);
@@ -3363,16 +3372,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numMod2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFrac1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numAuxOutPower)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numRfOutPower)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTimeout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numSynthTimeout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTotalCalculatedTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numADCClockDivider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numFrequency)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numResyncClock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numResyncClockTimeout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numVCOBandDivision)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

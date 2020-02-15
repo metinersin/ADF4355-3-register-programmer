@@ -1984,11 +1984,6 @@ namespace register_programmer
 
             return null;
         }
-        private void numN_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void rbSingle_CheckedChanged(object sender, EventArgs e)
         {
             this.rbDifferential.Checked = !this.rbSingle.Checked;
@@ -1999,7 +1994,6 @@ namespace register_programmer
         }
         private void rbNegative_CheckedChanged(object sender, EventArgs e)
         {
-            //MessageBox.Show(this.rbNegative.Checked.ToString());
             this.rbPositive.Checked = !this.rbNegative.Checked;
         }
 
@@ -2139,16 +2133,6 @@ namespace register_programmer
             MessageBox.Show((string)Properties.Settings.Default["EnvironmentVaribleName"]);
             SaveSettings();
             MessageBox.Show((string)Properties.Settings.Default["EnvironmentVaribleName"]);
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void numN_ValueChanged_1(object sender, EventArgs e)
-        {
-
         }
     }
 
