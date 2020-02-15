@@ -18,7 +18,7 @@ namespace register_programmer
 {
     public partial class Form1 : Form
     {
-        static private string CHOOSE_FILE_CERTAINLY(string initialDirectory, string errorMessage
+        static private string ChooseFileCertainly(string initialDirectory, string errorMessage
             , string errorCaption, MessageBoxIcon icon, bool startWithErrorMessage
             , DialogResult buttonToExit, Func<string, bool> condition)
         {
@@ -61,7 +61,7 @@ namespace register_programmer
                 return filePath;
             }
         }
-        static private string GET_ARDUINO_PATH_FROM_ENVPATH()
+        static private string GetArduinoPathFromEnvironment()
         {
             string pathVar =  System.Environment.GetEnvironmentVariable(ENV_VAR_NAME
                 , EnvironmentVariableTarget.User);
@@ -88,7 +88,7 @@ namespace register_programmer
                 if (MessageBox.Show(tempmsg, tempcap
                     , MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
                 {
-                    string filePath = CHOOSE_FILE_CERTAINLY(
+                    string filePath = ChooseFileCertainly(
                         Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "You have not"
                         + " choosen any file. You should choose the arduino.exe file in your system. If you"
                         + " do not have Arduino IDE, install Arduino IDE and try again. You can do this"
@@ -103,7 +103,7 @@ namespace register_programmer
 
                     if (fileName != "arduino.exe" && fileName != "arduino_debug.exe")
                     {
-                        string temp = CHOOSE_FILE_CERTAINLY(Path.GetDirectoryName(filePath), "Your file's name (" + fileName
+                        string temp = ChooseFileCertainly(Path.GetDirectoryName(filePath), "Your file's name (" + fileName
                             + ") is not arduino.exe or arduino_debug.exe (arduino_debug.exe is"
                             + " strongly recommended for more functionality.). Do you want to still continue?"
                             + " Click No to replace the file.", "The file has an unexpected name"
@@ -120,7 +120,7 @@ namespace register_programmer
 
                     if (fileName == "arduino.exe" && !wantsToContinue)
                     {
-                        string temp = CHOOSE_FILE_CERTAINLY(Path.GetDirectoryName(filePath), "arduino_debug.exe is strongly"
+                        string temp = ChooseFileCertainly(Path.GetDirectoryName(filePath), "arduino_debug.exe is strongly"
                             + " recommended for more functionality. Do you want to still continue? Click No"
                             + " to replace the file.", "arduino_debug.exe is recommended"
                             , MessageBoxIcon.Warning, true, DialogResult.Yes, (string name)
@@ -176,7 +176,7 @@ namespace register_programmer
                 if (MessageBox.Show("We could not locate arduino_debug.exe or arduino.exe in your " 
                     + ENV_VAR_NAME + ". Do you want to add it now?", "No arduino_debug.exe or arduino.exe in "
                     + ENV_VAR_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
-                    filePath = CHOOSE_FILE_CERTAINLY(
+                    filePath = ChooseFileCertainly(
                         Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "You have not"
                         + " choosen any file. You should choose the arduino.exe file in your system. If you"
                         + " do not have Arduino IDE, install Arduino IDE and try again. You can do this"
@@ -191,7 +191,7 @@ namespace register_programmer
 
                 if (_fileName != "arduino.exe" && _fileName != "arduino_debug.exe")
                 {
-                    string temp = CHOOSE_FILE_CERTAINLY(Environment.GetFolderPath(
+                    string temp = ChooseFileCertainly(Environment.GetFolderPath(
                         Environment.SpecialFolder.ProgramFiles), "Your file's name (" + _fileName
                         + ") is not arduino.exe or arduino_debug.exe (arduino_debug.exe is"
                         + " strongly recommended for more functionality.). Do you want to still continue?"
@@ -209,7 +209,7 @@ namespace register_programmer
 
                 if (_fileName == "arduino.exe" && !wantsToContinue)
                 {
-                    string temp = CHOOSE_FILE_CERTAINLY(Path.GetDirectoryName(filePath), "arduino_debug.exe is strongly"
+                    string temp = ChooseFileCertainly(Path.GetDirectoryName(filePath), "arduino_debug.exe is strongly"
                         + " recommended for more functionality. Do you want to still continue? Click No"
                         + " to replace the file.", "arduino_debug.exe is recommended"
                         , MessageBoxIcon.Warning, true, DialogResult.Yes, (string name)
@@ -227,10 +227,18 @@ namespace register_programmer
                 return filePath;
             }
         }
+        static private void LoadSettings()
+        {
+            ENV_VAR_NAME = (string) Properties.Settings.Default["EnvironmentVaribleName"];
+        }
+        static private void SaveSettings()
+        {
+            Properties.Settings.Default["EnvironmentVaribleName"] = ENV_VAR_NAME;
+        }
 
         readonly static private string PROGRAM_NAME = "ADF4355-3 Programmer";
 
-        static string ENV_VAR_NAME = "Path";
+        static private string ENV_VAR_NAME = "Path";
         static private string TASLAK_FILE_PATH = @"arduino-1.8.11\pll\pll.ino";
         static private string INO_FILE_PATH = @"arduino-1.8.11\code\code.ino";
         static private Process ARDUINO_PROCESS;
@@ -1533,7 +1541,7 @@ namespace register_programmer
         }
         private void calculateMod2(object sender, EventArgs e)
         {
-            decimal val = this.Frac2 == 0 ? 1 : this.Fpfd * MEGA / GCD(this.Fpfd * MEGA, this.Fchsp * MEGA);
+            decimal val = this.Frac2 == 0 ? 1 : this.Fpfd * MEGA / GCD(this.Fpfd * MEGA, this.Fchsp * KILO);
 
             if (this._mod2.Value == val)
                 return;
@@ -1764,8 +1772,8 @@ namespace register_programmer
                 this.erpVco.Clear();
             else
             {
-                this.erpVco.SetIconAlignment(this.flpVco, ErrorIconAlignment.BottomLeft);
-                this.erpVco.SetError(this.flpVco, ERROR_VCO);
+                this.erpVco.SetIconAlignment(this.lblVCO, ErrorIconAlignment.MiddleLeft);
+                this.erpVco.SetError(this.lblVCO, ERROR_VCO);
             }
         }
         private void validatePhaseResync(object sender, EventArgs e)
@@ -2125,7 +2133,22 @@ namespace register_programmer
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(GET_ARDUINO_PATH_FROM_ENVPATH());
+            //MessageBox.Show(GetArduinoPathFromEnvironment());
+            //ENV_VAR_NAME = "mal";
+            MessageBox.Show(ENV_VAR_NAME);
+            MessageBox.Show((string)Properties.Settings.Default["EnvironmentVaribleName"]);
+            SaveSettings();
+            MessageBox.Show((string)Properties.Settings.Default["EnvironmentVaribleName"]);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void numN_ValueChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 

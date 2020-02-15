@@ -26,48 +26,576 @@ namespace register_programmer.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("122.8")]
-        public decimal referenceInput {
+        public decimal ReferenceInput {
             get {
-                return ((decimal)(this["referenceInput"]));
+                return ((decimal)(this["ReferenceInput"]));
             }
             set {
-                this["referenceInput"] = value;
+                this["ReferenceInput"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public decimal divider {
+        public int Divider {
             get {
-                return ((decimal)(this["divider"]));
+                return ((int)(this["Divider"]));
             }
             set {
-                this["divider"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool doubler {
-            get {
-                return ((bool)(this["doubler"]));
-            }
-            set {
-                this["doubler"] = value;
+                this["Divider"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool divideby2 {
+        public bool DivideBy2 {
             get {
-                return ((bool)(this["divideby2"]));
+                return ((bool)(this["DivideBy2"]));
             }
             set {
-                this["divideby2"] = value;
+                this["DivideBy2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Doubler {
+            get {
+                return ((bool)(this["Doubler"]));
+            }
+            set {
+                this["Doubler"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public decimal ChannelSpacing {
+            get {
+                return ((decimal)(this["ChannelSpacing"]));
+            }
+            set {
+                this["ChannelSpacing"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3600")]
+        public decimal VCOOutput {
+            get {
+                return ((decimal)(this["VCOOutput"]));
+            }
+            set {
+                this["VCOOutput"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int OutputDividerIndex {
+            get {
+                return ((int)(this["OutputDividerIndex"]));
+            }
+            set {
+                this["OutputDividerIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoCalibration {
+            get {
+                return ((bool)(this["AutoCalibration"]));
+            }
+            set {
+                this["AutoCalibration"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Prescaler {
+            get {
+                return ((int)(this["Prescaler"]));
+            }
+            set {
+                this["Prescaler"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SDLoadReset {
+            get {
+                return ((bool)(this["SDLoadReset"]));
+            }
+            set {
+                this["SDLoadReset"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PhaseResync {
+            get {
+                return ((bool)(this["PhaseResync"]));
+            }
+            set {
+                this["PhaseResync"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PhaseAdjustment {
+            get {
+                return ((bool)(this["PhaseAdjustment"]));
+            }
+            set {
+                this["PhaseAdjustment"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal Phase {
+            get {
+                return ((decimal)(this["Phase"]));
+            }
+            set {
+                this["Phase"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int MuxOutputIndex {
+            get {
+                return ((int)(this["MuxOutputIndex"]));
+            }
+            set {
+                this["MuxOutputIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DoubleBuffer {
+            get {
+                return ((bool)(this["DoubleBuffer"]));
+            }
+            set {
+                this["DoubleBuffer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int CPCurrentIndex {
+            get {
+                return ((int)(this["CPCurrentIndex"]));
+            }
+            set {
+                this["CPCurrentIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ReferenceModeIsSingle {
+            get {
+                return ((bool)(this["ReferenceModeIsSingle"]));
+            }
+            set {
+                this["ReferenceModeIsSingle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MuxLevelIs18 {
+            get {
+                return ((bool)(this["MuxLevelIs18"]));
+            }
+            set {
+                this["MuxLevelIs18"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PDPolarityIsNegative {
+            get {
+                return ((bool)(this["PDPolarityIsNegative"]));
+            }
+            set {
+                this["PDPolarityIsNegative"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PowerDown {
+            get {
+                return ((bool)(this["PowerDown"]));
+            }
+            set {
+                this["PowerDown"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CPThreeState {
+            get {
+                return ((bool)(this["CPThreeState"]));
+            }
+            set {
+                this["CPThreeState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CounterReset {
+            get {
+                return ((bool)(this["CounterReset"]));
+            }
+            set {
+                this["CounterReset"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int FeedbackIndex {
+            get {
+                return ((int)(this["FeedbackIndex"]));
+            }
+            set {
+                this["FeedbackIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("36")]
+        public int CPBleedCurrentInt {
+            get {
+                return ((int)(this["CPBleedCurrentInt"]));
+            }
+            set {
+                this["CPBleedCurrentInt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MuteTillLockDetect {
+            get {
+                return ((bool)(this["MuteTillLockDetect"]));
+            }
+            set {
+                this["MuteTillLockDetect"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AuxOutputEnable {
+            get {
+                return ((bool)(this["AuxOutputEnable"]));
+            }
+            set {
+                this["AuxOutputEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public decimal AuxOutputPower {
+            get {
+                return ((decimal)(this["AuxOutputPower"]));
+            }
+            set {
+                this["AuxOutputPower"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool RfOutputEnable {
+            get {
+                return ((bool)(this["RfOutputEnable"]));
+            }
+            set {
+                this["RfOutputEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public decimal RfOutputPower {
+            get {
+                return ((decimal)(this["RfOutputPower"]));
+            }
+            set {
+                this["RfOutputPower"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NegativeBleed {
+            get {
+                return ((bool)(this["NegativeBleed"]));
+            }
+            set {
+                this["NegativeBleed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool GatedBleed {
+            get {
+                return ((bool)(this["GatedBleed"]));
+            }
+            set {
+                this["GatedBleed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LESync {
+            get {
+                return ((bool)(this["LESync"]));
+            }
+            set {
+                this["LESync"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int LDCycleCountInt {
+            get {
+                return ((int)(this["LDCycleCountInt"]));
+            }
+            set {
+                this["LDCycleCountInt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool LOLMode {
+            get {
+                return ((bool)(this["LOLMode"]));
+            }
+            set {
+                this["LOLMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int FracNPrecision {
+            get {
+                return ((int)(this["FracNPrecision"]));
+            }
+            set {
+                this["FracNPrecision"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int LDModeInt {
+            get {
+                return ((int)(this["LDModeInt"]));
+            }
+            set {
+                this["LDModeInt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutosetFastestCalibration {
+            get {
+                return ((bool)(this["AutosetFastestCalibration"]));
+            }
+            set {
+                this["AutosetFastestCalibration"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("52")]
+        public int VCOBandDivisonInt {
+            get {
+                return ((int)(this["VCOBandDivisonInt"]));
+            }
+            set {
+                this["VCOBandDivisonInt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25")]
+        public int TimeoutInt {
+            get {
+                return ((int)(this["TimeoutInt"]));
+            }
+            set {
+                this["TimeoutInt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25")]
+        public int SynthLockTimeoutInt {
+            get {
+                return ((int)(this["SynthLockTimeoutInt"]));
+            }
+            set {
+                this["SynthLockTimeoutInt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("148.958")]
+        public decimal TotalCalculatedTime {
+            get {
+                return ((decimal)(this["TotalCalculatedTime"]));
+            }
+            set {
+                this["TotalCalculatedTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("154")]
+        public int ADCClockDividerInt {
+            get {
+                return ((int)(this["ADCClockDividerInt"]));
+            }
+            set {
+                this["ADCClockDividerInt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ADCConversion {
+            get {
+                return ((bool)(this["ADCConversion"]));
+            }
+            set {
+                this["ADCConversion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ADCEnable {
+            get {
+                return ((bool)(this["ADCEnable"]));
+            }
+            set {
+                this["ADCEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ADCClockDividerAutoset {
+            get {
+                return ((bool)(this["ADCClockDividerAutoset"]));
+            }
+            set {
+                this["ADCClockDividerAutoset"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int ResyncClockInt {
+            get {
+                return ((int)(this["ResyncClockInt"]));
+            }
+            set {
+                this["ResyncClockInt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.016")]
+        public decimal ResyncClockTimeout {
+            get {
+                return ((decimal)(this["ResyncClockTimeout"]));
+            }
+            set {
+                this["ResyncClockTimeout"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Path")]
+        public string EnvironmentVaribleName {
+            get {
+                return ((string)(this["EnvironmentVaribleName"]));
+            }
+            set {
+                this["EnvironmentVaribleName"] = value;
             }
         }
     }
