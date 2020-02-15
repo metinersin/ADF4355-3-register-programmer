@@ -1818,8 +1818,8 @@ namespace register_programmer
         {
             if (this.MuxOutValue == 4 || this.MuxOutValue == 3)
             {
-                this.hpMuxout.SetIconAlignment(this.flpMuxout, ErrorIconAlignment.MiddleRight);
-                this.hpMuxout.SetError(this.flpMuxout, "While writing to Register 1, Muxout must not be set" +
+                this.hpMuxout.SetIconAlignment(this.cbMuxout, ErrorIconAlignment.MiddleRight);
+                this.hpMuxout.SetError(this.cbMuxout, "While writing to Register 1, Muxout must not be set" +
                     " to the N divider output or R divider output.");
             }
             else
@@ -1829,8 +1829,8 @@ namespace register_programmer
         {
             if (this.CPCurrentValue != 0.94M)
             {
-                this.hpCPCurrent.SetIconAlignment(this.flpCPCurrent, ErrorIconAlignment.MiddleRight);
-                this.hpCPCurrent.SetError(this.flpCPCurrent, "For lowest spurs, 0.9 mA is recommended.");
+                this.hpCPCurrent.SetIconAlignment(this.cbCPCurrent, ErrorIconAlignment.MiddleRight);
+                this.hpCPCurrent.SetError(this.cbCPCurrent, "For lowest spurs, 0.9 mA is recommended.");
             }
             else
                 this.hpCPCurrent.Clear();
@@ -1906,8 +1906,8 @@ namespace register_programmer
         {
             if (this.LDModeInt == 0)
             {
-                this.hpLDMode.SetIconAlignment(this.flpLDMode, ErrorIconAlignment.TopRight);
-                this.hpLDMode.SetError(this.flpLDMode, "Do not forget to set the \"Frac-N LD Precision\"" +
+                this.hpLDMode.SetIconAlignment(this.cbLDMode, ErrorIconAlignment.MiddleRight);
+                this.hpLDMode.SetError(this.cbLDMode, "Do not forget to set the \"Frac-N LD Precision\"" +
                     " in Register 7!");
             }
             else
