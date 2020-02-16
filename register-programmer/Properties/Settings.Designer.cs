@@ -38,9 +38,9 @@ namespace register_programmer.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public int Divider {
+        public decimal Divider {
             get {
-                return ((int)(this["Divider"]));
+                return ((decimal)(this["Divider"]));
             }
             set {
                 this["Divider"] = value;
@@ -73,7 +73,7 @@ namespace register_programmer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
         public decimal ChannelSpacing {
             get {
                 return ((decimal)(this["ChannelSpacing"]));

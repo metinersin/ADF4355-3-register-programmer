@@ -5,7 +5,7 @@
     <Setting Name="ReferenceInput" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">122.8</Value>
     </Setting>
-    <Setting Name="Divider" Type="System.Int32" Scope="User">
+    <Setting Name="Divider" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="DivideBy2" Type="System.Boolean" Scope="User">
@@ -15,7 +15,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ChannelSpacing" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">1000</Value>
     </Setting>
     <Setting Name="VCOOutput" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">3600</Value>

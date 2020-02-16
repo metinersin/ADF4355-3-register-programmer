@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Management;
 using System.Diagnostics;
 using System.IO;
+using System.Xml;
+using System.Xml.Linq;
 using PCEArgs = System.ComponentModel.PropertyChangedEventArgs;
 using PCEHandler = System.ComponentModel.PropertyChangedEventHandler;
 
@@ -227,21 +229,271 @@ namespace register_programmer
                 return filePath;
             }
         }
-        static private void LoadSettings()
+        static private bool CheckFolders()
         {
-            ENV_VAR_NAME = (string) Properties.Settings.Default["EnvironmentVaribleName"];
+            bool wasThereProblems = false;
+
+            if (!Directory.Exists(PROGRAM_APPDATA_PATH))
+            {
+                Directory.CreateDirectory(PROGRAM_APPDATA_PATH);
+                wasThereProblems = true;
+            }
+
+            if (!Directory.Exists(SETTINGS_DIR))
+            {
+                Directory.CreateDirectory(SETTINGS_DIR);
+                wasThereProblems = true;
+            }
+
+            if (!File.Exists(DEFAULT_SETTINGS_FILE))
+            {
+                #region settingsTree
+                XElement settingsTree =
+                    new XElement("Settings",
+                        new XElement("Inputs",
+                            new XElement("ReferenceInput", 122.8M.ToString()), 
+                            new XElement("Divider", 1M.ToString()), 
+                            new XElement("DivideBy2", true.ToString()), 
+                            new XElement("Doubler", false.ToString()),
+                            new XElement("ChannelSpacing", 1000M.ToString()),
+                            new XElement("VCOOutput", 3600M.ToString()),
+                            new XElement("OutputDividerIndex", 0.ToString())),
+                        new XElement("Register0",
+                            new XElement("AutoCalibration", true.ToString()),
+                            new XElement("Prescaler", 0.ToString())),
+                        new XElement("Register3",
+                            new XElement("SDLoadReset", true.ToString()),
+                            new XElement("PhaseResync", false.ToString()),
+                            new XElement("PhaseAdjustment", false.ToString()),
+                            new XElement("Phase", 0M.ToString())),
+                        new XElement("Register4",
+                            new XElement("MuxOutputIndex", 5.ToString()),
+                            new XElement("DoubleBuffer", false.ToString()),
+                            new XElement("CPCurrentIndex", 2.ToString()),
+                            new XElement("ReferenceModeIsSingle", false.ToString()),
+                            new XElement("MuxLevelIs18", false.ToString()),
+                            new XElement("PDPolarityIsNegative", false.ToString()),
+                            new XElement("PowerDown", false.ToString()), 
+                            new XElement("CPThreeState", false.ToString()), 
+                            new XElement("CounterReset", false.ToString())),
+                        new XElement("Register6",
+                            new XElement("FeedbackIndex", 1.ToString()),
+                            new XElement("CPBleedCurrentInt", 36.ToString()),
+                            new XElement("MuteTillLockDetect", false.ToString()), 
+                            new XElement("AuxOutputEnable", false.ToString()),
+                            new XElement("AuxOutputPower", (-1M).ToString()),
+                            new XElement("RfOutputEnable", true.ToString()),
+                            new XElement("RfOutputPower", 5M.ToString()),
+                            new XElement("NegativeBleed", true.ToString()), 
+                            new XElement("GatedBleed", false.ToString())),
+                        new XElement("Register7",
+                            new XElement("LESync", false.ToString()),
+                            new XElement("LDCycleCountInt", 2.ToString()),
+                            new XElement("LOLMode", true.ToString()),
+                            new XElement("FracNPrecision", 3.ToString()),
+                            new XElement("LDModeInt", 0.ToString())),
+                        new XElement("Register9",
+                            new XElement("AutosetFastestCalibration", false.ToString()),
+                            new XElement("VCOBandDivisonInt", 52.ToString()),
+                            new XElement("TimeoutInt", 25.ToString()),
+                            new XElement("SynthLockTimeoutInt", 25.ToString()),
+                            new XElement("TotalCalculatedTime", (148.958M).ToString())),
+                        new XElement("Register10",
+                            new XElement("ADCClockDividerInt", 154.ToString()), 
+                            new XElement("ADCConversion", true.ToString()), 
+                            new XElement("ADCEnable", true.ToString()), 
+                            new XElement("ADCClockDividerAutoset", false.ToString())),
+                        new XElement("Register12",
+                            new XElement("ResyncClockInt", 1.ToString()),
+                            new XElement("ResyncClockTimeout", 0.016M.ToString())), 
+                        new XElement("EnvironmentVaribleName", "Path"));
+                #endregion
+
+                settingsTree.Save(DEFAULT_SETTINGS_FILE);
+
+                wasThereProblems = true;
+            }
+
+            return wasThereProblems;
         }
-        static private void SaveSettings()
+        static private bool CheckFolders(string errorMessage, string caption)
         {
-            Properties.Settings.Default["EnvironmentVaribleName"] = ENV_VAR_NAME;
+            bool wasThereProblems = CheckFolders();
+
+            if (wasThereProblems)
+                MessageBox.Show(errorMessage, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return wasThereProblems;
+        }
+        private void LoadSettings()
+        {
+            XElement settingsTree = XElement.Load(DEFAULT_SETTINGS_FILE);
+            XElement inputTree = settingsTree.Element("Inputs");
+            XElement register0Tree = settingsTree.Element("Register0");
+            XElement register3Tree = settingsTree.Element("Register3");
+            XElement register4Tree = settingsTree.Element("Register4");
+            XElement register6Tree = settingsTree.Element("Register6");
+            XElement register9Tree = settingsTree.Element("Register9");
+            XElement register10Tree = settingsTree.Element("Register10");
+            XElement register12Tree = settingsTree.Element("Register12");
+            XElement register7Tree = settingsTree.Element("Register7");
+
+            #region other
+            ENV_VAR_NAME = settingsTree.Element("EnvironmentVaribleName").Value;
+            #endregion
+
+            #region inputs
+            this.Divider = decimal.Parse(inputTree.Element("Divider").Value);
+            this.ReferenceInput = decimal.Parse(inputTree.Element("ReferenceInput").Value);
+            this.Divideby2 = bool.Parse(inputTree.Element("DivideBy2").Value);
+            this.Doubler = bool.Parse(inputTree.Element("Doubler").Value);
+            this.Fchsp = decimal.Parse(inputTree.Element("ChannelSpacing").Value);
+            this.Vco = decimal.Parse(inputTree.Element("VCOOutput").Value);
+            this.OutputDividerIndex = int.Parse(inputTree.Element("OutputDividerIndex").Value);
+            #endregion
+
+            #region register 0
+            this.Autocal = bool.Parse(register0Tree.Element("AutoCalibration").Value);
+            this.Prescaler = int.Parse(register0Tree.Element("Prescaler").Value);
+            #endregion
+            #region register 3
+            this.SDLoadReset = bool.Parse(register3Tree.Element("SDLoadReset").Value);
+            this.PhaseResync = bool.Parse(register3Tree.Element("PhaseResync").Value);
+            this.PhaseAdjustment = bool.Parse(register3Tree.Element("PhaseAdjustment").Value);
+            this.Phase = decimal.Parse(register3Tree.Element("Phase").Value);
+            #endregion
+            #region register 4
+            this.MuxOutIndex = int.Parse(register4Tree.Element("MuxOutputIndex").Value);
+            this.DoubleBuffer = bool.Parse(register4Tree.Element("DoubleBuffer").Value);
+            this.CPCurrentIndex = int.Parse(register4Tree.Element("CPCurrentIndex").Value);
+            this.ReferenceModeIsSingle = bool.Parse(register4Tree.Element("ReferenceModeIsSingle").Value);
+            this.MuxLevelIs18 = bool.Parse(register4Tree.Element("MuxLevelIs18").Value);
+            this.PDPolarityIsNegative = bool.Parse(register4Tree.Element("PDPolarityIsNegative").Value);
+            this.PowerDown = bool.Parse(register4Tree.Element("PowerDown").Value);
+            this.CPThreeState = bool.Parse(register4Tree.Element("CPThreeState").Value);
+            this.CounterReset = bool.Parse(register4Tree.Element("CounterReset").Value);
+            #endregion
+            #region register 6
+            this.FeedBack = int.Parse(register6Tree.Element("FeedbackIndex").Value);
+            this.CPBleedCurrentInt = int.Parse(register6Tree.Element("CPBleedCurrentInt").Value);
+            this.MuteTillLockDetect = bool.Parse(register6Tree.Element("MuteTillLockDetect").Value);
+            this.AuxOutEnable = bool.Parse(register6Tree.Element("AuxOutputEnable").Value);
+            this.AuxPowerValue = int.Parse(register6Tree.Element("AuxOutputPower").Value);
+            this.RfOutEnable = bool.Parse(register6Tree.Element("RfOutputEnable").Value);
+            this.RfOutPowerValue = int.Parse(register6Tree.Element("RfOutputPower").Value);
+            this.NegativeBleed = bool.Parse(register6Tree.Element("NegativeBleed").Value);
+            this.GatedBleed = bool.Parse(register6Tree.Element("GatedBleed").Value);
+            #endregion
+            #region register 7
+            this.LESync = bool.Parse(register7Tree.Element("LESync").Value);
+            this.LDCycleCountInt = int.Parse(register7Tree.Element("LDCycleCountInt").Value);
+            this.LOLMode = bool.Parse(register7Tree.Element("LOLMode").Value);
+            this.FracNPrecisionInt = int.Parse(register7Tree.Element("FracNPrecision").Value);
+            this.LDModeInt = int.Parse(register7Tree.Element("LDModeInt").Value);
+            #endregion
+            #region register 9
+            this.VCOBandDivisonInt = int.Parse(register9Tree.Element("VCOBandDivisonInt").Value);
+            this.TimeoutInt = int.Parse(register9Tree.Element("TimeoutInt").Value);
+            this.SynthLockTimeoutInt = int.Parse(register9Tree.Element("SynthLockTimeoutInt").Value);
+            this.TotalCalculatedTime = decimal.Parse(register9Tree.Element("TotalCalculatedTime").Value);
+            this.FastestCalibration = bool.Parse(register9Tree.Element("AutosetFastestCalibration").Value);
+            #endregion
+            #region register 10
+            this.ADCClockDividerInt = int.Parse(register10Tree.Element("ADCClockDividerInt").Value);
+            this.ADCConversion = bool.Parse(register10Tree.Element("ADCConversion").Value);
+            this.ADCEnable = bool.Parse(register10Tree.Element("ADCEnable").Value);
+            this.ADCClockDividerAutoset = bool.Parse(register10Tree.Element("ADCClockDividerAutoset").Value);
+            #endregion
+            #region register 12
+            this.ResyncClockInt = int.Parse(register12Tree.Element("ResyncClockInt").Value);
+            this.ResyncClockTimeout = decimal.Parse(register12Tree.Element("ResyncClockTimeout").Value);
+            #endregion
+        }
+        private void SaveSettings(string path)
+        {
+            #region settingsTree
+            XElement settingsTree =
+                new XElement("Settings",
+                    new XElement("Inputs",
+                        new XElement("ReferenceInput", this.ReferenceInput.ToString()),
+                        new XElement("Divider", this.Divider.ToString()),
+                        new XElement("DivideBy2", this.Divideby2.ToString()),
+                        new XElement("Doubler", this.Doubler.ToString()),
+                        new XElement("ChannelSpacing", this.Fchsp.ToString()),
+                        new XElement("VCOOutput", this.Vco.ToString()),
+                        new XElement("OutputDividerIndex", this.OutputDividerIndex.ToString())),
+                    new XElement("Register0",
+                        new XElement("AutoCalibration", this.Autocal.ToString()),
+                        new XElement("Prescaler", this.Prescaler.ToString())),
+                    new XElement("Register3",
+                        new XElement("SDLoadReset", this.SDLoadReset.ToString()),
+                        new XElement("PhaseResync", this.PhaseResync.ToString()),
+                        new XElement("PhaseAdjustment", this.PhaseAdjustment.ToString()),
+                        new XElement("Phase", this.Phase.ToString())),
+                    new XElement("Register4",
+                        new XElement("MuxOutputIndex", this.MuxOutIndex.ToString()),
+                        new XElement("DoubleBuffer", this.DoubleBuffer.ToString()),
+                        new XElement("CPCurrentIndex", this.CPCurrentIndex.ToString()),
+                        new XElement("ReferenceModeIsSingle", this.ReferenceModeIsSingle.ToString()),
+                        new XElement("MuxLevelIs18", this.MuxLevelIs18.ToString()),
+                        new XElement("PDPolarityIsNegative", this.PDPolarityIsNegative.ToString()),
+                        new XElement("PowerDown", this.PowerDown.ToString()),
+                        new XElement("CPThreeState", this.CPThreeState.ToString()),
+                        new XElement("CounterReset", this.CounterReset.ToString())),
+                    new XElement("Register6",
+                        new XElement("FeedbackIndex", this.FeedBack.ToString()),
+                        new XElement("CPBleedCurrentInt", this.CPBleedCurrentInt.ToString()),
+                        new XElement("MuteTillLockDetect", this.MuteTillLockDetect.ToString()),
+                        new XElement("AuxOutputEnable", this.AuxOutEnable.ToString()),
+                        new XElement("AuxOutputPower", this.AuxPowerValue.ToString()),
+                        new XElement("RfOutputEnable", this.RfOutEnable.ToString()),
+                        new XElement("RfOutputPower", this.RfOutPowerValue.ToString()),
+                        new XElement("NegativeBleed", this.NegativeBleed.ToString()),
+                        new XElement("GatedBleed", this.GatedBleed.ToString())),
+                    new XElement("Register7",
+                        new XElement("LESync", this.LESync.ToString()),
+                        new XElement("LDCycleCountInt", this.LDCycleCountInt.ToString()),
+                        new XElement("LOLMode", this.LOLMode.ToString()),
+                        new XElement("FracNPrecision", this.FracNPrecisionInt.ToString()),
+                        new XElement("LDModeInt", this.LDModeInt.ToString())),
+                    new XElement("Register9",
+                        new XElement("AutosetFastestCalibration", this.FastestCalibration.ToString()),
+                        new XElement("VCOBandDivisonInt", this.VCOBandDivisonInt.ToString()),
+                        new XElement("TimeoutInt", this.TimeoutInt.ToString()),
+                        new XElement("SynthLockTimeoutInt", this.SynthLockTimeoutInt.ToString()),
+                        new XElement("TotalCalculatedTime", this.TotalCalculatedTime.ToString())),
+                    new XElement("Register10",
+                        new XElement("ADCClockDividerInt", this.ADCClockDividerInt.ToString()),
+                        new XElement("ADCConversion", this.ADCConversion.ToString()),
+                        new XElement("ADCEnable", this.ADCEnable.ToString()),
+                        new XElement("ADCClockDividerAutoset", this.ADCClockDividerAutoset.ToString())),
+                    new XElement("Register12",
+                        new XElement("ResyncClockInt", this.ResyncClockInt.ToString()),
+                        new XElement("ResyncClockTimeout", this.ResyncClockTimeout.ToString())),
+                    new XElement("EnvironmentVaribleName", ENV_VAR_NAME));
+            #endregion
+
+            string dir = Path.GetDirectoryName(path);
+
+            if (!Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
+
+            settingsTree.Save(path);
         }
 
         readonly static private string PROGRAM_NAME = "ADF4355-3 Programmer";
+        readonly static private string PROGRAM_APPDATA_PATH = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), PROGRAM_NAME);
+        readonly static private string SETTINGS_DIR = Path.Combine(PROGRAM_APPDATA_PATH, "Settings");
+        readonly static private string DEFAULT_SETTINGS_FILE = Path.Combine(SETTINGS_DIR
+            , "Default Settings.xml");
 
         static private string ENV_VAR_NAME = "Path";
         static private string TASLAK_FILE_PATH = @"arduino-1.8.11\pll\pll.ino";
         static private string INO_FILE_PATH = @"arduino-1.8.11\code\code.ino";
         static private Process ARDUINO_PROCESS;
+
+        static private bool SettingsAreSaved = false;
 
         #region constants
 
@@ -636,10 +888,14 @@ namespace register_programmer
         #endregion
 
         #endregion
+
         
         public Form1()
         {
             InitializeComponent();
+            //folder specific checks
+            CheckFolders("Your default settings file could not found! So we created one."
+                , "No Default Settings File");
 
             //System.Environment.GetFolderPath(System.Environment.SpecialFolder.)
 
@@ -760,10 +1016,10 @@ namespace register_programmer
             #region calculation method bindings
 
             #region other
-            this._referenceInput.PropertyChanged += calculateFpfd;
-            this._divider.PropertyChanged += calculateFpfd;
-            this._doubler.PropertyChanged += calculateFpfd;
-            this._divideby2.PropertyChanged += calculateFpfd;
+            this._referenceInput.PropertyChanged += this.calculateFpfd;
+            this._divider.PropertyChanged += this.calculateFpfd;
+            this._doubler.PropertyChanged += this.calculateFpfd;
+            this._divideby2.PropertyChanged += this.calculateFpfd;
 
             this._vco.PropertyChanged += this.calculateN;
             this._fpfd.PropertyChanged += this.calculateN;
@@ -1051,18 +1307,12 @@ namespace register_programmer
             #endregion
 
             #region inital values
-            this._divider.Value = 1;
-            this._referenceInput.Value = 122.88M;
-            this._doubler.Value = false;
-            this._divideby2.Value = true;
-            this._vco.Value = 3600;
-            this._fchsp.Value = 1;
-            this._outputDividerIndex.Value = 0;
+
+            //load settings
+            LoadSettings();
 
             #region registers
             #region register 0
-            this._autocal.Value = true;
-            this._prescaler.Value = 0;
             txtReg0.Text = this.Register0_HexStr;
             #endregion
             #region register 1
@@ -1072,22 +1322,9 @@ namespace register_programmer
             txtReg2.Text = this.Register2_HexStr;
             #endregion
             #region register 3
-            this._sdLoadReset.Value = true;
-            this._phaseResync.Value = false;
-            this._phaseAdjustment.Value = false;
-            this._phase.Value = 0;
             txtReg3.Text = this.Register3_HexStr;
             #endregion
             #region register 4
-            this._muxOutIndex.Value = 5;
-            this._doubleBuffer.Value = false;
-            this._cpCurrentIndex.Value = 2;
-            this._referenceModeIsSingle.Value = false;
-            this._muxLevelIs18.Value = false;
-            this._pdPolarityIsNegative.Value = false;
-            this._powerDown.Value = false;
-            this._cpThreeState.Value = false;
-            this._counterReset.Value = false;
             txtReg4.Text = this.Register4HexStr;
             #endregion
             #region register 5*
@@ -1095,23 +1332,9 @@ namespace register_programmer
             this.txtReg5.Text = "00800025";
             #endregion
             #region register 6
-            this._gatedBleed.Value = false;
-            this._negativeBleed.Value = true;
-            this._rfOutPowerValue.Value = 5;
-            this._rfOutEnable.Value = true;
-            this._auxPowerValue.Value = -1;
-            this._auxOutEnable.Value = false;
-            this._muteTillLockDetect.Value = false;
-            this._cpBleedCurrentInt.Value = 36;
-            this._feedback.Value = 1;
             this.txtReg6.Text = this.Register6HexStr;
             #endregion
             #region register 7
-            this._leSync.Value = false;
-            this._ldCycleCountInt.Value = 2;
-            this._lolMode.Value = true;
-            this._fracNPrecisionInt.Value = 3;
-            this._ldModeInt.Value = 0;
             this.txtReg7.Text = this.Register7HexStr;
             #endregion
             #region register 8*
@@ -1119,16 +1342,9 @@ namespace register_programmer
             this.txtReg8.Text = this.Register8HexStr;
             #endregion
             #region register 9
-            this._vcoBandDivisionInt.Value = 52;
-            this._timeoutInt.Value = 25;
-            this._synthLockTimeoutInt.Value = 25;
-            this._fastestCalibration.Value = false;
             this.txtReg9.Text = this.Register9HexStr;
             #endregion
             #region register 10
-            this._adcClockDividerInt.Value = 154;
-            this._adcConversion.Value = true;
-            this._adcEnable.Value = true;
             this.txtReg10.Text = this.Register10HexStr;
             #endregion
             #region register 11*
@@ -1136,11 +1352,11 @@ namespace register_programmer
             this.txtReg11.Text = this.Register11HexStr;
             #endregion
             #region register 12
-            this._resyncClockInt.Value = 1;
             this.txtReg12.Text = this.Register12HexStr;
             #endregion
             #endregion
 
+            #region error and help messages 
             this.hlblPhaseResync1.Text = "Do not forget to set the \"phase resync\"" +
                     " in Register 12!";
             this.hlblPhaseResync2.Text = "It is necessary for phase critical applications that " +
@@ -1159,11 +1375,15 @@ namespace register_programmer
             this.hlblLOLModeError1.Text = "LOL mode does not function reliably when using differential REFin" +
                 " mode";
             this.hlblLDModeError1.Text = "Integer-N mode is more appropriate for integer-N app.";
+            #endregion
 
             #endregion
+
+
         }
 
         #region properties
+        #region inputs
         public decimal ReferenceInput
         {
             get { return this._referenceInput.Value; }
@@ -1240,7 +1460,19 @@ namespace register_programmer
         public decimal Mod2 { get { return this._mod2.Value; } }
         public decimal Frac2 { get { return this._frac2.Value; } }
         public decimal OutputDivider { get { return OUTPUT_DIVIDER[this._outputDividerIndex.Value]; } }
+        public int OutputDividerIndex
+        {
+            get { return this._outputDividerIndex.Value; }
+            set
+            {
+                if (value == this._outputDividerIndex.Value)
+                    return;
+
+                this._outputDividerIndex.Value = value;
+            }
+        }
         public decimal RefOut { get { return this._refOut.Value; } }
+        #endregion
 
         #region errors
         public bool IsIntValid { get { return this.Int >= INT45_LOWER_LIMIT && this.Int <= INT98_UPPER_LIMIT; } }
@@ -1252,9 +1484,29 @@ namespace register_programmer
 
         #region registers
         #region register 0
-        public bool Autocal { get { return this._autocal.Value; } }
+        public bool Autocal 
+        { 
+            get { return this._autocal.Value; }
+            set
+            {
+                if (value == this._autocal.Value)
+                    return;
+
+                this._autocal.Value = value;
+            }
+        }
         public int Autocal_Int { get { return this.Autocal ? 1 : 0; } }
-        public int Prescaler { get { return this._prescaler.Value; } }
+        public int Prescaler 
+        { 
+            get { return this._prescaler.Value; }
+            set
+            {
+                if (value == this._prescaler.Value)
+                    return;
+
+                this._prescaler.Value = value;
+            }
+        }
         public string Prescaler_Text { get { return PRESCALER_TEXT[this._prescaler.Value]; } }
         public decimal Register0_Dec { get { return this._reg0.Value; } }
         public string Register0_BinStr { get { return NUM_TO_BIN_STR(this._reg0.Value, 8); } }
@@ -1267,38 +1519,164 @@ namespace register_programmer
         public string Register2_HexStr { get { return NUM_TO_HEX_STR(this._reg2.Value, 8); } }
         #endregion
         #region register 3
-        public bool SDLoadReset { get { return this._sdLoadReset.Value; } }
+        public bool SDLoadReset 
+        { 
+            get { return this._sdLoadReset.Value; }
+            set
+            {
+                if (value == this._sdLoadReset.Value)
+                    return;
+
+                this._sdLoadReset.Value = value;
+            }
+        }
         public int SDLoadResetInt { get { return this.SDLoadReset ? 0 : 1; } }
-        public bool PhaseResync { get { return this._phaseResync.Value; } }
-        public int PhaseResyncInt { get { return this.PhaseResync ? 1 : 0; } }
-        public bool PhaseAdjustment { get { return this._phaseAdjustment.Value; } }
+        public bool PhaseResync
+        {
+            get { return this._phaseResync.Value; }
+            set
+            {
+                if (value == this._phaseResync.Value)
+                    return;
+
+                this._phaseResync.Value = value;
+            }
+        }
+        public int PhaseResyncInt{ get { return this.PhaseResync ? 1 : 0; } }
+        public bool PhaseAdjustment
+        {
+            get { return this._phaseAdjustment.Value; }
+            set
+            {
+                if (value == this._phaseAdjustment.Value)
+                    return;
+
+                this._phaseAdjustment.Value = value;
+            }
+        }
         public int PhaseAdjustmentInt { get { return this.PhaseAdjustment ? 1 : 0; } }
-        public decimal Phase { get { return this._phase.Value; } }
+        public decimal Phase
+        {
+            get { return this._phase.Value; }
+            set
+            {
+                if (value == this._phase.Value)
+                    return;
+
+                this._phase.Value = value;
+            }
+        }
         public decimal PhaseValue { get { return Decimal.Floor(this.Phase / 360 * 16777216); } }
         public string Register3_HexStr { get { return NUM_TO_HEX_STR(this._reg3.Value, 8); } }
         #endregion
         #region register 4
-        public int MuxOutIndex { get { return this._muxOutIndex.Value; } }
-        //public string MuxOutText { get { return MUX_OUT_TEXT[this.MuxOutIndex].Item1; } }
+        public int MuxOutIndex
+        {
+            get { return this._muxOutIndex.Value; }
+            set
+            {
+                if (value == this._muxOutIndex.Value)
+                    return;
+
+                this._muxOutIndex.Value = value;
+            }
+        }
         public int MuxOutValue { get { return MUX_OUT_TEXT[this.MuxOutIndex].Item2; } }
-        public bool DoubleBuffer { get { return this._doubleBuffer.Value; } }
+        public bool DoubleBuffer
+        {
+            get { return this._doubleBuffer.Value; }
+            set
+            {
+                if (value == this._doubleBuffer.Value)
+                    return;
+
+                this._doubleBuffer.Value = value;
+            }
+        }
         public int DoubleBufferInt { get { return this.DoubleBuffer ? 1 : 0; } }
-        public int CPCurrentIndex { get { return this._cpCurrentIndex.Value; } }
+        public int CPCurrentIndex
+        {
+            get { return this._cpCurrentIndex.Value; }
+            set
+            {
+                if (value == this._cpCurrentIndex.Value)
+                    return;
+
+                this._cpCurrentIndex.Value = value;
+            }
+        }
         public decimal CPCurrentValue { get { return CP_CURRENTS[this.CPCurrentIndex]; } }
-        public bool ReferenceModeIsSingle { get { return this._referenceModeIsSingle.Value; } }
+        public bool ReferenceModeIsSingle
+        {
+            get { return this._referenceModeIsSingle.Value; }
+            set
+            {
+                if (value == this._referenceModeIsSingle.Value)
+                    return;
+
+                this._referenceModeIsSingle.Value = value;
+            }
+        }
         public int ReferenceModeInt { get { return this.ReferenceModeIsSingle ? 0 : 1; } }
-        //public string ReferenceModeStr { get { return this.ReferenceModeIsSingle ? "Single" : "Differential"; } }
-        public bool MuxLevelIs18 { get { return this._muxLevelIs18.Value; } }
+        public bool MuxLevelIs18
+        {
+            get { return this._muxLevelIs18.Value; }
+            set
+            {
+                if (value == this._muxLevelIs18.Value)
+                    return;
+
+                this._muxLevelIs18.Value = value;
+            }
+        }
         public int MuxLevelInt { get { return this.MuxLevelIs18 ? 0 : 1; } }
-        //public decimal MuxLevelValue { get { return this.MuxLevelIs18 ? 1.8M : 3.3M; } }
-        public bool PDPolarityIsNegative { get { return this._pdPolarityIsNegative.Value; } }
+        public bool PDPolarityIsNegative
+        {
+            get { return this._pdPolarityIsNegative.Value; }
+            set
+            {
+                if (value == this._pdPolarityIsNegative.Value)
+                    return;
+
+                this._pdPolarityIsNegative.Value = value;
+            }
+        }
         public int PDPolarityInt { get { return this.PDPolarityIsNegative ? 0 : 1; } }
-        //public string PDPolarityStr { get { return this.PDPolarityIsNegative ? "Negative" : "Positive"; } }
-        public bool PowerDown { get { return this._powerDown.Value; } }
+        public bool PowerDown
+        {
+            get { return this._powerDown.Value; }
+            set
+            {
+                if (value == this._powerDown.Value)
+                    return;
+
+                this._powerDown.Value = value;
+            }
+        }
         public int PowerDownInt { get { return this.PowerDown ? 1 : 0; } }
-        public bool CPThreeState { get { return this._cpThreeState.Value; } }
+        public bool CPThreeState
+        {
+            get { return this._cpThreeState.Value; }
+            set
+            {
+                if (value == this._cpThreeState.Value)
+                    return;
+
+                this._cpThreeState.Value = value;
+            }
+        }
         public int CPThreeStateInt { get { return this.CPThreeState ? 1 : 0; } }
-        public bool CounterReset { get { return this._counterReset.Value; } }
+        public bool CounterReset
+        {
+            get { return this._counterReset.Value; }
+            set
+            {
+                if (value == this._counterReset.Value)
+                    return;
+
+                this._counterReset.Value = value;
+            }
+        }
         public int CounterResetInt { get { return this.CounterReset ? 1 : 0; } }
         public decimal Register4 { get { return this._reg4.Value; } }
         public string Register4HexStr { get { return NUM_TO_HEX_STR(this.Register4, 8); } }
@@ -1308,37 +1686,175 @@ namespace register_programmer
         public string Register5HexStr { get { return NUM_TO_HEX_STR(this.Register5, 8); } }
         #endregion
         #region register 6
-        public bool GatedBleed { get { return this._gatedBleed.Value; } }
+        public int FeedBack
+        {
+            get { return this._feedback.Value; }
+            set
+            {
+                if (value == this._feedback.Value)
+                    return;
+
+                this._feedback.Value = value;
+            }
+        }
+        public int CPBleedCurrentInt
+        {
+            get { return this._cpBleedCurrentInt.Value; }
+            set
+            {
+                if (value == this._cpBleedCurrentInt.Value)
+                    return;
+
+                this._cpBleedCurrentInt.Value = value;
+            }
+        }
+        public bool MuteTillLockDetect
+        {
+            get { return this._muteTillLockDetect.Value; }
+            set
+            {
+                if (value == this._muteTillLockDetect.Value)
+                    return;
+
+                this._muteTillLockDetect.Value = value;
+            }
+        }
+        public bool AuxOutEnable
+        {
+            get { return this._auxOutEnable.Value; }
+            set
+            {
+                if (value == this._auxOutEnable.Value)
+                    return;
+
+                this._auxOutEnable.Value = value;
+            }
+        }
+        public int AuxPowerValue
+        {
+            get { return this._auxPowerValue.Value; }
+            set
+            {
+                if (value == this._auxPowerValue.Value)
+                    return;
+
+                this._auxPowerValue.Value = value;
+            }
+        }
+        public bool RfOutEnable
+        {
+            get { return this._rfOutEnable.Value; }
+            set
+            {
+                if (value == this._rfOutEnable.Value)
+                    return;
+
+                this._rfOutEnable.Value = value;
+            }
+        }
+        public int RfOutPowerValue
+        {
+            get { return this._rfOutPowerValue.Value; }
+            set
+            {
+                if (value == this._rfOutPowerValue.Value)
+                    return;
+
+                this._rfOutPowerValue.Value = value;
+            }
+        }
+        public bool NegativeBleed
+        {
+            get { return this._negativeBleed.Value; }
+            set
+            {
+                if (value == this._negativeBleed.Value)
+                    return;
+
+                this._negativeBleed.Value = value;
+            }
+        }
+        public bool GatedBleed
+        {
+            get { return this._gatedBleed.Value; }
+            set
+            {
+                if (value == this._gatedBleed.Value)
+                    return;
+
+                this._gatedBleed.Value = value;
+            }
+        }
         public int GatedBleedInt { get { return this.GatedBleed ? 1 : 0; } }
-        public bool NegativeBleed { get { return this._negativeBleed.Value; } }
         public int NegativeBleedInt { get { return this.NegativeBleed ? 1 : 0; } }
-        public int FeedBack { get { return this._feedback.Value; } }
-        //public int FeedBackInt { get { return this._feedback.Value; } }
-        //public int CPBleedCurrentInt { get { return this._cpBleedCurrentIndex.Value; } }
-        public int CPBleedCurrentInt { get { return this._cpBleedCurrentInt.Value; } }
         public decimal CPBleedCurrentValue { get { return this._cpBleedCurrentValue.Value; } }
-        public bool MuteTillLockDetect { get { return this._muteTillLockDetect.Value; } }
         public int MuteTillLockDetectInt { get { return this.MuteTillLockDetect ? 1 : 0; } }
-        public bool AuxOutEnable { get { return this._auxOutEnable.Value; } }
         public int AuxOutEnableInt { get { return this.AuxOutEnable ? 1 : 0; } }
-        //public int AuxPowerIndex { get { return this._auxPowerIndex.Value; } }
         public int AuxOutPowerInt { get { return (int)decimal.Floor((this._auxPowerValue.Value + 4) / 3); } }
-        public bool RfOutEnable { get { return this._rfOutEnable.Value; } }
         public int RfOutEnableInt { get { return this.RfOutEnable ? 1 : 0; } }
-        //public int RfOutPowerIndex { get { return this._rfOutPowerIndex.Value; } }
         public int RfOutPowerInt { get { return (int)decimal.Floor((this._rfOutPowerValue.Value + 4) / 3); } }
         public decimal Register6 { get { return this._reg6.Value; } }
         public string Register6HexStr { get { return NUM_TO_HEX_STR(this.Register6, 8); } }
         public int OutputDividerInt { get { return this._outputDividerIndex.Value; } }
         #endregion
         #region register 7
-        public bool LESync { get { return this._leSync.Value; } }
+        public bool LESync
+        {
+            get { return this._leSync.Value; }
+            set
+            {
+                if (value == this._leSync.Value)
+                    return;
+
+                this._leSync.Value = value;
+            }
+        }
         public int LESyncInt { get { return this.LESync ? 1 : 0; } }
-        public int LDCycleCountInt { get { return this._ldCycleCountInt.Value; } }
-        public bool LOLMode { get { return this._lolMode.Value; } }
+        public int LDCycleCountInt
+        {
+            get { return this._ldCycleCountInt.Value; }
+            set
+            {
+                if (value == this._ldCycleCountInt.Value)
+                    return;
+
+                this._ldCycleCountInt.Value = value;
+            }
+        }
+        public bool LOLMode
+        {
+            get { return this._lolMode.Value; }
+            set
+            {
+                if (value == this._lolMode.Value)
+                    return;
+
+                this._lolMode.Value = value;
+            }
+        }
         public int LOLModeInt { get { return this.LOLMode ? 1 : 0; } }
-        public int FracNPrecisionInt { get { return this._fracNPrecisionInt.Value; } }
-        public int LDModeInt { get { return this._ldModeInt.Value; } }
+        public int FracNPrecisionInt
+        {
+            get { return this._fracNPrecisionInt.Value; }
+            set
+            {
+                if (value == this._fracNPrecisionInt.Value)
+                    return;
+
+                this._fracNPrecisionInt.Value = value;
+            }
+        }
+        public int LDModeInt
+        {
+            get { return this._ldModeInt.Value; }
+            set
+            {
+                if (value == this._ldModeInt.Value)
+                    return;
+
+                this._ldModeInt.Value = value;
+            }
+        }
         public decimal Register7 { get { return this._reg7.Value; } }
         public string Register7HexStr { get { return NUM_TO_HEX_STR(this.Register7, 8); } }
         #endregion
@@ -1347,32 +1863,142 @@ namespace register_programmer
         public string Register8HexStr { get { return NUM_TO_HEX_STR(this.Register8, 8); } }
         #endregion
         #region register 9
-        public int VCOBandDivisonInt { get { return this._vcoBandDivisionInt.Value; } }
-        public int TimeoutInt { get { return this._timeoutInt.Value; } }
-        public int SynthLockTimeoutInt { get { return this._synthLockTimeoutInt.Value; } }
-        public bool FastestCalibration { get { return this._fastestCalibration.Value; } }
+        public bool FastestCalibration
+        {
+            get { return this._fastestCalibration.Value; }
+            set
+            {
+                if (value == this._fastestCalibration.Value)
+                    return;
+
+                this._fastestCalibration.Value = value;
+            }
+        }
+        public int VCOBandDivisonInt
+        {
+            get { return this._vcoBandDivisionInt.Value; }
+            set
+            {
+                if (value == this._vcoBandDivisionInt.Value)
+                    return;
+
+                this._vcoBandDivisionInt.Value = value;
+            }
+        }
+        public int TimeoutInt
+        {
+            get { return this._timeoutInt.Value; }
+            set
+            {
+                if (value == this._timeoutInt.Value)
+                    return;
+
+                this._timeoutInt.Value = value;
+            }
+        }
+        public int SynthLockTimeoutInt
+        {
+            get { return this._synthLockTimeoutInt.Value; }
+            set
+            {
+                if (value == this._synthLockTimeoutInt.Value)
+                    return;
+
+                this._synthLockTimeoutInt.Value = value;
+            }
+        }
+        public decimal TotalCalculatedTime
+        {
+            get { return this._totalCalculatedTime.Value; }
+            set
+            {
+                if (value == this._totalCalculatedTime.Value)
+                    return;
+
+                this._totalCalculatedTime.Value = value;
+            }
+        }
         public decimal Register9 { get { return this._reg9.Value; } }
         public string Register9HexStr { get { return NUM_TO_HEX_STR(this.Register9, 8); } }
-        public decimal TotalCalculatedTime { get { return this._totalCalculatedTime.Value; } }
         #endregion
         #region register 10
-        public int ADCClockDividerInt { get { return this._adcClockDividerInt.Value; } }
-        public bool ADCConversion { get { return this._adcConversion.Value; } }
+        public int ADCClockDividerInt
+        {
+            get { return this._adcClockDividerInt.Value; }
+            set
+            {
+                if (value == this._adcClockDividerInt.Value)
+                    return;
+
+                this._adcClockDividerInt.Value = value;
+            }
+        }
+        public bool ADCConversion
+        {
+            get { return this._adcConversion.Value; }
+            set
+            {
+                if (value == this._adcConversion.Value)
+                    return;
+
+                this._adcConversion.Value = value;
+            }
+        }
         public int ADCConversionInt { get { return this.ADCConversion ? 1 : 0; } }
-        public bool ADCEnable { get { return this._adcEnable.Value; } }
+        public bool ADCEnable
+        {
+            get { return this._adcEnable.Value; }
+            set
+            {
+                if (value == this._adcEnable.Value)
+                    return;
+
+                this._adcEnable.Value = value;
+            }
+        }
         public int ADCEnableInt { get { return this.ADCEnable ? 1 : 0; } }
+        public bool ADCClockDividerAutoset
+        {
+            get { return this._adcClockDividerAutoset.Value; }
+            set
+            {
+                if (value == this._adcClockDividerAutoset.Value)
+                    return;
+
+                this._adcClockDividerAutoset.Value = value;
+            }
+        }
         public decimal Register10 { get { return this._reg10.Value; } }
         public string Register10HexStr { get { return NUM_TO_HEX_STR(this.Register10, 8); } }
         public decimal Frequency { get { return this._frequency.Value; } }
-        public bool ADCClockDividerAutoset { get { return this._adcClockDividerAutoset.Value; } }
         #endregion
         #region register 11*
         public decimal Register11 { get { return this._reg11.Value; } }
         public string Register11HexStr { get { return NUM_TO_HEX_STR(this.Register11, 8); } }
         #endregion
         #region register 12
-        private int ResyncClockInt { get { return this._resyncClockInt.Value; } }
-        private decimal ResyncClockTimeout { get { return this._resyncClockTimeout.Value; } }
+        private int ResyncClockInt
+        {
+            get { return this._resyncClockInt.Value; }
+            set
+            {
+                if (value == this._resyncClockInt.Value)
+                    return;
+
+                this._resyncClockInt.Value = value;
+            }
+        }
+        private decimal ResyncClockTimeout
+        {
+            get { return this._resyncClockTimeout.Value; }
+            set
+            {
+                if (value == this._resyncClockTimeout.Value)
+                    return;
+
+                this._resyncClockTimeout.Value = value;
+            }
+        }
         public decimal Register12 { get { return this._reg12.Value; } }
         public string Register12HexStr { get { return NUM_TO_HEX_STR(this.Register12, 8); } }
         #endregion
@@ -1541,7 +2167,7 @@ namespace register_programmer
         }
         private void calculateMod2(object sender, EventArgs e)
         {
-            decimal val = this.Frac2 == 0 ? 1 : this.Fpfd * MEGA / GCD(this.Fpfd * MEGA, this.Fchsp * KILO);
+            decimal val = this.Fpfd * MEGA / GCD(this.Fpfd * MEGA, this.Fchsp * KILO);
 
             if (this._mod2.Value == val)
                 return;
@@ -1550,6 +2176,7 @@ namespace register_programmer
         }
         private void calculateFrac2(object sender, EventArgs e)
         {
+            
             decimal val = ((this.N - this.Int) * MOD1 - this.Frac1) * this.Mod2;
 
             if (this._frac2.Value == val)
@@ -1958,32 +2585,7 @@ namespace register_programmer
             MessageBox.Show(arduinoOutput);
             MessageBox.Show("exit code = " + ARDUINO_PROCESS.ExitCode.ToString());
         }
-        static private string AutodetectArduinoPort()
-        {
-            ManagementScope connectionScope = new ManagementScope();
-            SelectQuery serialQuery = new SelectQuery("SELECT * FROM Win32_SerialPort");
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher(connectionScope, serialQuery);
-
-            try
-            {
-                foreach (ManagementObject item in searcher.Get())
-                {
-                    string desc = item["Description"].ToString();
-                    string deviceId = item["DeviceID"].ToString();
-
-                    if (desc.Contains("Arduino"))
-                    {
-                        return deviceId;
-                    }
-                }
-            }
-            catch (ManagementException e)
-            {
-                /* Do Nothing */
-            }
-
-            return null;
-        }
+        
         private void rbSingle_CheckedChanged(object sender, EventArgs e)
         {
             this.rbDifferential.Checked = !this.rbSingle.Checked;
@@ -2129,10 +2731,39 @@ namespace register_programmer
         {
             //MessageBox.Show(GetArduinoPathFromEnvironment());
             //ENV_VAR_NAME = "mal";
-            MessageBox.Show(ENV_VAR_NAME);
+            /*MessageBox.Show(ENV_VAR_NAME);
             MessageBox.Show((string)Properties.Settings.Default["EnvironmentVaribleName"]);
             SaveSettings();
-            MessageBox.Show((string)Properties.Settings.Default["EnvironmentVaribleName"]);
+            MessageBox.Show((string)Properties.Settings.Default["EnvironmentVaribleName"]);*/
+            /*MessageBox.Show(SETTINGS_DIR);
+            LoadSettings();*/
+
+            SaveSettings(@"C:\Users\metin\Desktop\merhaba\deneme.xml");
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!SettingsAreSaved)
+            {
+                switch(MessageBox.Show("Do you want to save changes?"
+                    , "Save changes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                {
+                    case DialogResult.Yes:
+                        SaveSettings(DEFAULT_SETTINGS_FILE);
+                        SettingsAreSaved = true;
+                        break;
+                    case DialogResult.Cancel:
+                        e.Cancel = true;
+                        break;
+                }
+            }
+        }
+
+        private void mmSave_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Settings are saved.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            SaveSettings(DEFAULT_SETTINGS_FILE);
+            SettingsAreSaved = true;
         }
     }
 
