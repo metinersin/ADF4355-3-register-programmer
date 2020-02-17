@@ -119,6 +119,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="register-programmer_TemporaryKey.pfx" />
+    <None Include="Resources\pll_draft.ino" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -134,6 +135,30 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveAs_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redo_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arduino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pll_draft.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -53,7 +53,8 @@ namespace register_programmer
                     else
                         continue;
 
-                if (!condition(fileName))
+                bool c = condition(fileName);
+                if (!c)
                     if (MessageBox.Show(errorMessage, errorCaption, MessageBoxButtons.YesNo, icon)
                     == buttonToExit)
                         return null;
@@ -109,7 +110,7 @@ namespace register_programmer
                             + ") is not arduino.exe or arduino_debug.exe (arduino_debug.exe is"
                             + " strongly recommended for more functionality.). Do you want to still continue?"
                             + " Click No to replace the file.", "The file has an unexpected name"
-                            , MessageBoxIcon.Warning, true, DialogResult.Yes, (string name)
+                            , MessageBoxIcon.Warning, false, DialogResult.Yes, (string name)
                             => name == "arduino.exe" || name == "arduino_debug.exe");
 
                         if (!string.IsNullOrEmpty(temp))
@@ -126,7 +127,7 @@ namespace register_programmer
                             + " recommended for more functionality. Do you want to still continue? Click No"
                             + " to replace the file.", "arduino_debug.exe is recommended"
                             , MessageBoxIcon.Warning, true, DialogResult.Yes, (string name)
-                            => fileName == "arduino_debug.exe");
+                            => name == "arduino_debug.exe" );
 
                         if (!string.IsNullOrEmpty(temp))
                         {
@@ -150,7 +151,7 @@ namespace register_programmer
                 {
                     string fileName = Path.GetFileName(path);
 
-                    if (File.GetAttributes(path).HasFlag(FileAttributes.Directory))
+                    if (Directory.Exists(path))
                     {
                         foreach(string memberFile in Directory.EnumerateFiles(path))
                         {
@@ -215,7 +216,7 @@ namespace register_programmer
                         + " recommended for more functionality. Do you want to still continue? Click No"
                         + " to replace the file.", "arduino_debug.exe is recommended"
                         , MessageBoxIcon.Warning, true, DialogResult.Yes, (string name)
-                        => _fileName == "arduino_debug.exe");
+                        => name == "arduino_debug.exe");
 
                     if (!string.IsNullOrEmpty(temp))
                     {
@@ -305,13 +306,19 @@ namespace register_programmer
                             new XElement("ADCClockDividerAutoset", false.ToString())),
                         new XElement("Register12",
                             new XElement("ResyncClockInt", 1.ToString()),
-                            new XElement("ResyncClockTimeout", 0.016M.ToString())), 
+                            new XElement("ResyncClockTimeout", (0.016M).ToString())), 
                         new XElement("EnvironmentVaribleName", "Path"));
                 #endregion
 
                 settingsTree.Save(DEFAULT_SETTINGS_FILE);
 
                 wasThereProblems = true;
+            }
+
+            if (!Directory.Exists(INO_DIR))
+            {
+                Directory.CreateDirectory(INO_DIR);
+                //wasThereProblems = true;
             }
 
             return wasThereProblems;
@@ -408,6 +415,7 @@ namespace register_programmer
             this.ResyncClockInt = int.Parse(register12Tree.Element("ResyncClockInt").Value);
             this.ResyncClockTimeout = decimal.Parse(register12Tree.Element("ResyncClockTimeout").Value);
             #endregion
+
         }
         private void SaveSettings(string path)
         {
@@ -487,11 +495,13 @@ namespace register_programmer
         readonly static private string SETTINGS_DIR = Path.Combine(PROGRAM_APPDATA_PATH, "Settings");
         readonly static private string DEFAULT_SETTINGS_FILE = Path.Combine(SETTINGS_DIR
             , "Default Settings.xml");
-
+        readonly static private string INO_DIR = Path.Combine(PROGRAM_APPDATA_PATH, "Ino files");
+        readonly static private string TEMP_INO_NAME = "temp";
         static private string ENV_VAR_NAME = "Path";
-        static private string TASLAK_FILE_PATH = @"arduino-1.8.11\pll\pll.ino";
+        static private Process ARDUINO_PROCESS = new Process();
+
         static private string INO_FILE_PATH = @"arduino-1.8.11\code\code.ino";
-        static private Process ARDUINO_PROCESS;
+        
 
         static private bool SettingsAreSaved = false;
 
@@ -897,11 +907,8 @@ namespace register_programmer
             CheckFolders("Your default settings file could not found! So we created one."
                 , "No Default Settings File");
 
-            //System.Environment.GetFolderPath(System.Environment.SpecialFolder.)
-
-            ARDUINO_PROCESS = new Process();
-            //ARDUINO_PROCESS.StartInfo.FileName = ARDUINO_PATH;
-            ARDUINO_PROCESS.StartInfo.FileName = "";
+            //arduino process created
+            ARDUINO_PROCESS.StartInfo.FileName = GetArduinoPathFromEnvironment();
             ARDUINO_PROCESS.StartInfo.UseShellExecute = false;
             ARDUINO_PROCESS.StartInfo.RedirectStandardOutput = true;
             ARDUINO_PROCESS.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -1306,10 +1313,80 @@ namespace register_programmer
 
             #endregion
 
-            #region inital values
+            #region SettingsAreSaved bindings
+            #region inputs
+            this._referenceInput.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._divider.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._divideby2.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._doubler.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._fchsp.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._vco.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._outputDividerIndex.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            #endregion
+
+            #region register 0
+            this._autocal.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._prescaler.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            #endregion
+            #region register 3
+            this._sdLoadReset.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._phaseResync.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._phaseAdjustment.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._phase.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            #endregion
+            #region register 4
+            this._muxOutIndex.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._doubleBuffer.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._cpCurrentIndex.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._referenceModeIsSingle.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._muxLevelIs18.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._pdPolarityIsNegative.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._powerDown.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._cpThreeState.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._counterReset.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            #endregion
+            #region register 6
+            this._feedback.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._cpBleedCurrentInt.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._muteTillLockDetect.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._auxOutEnable.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._auxPowerValue.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._rfOutEnable.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._rfOutPowerValue.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._negativeBleed.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._gatedBleed.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            #endregion
+            #region register 7
+            this._leSync.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._ldCycleCountInt.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._lolMode.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._fracNPrecisionInt.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._ldModeInt.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            #endregion
+            #region register 9
+            this._fastestCalibration.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._vcoBandDivisionInt.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._timeoutInt.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._synthLockTimeoutInt.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            #endregion
+            #region register 10
+            this._adcClockDividerAutoset.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._adcClockDividerInt.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._adcConversion.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._adcEnable.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            #endregion
+            #region register 12
+            this._resyncClockInt.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            this._resyncClockTimeout.PropertyChanged += (s, e) => { SettingsAreSaved = false; };
+            #endregion
+
+            #endregion
+
+            #region inital value
 
             //load settings
             LoadSettings();
+            SettingsAreSaved = true;
 
             #region registers
             #region register 0
@@ -1325,6 +1402,12 @@ namespace register_programmer
             txtReg3.Text = this.Register3_HexStr;
             #endregion
             #region register 4
+            this.rbSingle.Checked = this.ReferenceModeIsSingle;
+            this.rbDifferential.Checked = !this.ReferenceModeIsSingle;
+            this.rb18.Checked = this.MuxLevelIs18;
+            this.rb33.Checked = !this.MuxLevelIs18;
+            this.rbNegative.Checked = this.PDPolarityIsNegative;
+            this.rbPositive.Checked = !this.PDPolarityIsNegative;
             txtReg4.Text = this.Register4HexStr;
             #endregion
             #region register 5*
@@ -1378,8 +1461,6 @@ namespace register_programmer
             #endregion
 
             #endregion
-
-
         }
 
         #region properties
@@ -2561,7 +2642,7 @@ namespace register_programmer
         // control event methods
         private void btnUpload_Click(object sender, EventArgs e)
         {
-            createInoFile();
+            //createInoFile();
             //choose at form
             string portName = "COM5";
 
@@ -2575,33 +2656,24 @@ namespace register_programmer
         }
         private void btnIde_Click(object sender, EventArgs e)
         {
-            createInoFile();
+            string tempInoPath = Path.Combine(INO_DIR, Path.Combine(TEMP_INO_NAME, TEMP_INO_NAME + ".ino"));
+            CreateInoCode(tempInoPath);
 
-            ARDUINO_PROCESS.StartInfo.Arguments = INO_FILE_PATH;
+            ARDUINO_PROCESS.StartInfo.Arguments = "\"" + tempInoPath + "\"";
             ARDUINO_PROCESS.Start();
             string arduinoOutput = ARDUINO_PROCESS.StandardOutput.ReadToEnd();
             ARDUINO_PROCESS.WaitForExit();
 
             MessageBox.Show(arduinoOutput);
-            MessageBox.Show("exit code = " + ARDUINO_PROCESS.ExitCode.ToString());
-        }
-        
-        private void rbSingle_CheckedChanged(object sender, EventArgs e)
-        {
-            this.rbDifferential.Checked = !this.rbSingle.Checked;
-        }
-        private void rb18_CheckedChanged(object sender, EventArgs e)
-        {
-            this.rb33.Checked = !this.rb18.Checked;
-        }
-        private void rbNegative_CheckedChanged(object sender, EventArgs e)
-        {
-            this.rbPositive.Checked = !this.rbNegative.Checked;
+            if (ARDUINO_PROCESS.ExitCode == 0)
+                MessageBox.Show("Success!");
+            else
+                MessageBox.Show("Something went wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void createInoFile()
+        private void CreateInoCode(string path)
         {
-            string[] pllLines = System.IO.File.ReadAllLines(TASLAK_FILE_PATH);
+            string[] pllLines = Properties.Resources.pll_draft.Split('\n');
 
             string[,] registers = new string[13,4];
             #region reg0
@@ -2724,21 +2796,32 @@ namespace register_programmer
                 + ", 0x" + registers[0, 2] + ", 0x" + registers[0, 3] + "); //Reg0";
             #endregion
 
-            System.IO.File.WriteAllLines(INO_FILE_PATH, pllLines);
+            if (!Directory.Exists(Path.GetDirectoryName(path)))
+                Directory.CreateDirectory(Path.GetDirectoryName(path));
+
+            File.WriteAllLines(path, pllLines);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void mmSave_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(GetArduinoPathFromEnvironment());
-            //ENV_VAR_NAME = "mal";
-            /*MessageBox.Show(ENV_VAR_NAME);
-            MessageBox.Show((string)Properties.Settings.Default["EnvironmentVaribleName"]);
-            SaveSettings();
-            MessageBox.Show((string)Properties.Settings.Default["EnvironmentVaribleName"]);*/
-            /*MessageBox.Show(SETTINGS_DIR);
-            LoadSettings();*/
+            MessageBox.Show("Inputs are saved.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            SaveSettings(DEFAULT_SETTINGS_FILE);
+            SettingsAreSaved = true;
+        }
+        private void mmSaveAs_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "xml files|*.xml";
+            saveFileDialog.DefaultExt = ".xml";
+            saveFileDialog.ShowDialog();
+            string filePath = saveFileDialog.FileName;
 
-            SaveSettings(@"C:\Users\metin\Desktop\merhaba\deneme.xml");
+            if (!string.IsNullOrEmpty(filePath) && !string.IsNullOrWhiteSpace(filePath))
+            {
+                MessageBox.Show("Inputs are saved as " + filePath + ".", "", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                SaveSettings(filePath);
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -2759,13 +2842,64 @@ namespace register_programmer
             }
         }
 
-        private void mmSave_Click(object sender, EventArgs e)
+        
+
+        //debug purposes
+        private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Settings are saved.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            SaveSettings(DEFAULT_SETTINGS_FILE);
-            SettingsAreSaved = true;
+            //MessageBox.Show(GetArduinoPathFromEnvironment());
+            //ENV_VAR_NAME = "mal";
+            /*MessageBox.Show(ENV_VAR_NAME);
+            MessageBox.Show((string)Properties.Settings.Default["EnvironmentVaribleName"]);
+            SaveSettings();
+            MessageBox.Show((string)Properties.Settings.Default["EnvironmentVaribleName"]);*/
+            /*MessageBox.Show(SETTINGS_DIR);
+            LoadSettings();*/
+
+            //SaveSettings(@"C:\Users\metin\Desktop\merhaba\deneme.xml");
+            //this._referenceModeIsSingle.Value = !this._referenceModeIsSingle.Value;
+            MessageBox.Show(ARDUINO_PROCESS.StartInfo.FileName);
+            CreateInoCode(@"C:\Users\metin\Desktop\deneme.ino");
         }
+
+        #region about radio buttons
+        private void rbSingle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.rbDifferential.Checked != !this.rbSingle.Checked)
+                this.rbDifferential.Checked = !this.rbSingle.Checked;
+        }
+
+        private void rbDifferential_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this._referenceModeIsSingle.Value != !this.rbDifferential.Checked)
+                this._referenceModeIsSingle.Value= !this.rbDifferential.Checked;
+        }
+
+        private void rb18_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.rb33.Checked != !this.rb18.Checked)
+                this.rb33.Checked = !this.rb18.Checked;
+        }
+
+        private void rb33_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this._muxLevelIs18.Value != !this.rb33.Checked)
+                this._muxLevelIs18.Value = !this.rb33.Checked;
+        }
+
+        private void rbNegative_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.rbPositive.Checked != !this.rbNegative.Checked)
+                this.rbPositive.Checked = !this.rbNegative.Checked;
+        }
+
+        private void rbPositive_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this._pdPolarityIsNegative.Value != !this.rbPositive.Checked)
+                this._pdPolarityIsNegative.Value = !this.rbPositive.Checked;
+        }
+        #endregion
     }
 
-    
+
 }
