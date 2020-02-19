@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Management;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Ports;
 using System.Xml;
 using System.Xml.Linq;
 using PCEArgs = System.ComponentModel.PropertyChangedEventArgs;
@@ -913,6 +914,7 @@ namespace register_programmer
             ARDUINO_PROCESS.StartInfo.RedirectStandardOutput = true;
             ARDUINO_PROCESS.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             ARDUINO_PROCESS.StartInfo.CreateNoWindow = true;
+            ARDUINO_PROCESS.EnableRaisingEvents = true;
 
 
             #region active variable initializations
@@ -2640,35 +2642,125 @@ namespace register_programmer
         #endregion
 
         // control event methods
+        private void pbUploadToArduinoStart()
+        {
+            pbUploadToArduino.Style = ProgressBarStyle.Marquee;
+        }
+        private void pbUploadToArduinoStop()
+        {
+            pbUploadToArduino.Style = ProgressBarStyle.Blocks;
+        }
         private void btnUpload_Click(object sender, EventArgs e)
         {
-            //createInoFile();
-            //choose at form
-            string portName = "COM5";
+            if (string.IsNullOrEmpty(ARDUINO_PROCESS.StartInfo.FileName) || string.IsNullOrWhiteSpace(ARDUINO_PROCESS.StartInfo.FileName))
+                ARDUINO_PROCESS.StartInfo.FileName = GetArduinoPathFromEnvironment();
 
-            ARDUINO_PROCESS.StartInfo.Arguments = "--port " + portName + " --upload " + INO_FILE_PATH;
+            if (string.IsNullOrEmpty(ARDUINO_PROCESS.StartInfo.FileName) || string.IsNullOrWhiteSpace(ARDUINO_PROCESS.StartInfo.FileName))
+            {
+                MessageBox.Show("Please provide the path of your arduino.exe or arduino_debug.exe next time."
+                    , "No path", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+                return;
+            }
+            pbUploadToArduinoStart();
+
+            string portName = null;
+
+            string tempInoPath = Path.Combine(INO_DIR, Path.Combine(TEMP_INO_NAME, TEMP_INO_NAME + ".ino"));
+            CheckFolders();
+            CreateInoCode(tempInoPath);
+
+            ARDUINO_PROCESS.StartInfo.Arguments = "--upload --port " + portName + "\"" + tempInoPath + "\"";
+            ARDUINO_PROCESS.Exited += (s, e2) =>
+            {
+                pbOpenWithIde.GetCurrentParent().Invoke(new Action(() => { pbOpenWithIdeStop(); }));
+                Process process = (Process)s;
+                process.CancelOutputRead();
+                if (process.ExitCode == 0)
+                    MessageBox.Show("Success!");
+                else
+                {
+                    MessageBox.Show("Something went wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(outputForOpenWithIde.ToString(), "Output message from Arduino IDE"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
+                outputForOpenWithIde.Clear();
+                lineCountForOpenWithIde = 0;
+            };
+            ARDUINO_PROCESS.OutputDataReceived += (s, e3) =>
+            {
+                if (!String.IsNullOrEmpty(e3.Data))
+                {
+                    lineCountForOpenWithIde++;
+                    outputForOpenWithIde.Append("\n[" + lineCountForOpenWithIde + "]: " + e3.Data);
+                }
+            };
+
             ARDUINO_PROCESS.Start();
-            string arduinoOutput = ARDUINO_PROCESS.StandardOutput.ReadToEnd();
-            ARDUINO_PROCESS.WaitForExit();
-
-            MessageBox.Show(arduinoOutput);
-            MessageBox.Show("exit code = " + ARDUINO_PROCESS.ExitCode.ToString());
+            ARDUINO_PROCESS.BeginOutputReadLine();
         }
+
+
+
+        private void pbOpenWithIdeStart()
+        {
+            pbOpenWithIde.Style = ProgressBarStyle.Marquee;
+        }
+        private void pbOpenWithIdeStop()
+        {
+            pbOpenWithIde.Style = ProgressBarStyle.Blocks;
+        }
+        private static StringBuilder outputForOpenWithIde = new StringBuilder();
+        private static int lineCountForOpenWithIde = 0;
         private void btnIde_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(ARDUINO_PROCESS.StartInfo.FileName) || string.IsNullOrWhiteSpace(ARDUINO_PROCESS.StartInfo.FileName))
+                ARDUINO_PROCESS.StartInfo.FileName = GetArduinoPathFromEnvironment();
+
+            if (string.IsNullOrEmpty(ARDUINO_PROCESS.StartInfo.FileName) || string.IsNullOrWhiteSpace(ARDUINO_PROCESS.StartInfo.FileName))
+            {
+                MessageBox.Show("Please provide the path of your arduino.exe or arduino_debug.exe next time."
+                    , "No path", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+                return;
+            }
+
+            pbOpenWithIdeStart();
+
             string tempInoPath = Path.Combine(INO_DIR, Path.Combine(TEMP_INO_NAME, TEMP_INO_NAME + ".ino"));
+            CheckFolders();
             CreateInoCode(tempInoPath);
 
             ARDUINO_PROCESS.StartInfo.Arguments = "\"" + tempInoPath + "\"";
-            ARDUINO_PROCESS.Start();
-            string arduinoOutput = ARDUINO_PROCESS.StandardOutput.ReadToEnd();
-            ARDUINO_PROCESS.WaitForExit();
+            ARDUINO_PROCESS.Exited += (s, e2) =>
+            {
+                pbOpenWithIde.GetCurrentParent().Invoke(new Action(() => { pbOpenWithIdeStop(); }));
+                Process process = (Process)s;
+                process.CancelOutputRead();
+                if (process.ExitCode == 0)
+                    MessageBox.Show("Success!");
+                else
+                {
+                    MessageBox.Show("Something went wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(outputForOpenWithIde.ToString(), "Output message from Arduino IDE"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                }
 
-            MessageBox.Show(arduinoOutput);
-            if (ARDUINO_PROCESS.ExitCode == 0)
-                MessageBox.Show("Success!");
-            else
-                MessageBox.Show("Something went wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                outputForOpenWithIde.Clear();
+                lineCountForOpenWithIde = 0;
+            };
+            ARDUINO_PROCESS.OutputDataReceived += (s, e3) =>
+            {
+                if (!String.IsNullOrEmpty(e3.Data))
+                {
+                    lineCountForOpenWithIde++;
+                    outputForOpenWithIde.Append("\n[" + lineCountForOpenWithIde + "]: " + e3.Data);
+                }
+            };
+
+            ARDUINO_PROCESS.Start();
+            ARDUINO_PROCESS.BeginOutputReadLine();
         }
 
         private void CreateInoCode(string path)
@@ -2847,19 +2939,58 @@ namespace register_programmer
         //debug purposes
         private void button2_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(GetArduinoPathFromEnvironment());
-            //ENV_VAR_NAME = "mal";
-            /*MessageBox.Show(ENV_VAR_NAME);
-            MessageBox.Show((string)Properties.Settings.Default["EnvironmentVaribleName"]);
-            SaveSettings();
-            MessageBox.Show((string)Properties.Settings.Default["EnvironmentVaribleName"]);*/
-            /*MessageBox.Show(SETTINGS_DIR);
-            LoadSettings();*/
+            string[] names = SerialPort.GetPortNames();
+            Console.WriteLine("Serial port names: ");
+            foreach(string name in names)
+            {
+                Console.WriteLine(name);
+            }
+            ////////
+            ManagementObjectCollection mbsList = null;
+            ManagementObjectSearcher mbs = new ManagementObjectSearcher("Select * From Win32_USBHub");
+            mbsList = mbs.Get();
 
-            //SaveSettings(@"C:\Users\metin\Desktop\merhaba\deneme.xml");
-            //this._referenceModeIsSingle.Value = !this._referenceModeIsSingle.Value;
-            MessageBox.Show(ARDUINO_PROCESS.StartInfo.FileName);
-            CreateInoCode(@"C:\Users\metin\Desktop\deneme.ino");
+            foreach (ManagementObject mo in mbsList)
+            {
+                Console.WriteLine("USBHub device Friendly name:{0}", mo["Name"].ToString());
+                Console.WriteLine("USBHub device id:{0}", mo["DeviceID"].ToString());
+            }
+            //////////
+            ManagementObjectSearcher manObjSearch = new ManagementObjectSearcher("Select * from Win32_SerialPort");
+            ManagementObjectCollection manObjReturn = manObjSearch.Get();
+            Console.WriteLine("another");
+            foreach (ManagementObject manObj in manObjReturn)
+            {
+                String portName = manObj["Name"].ToString();
+                Console.WriteLine("port: " + portName);
+            }
+            Console.WriteLine("finish");
+        }
+        private string AutodetectArduinoPort()
+        {
+            ManagementScope connectionScope = new ManagementScope();
+            SelectQuery serialQuery = new SelectQuery("SELECT * FROM Win32_SerialPort");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(connectionScope, serialQuery);
+
+            try
+            {
+                foreach (ManagementObject item in searcher.Get())
+                {
+                    string desc = item["Description"].ToString();
+                    string deviceId = item["DeviceID"].ToString();
+
+                    if (desc.Contains("Arduino"))
+                    {
+                        return deviceId;
+                    }
+                }
+            }
+            catch (ManagementException e)
+            {
+                /* Do Nothing */
+            }
+
+            return null;
         }
 
         #region about radio buttons

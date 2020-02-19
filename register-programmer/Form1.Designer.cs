@@ -102,7 +102,7 @@
             System.Windows.Forms.Label label32;
             System.Windows.Forms.Label label30;
             System.Windows.Forms.Label label25;
-            System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+            System.Windows.Forms.TableLayoutPanel tlpMenu;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnIde = new System.Windows.Forms.Button();
             this.txtReg0 = new System.Windows.Forms.TextBox();
@@ -166,17 +166,17 @@
             this.rbPositive = new System.Windows.Forms.CheckBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.btnUndo = new System.Windows.Forms.ToolStripButton();
+            this.btnRedo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.btnOpen = new System.Windows.Forms.ToolStripButton();
+            this.btnSave = new System.Windows.Forms.ToolStripButton();
+            this.btnSaveAs = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.btnOpenWithIde = new System.Windows.Forms.ToolStripButton();
+            this.pbOpenWithIde = new System.Windows.Forms.ToolStripProgressBar();
+            this.btnUploadToArduino = new System.Windows.Forms.ToolStripButton();
+            this.pbUploadToArduino = new System.Windows.Forms.ToolStripProgressBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mFile = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -186,8 +186,8 @@
             this.mmSave = new System.Windows.Forms.ToolStripMenuItem();
             this.mmSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.mExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mPreferences = new System.Windows.Forms.ToolStripMenuItem();
+            this.mHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.gbPhaseResync = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel40 = new System.Windows.Forms.FlowLayoutPanel();
             this.hlblPhaseResync1 = new System.Windows.Forms.Label();
@@ -246,6 +246,7 @@
             this.numFrac1 = new System.Windows.Forms.NumericUpDown();
             this.cbOutputDivider = new System.Windows.Forms.ComboBox();
             this.numN = new System.Windows.Forms.NumericUpDown();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             tlpRegisters = new System.Windows.Forms.TableLayoutPanel();
             label44 = new System.Windows.Forms.Label();
             label76 = new System.Windows.Forms.Label();
@@ -319,7 +320,7 @@
             label32 = new System.Windows.Forms.Label();
             label30 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
-            tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            tlpMenu = new System.Windows.Forms.TableLayoutPanel();
             tlpRegisters.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numVCOBandDivision)).BeginInit();
@@ -335,7 +336,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numTotalCalculatedTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSynthTimeout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTimeout)).BeginInit();
-            tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.gbPhaseResync.SuspendLayout();
@@ -377,6 +377,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numMod2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFrac1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numN)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpRegisters
@@ -416,7 +417,7 @@
             tlpRegisters.Controls.Add(this.txtReg12, 1, 12);
             tlpRegisters.Controls.Add(this.txtReg8, 1, 8);
             tlpRegisters.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tlpRegisters.Location = new System.Drawing.Point(1129, 296);
+            tlpRegisters.Location = new System.Drawing.Point(1133, 286);
             tlpRegisters.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             tlpRegisters.Name = "tlpRegisters";
             tlpRegisters.RowCount = 15;
@@ -1053,6 +1054,7 @@
             tableLayoutPanel7.AutoSize = true;
             tableLayoutPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             tableLayoutPanel7.ColumnCount = 12;
+            this.tableLayoutPanel1.SetColumnSpan(tableLayoutPanel7, 3);
             tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -1147,7 +1149,7 @@
             tableLayoutPanel7.Controls.Add(this.rb33, 2, 13);
             tableLayoutPanel7.Controls.Add(this.rbNegative, 1, 14);
             tableLayoutPanel7.Controls.Add(this.rbPositive, 2, 14);
-            tableLayoutPanel7.Location = new System.Drawing.Point(0, 296);
+            tableLayoutPanel7.Location = new System.Drawing.Point(3, 285);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 18;
             tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -2409,44 +2411,43 @@
             this.rbPositive.UseVisualStyleBackColor = true;
             this.rbPositive.CheckedChanged += new System.EventHandler(this.rbPositive_CheckedChanged);
             // 
-            // tableLayoutPanel1
+            // tlpMenu
             // 
-            tableLayoutPanel1.AutoSize = true;
-            tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(this.toolStrip1, 1, 0);
-            tableLayoutPanel1.Controls.Add(this.menuStrip1, 0, 0);
-            tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(1512, 31);
-            tableLayoutPanel1.TabIndex = 78;
+            tlpMenu.AutoSize = true;
+            tlpMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tlpMenu.ColumnCount = 2;
+            this.tableLayoutPanel1.SetColumnSpan(tlpMenu, 2);
+            tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpMenu.Location = new System.Drawing.Point(842, 3);
+            tlpMenu.Name = "tlpMenu";
+            tlpMenu.RowCount = 1;
+            tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpMenu.Size = new System.Drawing.Size(0, 0);
+            tlpMenu.TabIndex = 78;
             // 
             // toolStrip1
             // 
+            this.toolStrip1.AutoSize = false;
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator1,
-            this.toolStripButton1,
-            this.toolStripButton2,
+            this.btnUndo,
+            this.btnRedo,
             this.toolStripSeparator2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripButton5,
+            this.btnOpen,
+            this.btnSave,
+            this.btnSaveAs,
             this.toolStripSeparator3,
-            this.toolStripButton6,
-            this.toolStripProgressBar1,
-            this.toolStripSplitButton1,
-            this.toolStripDropDownButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(208, 0);
+            this.btnOpenWithIde,
+            this.pbOpenWithIde,
+            this.btnUploadToArduino,
+            this.pbUploadToArduino});
+            this.toolStrip1.Location = new System.Drawing.Point(313, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(370, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(483, 31);
             this.toolStrip1.TabIndex = 77;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -2455,107 +2456,108 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
-            // toolStripButton1
+            // btnUndo
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::register_programmer.Properties.Resources.Undo_16x;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton1.Text = "Undo Inputs";
+            this.btnUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnUndo.Image = global::register_programmer.Properties.Resources.Undo_16x;
+            this.btnUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(29, 28);
+            this.btnUndo.Text = "Undo Inputs";
             // 
-            // toolStripButton2
+            // btnRedo
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::register_programmer.Properties.Resources.Redo_16x;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton2.Text = "Redo Inputs";
+            this.btnRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnRedo.Image = global::register_programmer.Properties.Resources.Redo_16x;
+            this.btnRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRedo.Name = "btnRedo";
+            this.btnRedo.Size = new System.Drawing.Size(29, 28);
+            this.btnRedo.Text = "Redo Inputs";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
-            // toolStripButton3
+            // btnOpen
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::register_programmer.Properties.Resources.OpenFile_16x;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton3.Text = "Open Inputs";
+            this.btnOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnOpen.Image = global::register_programmer.Properties.Resources.OpenFile_16x;
+            this.btnOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(29, 28);
+            this.btnOpen.Text = "Open Inputs";
             // 
-            // toolStripButton4
+            // btnSave
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::register_programmer.Properties.Resources.Save_16x;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton4.Text = "Save Inputs";
-            this.toolStripButton4.Click += new System.EventHandler(this.mmSave_Click);
+            this.btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSave.Image = global::register_programmer.Properties.Resources.Save_16x;
+            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(29, 28);
+            this.btnSave.Text = "Save Inputs";
+            this.btnSave.Click += new System.EventHandler(this.mmSave_Click);
             // 
-            // toolStripButton5
+            // btnSaveAs
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = global::register_programmer.Properties.Resources.SaveAs_16x;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton5.Text = "Save As Inputs";
-            this.toolStripButton5.Click += new System.EventHandler(this.mmSaveAs_Click);
+            this.btnSaveAs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSaveAs.Image = global::register_programmer.Properties.Resources.SaveAs_16x;
+            this.btnSaveAs.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSaveAs.Name = "btnSaveAs";
+            this.btnSaveAs.Size = new System.Drawing.Size(29, 28);
+            this.btnSaveAs.Text = "Save As Inputs";
+            this.btnSaveAs.Click += new System.EventHandler(this.mmSaveAs_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
             // 
-            // toolStripButton6
+            // btnOpenWithIde
             // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = global::register_programmer.Properties.Resources.arduino;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton6.Text = "Open With Arduino IDE";
-            this.toolStripButton6.Click += new System.EventHandler(this.btnIde_Click);
+            this.btnOpenWithIde.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnOpenWithIde.Image = global::register_programmer.Properties.Resources.arduino;
+            this.btnOpenWithIde.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOpenWithIde.Name = "btnOpenWithIde";
+            this.btnOpenWithIde.Size = new System.Drawing.Size(29, 28);
+            this.btnOpenWithIde.Text = "Open With Arduino IDE";
+            this.btnOpenWithIde.Click += new System.EventHandler(this.btnIde_Click);
             // 
-            // toolStripSplitButton1
+            // pbOpenWithIde
             // 
-            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
-            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
-            this.toolStripSplitButton1.Size = new System.Drawing.Size(39, 28);
-            this.toolStripSplitButton1.Text = "toolStripSplitButton1";
+            this.pbOpenWithIde.MarqueeAnimationSpeed = 20;
+            this.pbOpenWithIde.Maximum = 20;
+            this.pbOpenWithIde.Name = "pbOpenWithIde";
+            this.pbOpenWithIde.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.pbOpenWithIde.Size = new System.Drawing.Size(100, 28);
             // 
-            // toolStripDropDownButton1
+            // btnUploadToArduino
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(34, 28);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            this.btnUploadToArduino.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnUploadToArduino.Image = global::register_programmer.Properties.Resources.Compile_16x;
+            this.btnUploadToArduino.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUploadToArduino.Name = "btnUploadToArduino";
+            this.btnUploadToArduino.Size = new System.Drawing.Size(29, 28);
+            this.btnUploadToArduino.Text = "Upload to Arduino";
+            this.btnUploadToArduino.Click += new System.EventHandler(this.btnUpload_Click);
             // 
-            // toolStripProgressBar1
+            // pbUploadToArduino
             // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 28);
+            this.pbUploadToArduino.Name = "pbUploadToArduino";
+            this.pbUploadToArduino.Size = new System.Drawing.Size(100, 28);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.AutoSize = false;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mFile,
-            this.preferencesToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.mPreferences,
+            this.mHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(208, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(313, 28);
             this.menuStrip1.TabIndex = 75;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -2630,18 +2632,18 @@
             this.mExit.Size = new System.Drawing.Size(243, 26);
             this.mExit.Text = "Exit";
             // 
-            // preferencesToolStripMenuItem
+            // mPreferences
             // 
-            this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
-            this.preferencesToolStripMenuItem.Text = "Preferences";
+            this.mPreferences.Name = "mPreferences";
+            this.mPreferences.Size = new System.Drawing.Size(99, 24);
+            this.mPreferences.Text = "Preferences";
             // 
-            // helpToolStripMenuItem
+            // mHelp
             // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
-            this.helpToolStripMenuItem.Text = "Help";
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.button2_Click);
+            this.mHelp.Name = "mHelp";
+            this.mHelp.Size = new System.Drawing.Size(55, 24);
+            this.mHelp.Text = "Help";
+            this.mHelp.Click += new System.EventHandler(this.button2_Click);
             // 
             // gbPhaseResync
             // 
@@ -2853,6 +2855,7 @@
             // 
             this.flpErrors.AutoScroll = true;
             this.flpErrors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tableLayoutPanel1.SetColumnSpan(this.flpErrors, 2);
             this.flpErrors.Controls.Add(this.gbDoubler);
             this.flpErrors.Controls.Add(this.gbCPBleedCurrent);
             this.flpErrors.Controls.Add(this.gbLDMode);
@@ -2861,10 +2864,10 @@
             this.flpErrors.Controls.Add(this.gbPhaseAdjust);
             this.flpErrors.Controls.Add(this.gbPhaseResync);
             this.flpErrors.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpErrors.Location = new System.Drawing.Point(836, 91);
+            this.flpErrors.Location = new System.Drawing.Point(842, 76);
             this.flpErrors.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpErrors.Name = "flpErrors";
-            this.flpErrors.Size = new System.Drawing.Size(588, 202);
+            this.flpErrors.Size = new System.Drawing.Size(586, 202);
             this.flpErrors.TabIndex = 66;
             this.flpErrors.WrapContents = false;
             // 
@@ -3092,6 +3095,7 @@
             this.tableLayoutPanel5.AutoSize = true;
             this.tableLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel5.ColumnCount = 10;
+            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel5, 4);
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -3114,7 +3118,7 @@
             this.tableLayoutPanel5.Controls.Add(this.numDivider, 4, 0);
             this.tableLayoutPanel5.Controls.Add(this.cbDoubler, 5, 0);
             this.tableLayoutPanel5.Font = new System.Drawing.Font("Consolas", 9F);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 56);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 35);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
@@ -3258,6 +3262,7 @@
             this.tableLayoutPanel6.AutoSize = true;
             this.tableLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel6.ColumnCount = 11;
+            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel6, 2);
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -3297,7 +3302,7 @@
             this.tableLayoutPanel6.Controls.Add(this.cbOutputDivider, 8, 6);
             this.tableLayoutPanel6.Controls.Add(this.numN, 2, 6);
             this.tableLayoutPanel6.Font = new System.Drawing.Font("Consolas", 9F);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 91);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 76);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 7;
@@ -3557,18 +3562,43 @@
             0,
             327680});
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(tlpMenu, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(tlpRegisters, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(tableLayoutPanel7, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.menuStrip1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flpErrors, 2, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1433, 873);
+            this.tableLayoutPanel1.TabIndex = 79;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1512, 873);
-            this.Controls.Add(tableLayoutPanel1);
-            this.Controls.Add(tableLayoutPanel7);
-            this.Controls.Add(this.tableLayoutPanel6);
-            this.Controls.Add(tlpRegisters);
-            this.Controls.Add(this.tableLayoutPanel5);
-            this.Controls.Add(this.flpErrors);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1433, 873);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Consolas", 9F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -3593,8 +3623,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numTotalCalculatedTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSynthTimeout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTimeout)).EndInit();
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -3655,6 +3683,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numMod2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFrac1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numN)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3780,15 +3810,13 @@
         private System.Windows.Forms.CheckBox rbNegative;
         private System.Windows.Forms.CheckBox rbPositive;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripButton btnUndo;
+        private System.Windows.Forms.ToolStripButton btnRedo;
+        private System.Windows.Forms.ToolStripButton btnOpen;
+        private System.Windows.Forms.ToolStripButton btnSave;
+        private System.Windows.Forms.ToolStripButton btnSaveAs;
+        private System.Windows.Forms.ToolStripButton btnOpenWithIde;
+        private System.Windows.Forms.ToolStripProgressBar pbOpenWithIde;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mFile;
         private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
@@ -3798,11 +3826,14 @@
         private System.Windows.Forms.ToolStripMenuItem mmSave;
         private System.Windows.Forms.ToolStripMenuItem mmSaveAs;
         private System.Windows.Forms.ToolStripMenuItem mExit;
-        private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mPreferences;
+        private System.Windows.Forms.ToolStripMenuItem mHelp;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ToolStripButton btnUploadToArduino;
+        private System.Windows.Forms.ToolStripProgressBar pbUploadToArduino;
     }
 }
 

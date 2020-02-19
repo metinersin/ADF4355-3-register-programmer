@@ -160,5 +160,8 @@
   <ItemGroup>
     <None Include="Resources\pll_draft.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Compile_16x.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
