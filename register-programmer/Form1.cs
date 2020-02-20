@@ -13,6 +13,8 @@ using System.IO;
 using System.IO.Ports;
 using System.Xml;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
+using Microsoft.VisualBasic;
 using PCEArgs = System.ComponentModel.PropertyChangedEventArgs;
 using PCEHandler = System.ComponentModel.PropertyChangedEventHandler;
 
@@ -500,9 +502,6 @@ namespace register_programmer
         readonly static private string TEMP_INO_NAME = "temp";
         static private string ENV_VAR_NAME = "Path";
         static private Process ARDUINO_PROCESS = new Process();
-
-        static private string INO_FILE_PATH = @"arduino-1.8.11\code\code.ino";
-        
 
         static private bool SettingsAreSaved = false;
 
@@ -1051,6 +1050,7 @@ namespace register_programmer
 
             this._frac1.PropertyChanged += this.calculateIntMode;
             this._frac2.PropertyChanged += this.calculateIntMode;
+
             #endregion
 
             #region registers
@@ -1463,6 +1463,8 @@ namespace register_programmer
             #endregion
 
             #endregion
+
+            tmCheckPorts.Start();
         }
 
         #region properties
@@ -2118,6 +2120,7 @@ namespace register_programmer
 
         private ActiveVar<bool> _intMode;
 
+        #region registers
         #region register 0
         private ActiveVar<bool> _autocal;
         private ActiveVar<int> _prescaler;
@@ -2198,6 +2201,7 @@ namespace register_programmer
         private ActiveVar<int> _resyncClockInt;
         private ActiveVar<decimal> _resyncClockTimeout;
         private ActiveVar<decimal> _reg12;
+        #endregion
         #endregion
 
         #endregion
@@ -2663,8 +2667,51 @@ namespace register_programmer
             }
             pbUploadToArduinoStart();
 
+            //get port name
             string portName = null;
+            if(cbPorts.Items.Count > 0)
+            {
+                string selectedItem = (string)cbPorts.SelectedItem;
+                if(!string.IsNullOrWhiteSpace(selectedItem) && !string.IsNullOrEmpty(selectedItem))
+                {
+                    selectedItem = Regex.Replace(selectedItem, @"\s+", "");
+                    if(Regex.IsMatch(selectedItem, @"^COM\d+$"))
+                    {
+                        portName = selectedItem;
+                    }
+                }
+            }
 
+            if(string.IsNullOrEmpty(portName) || string.IsNullOrWhiteSpace(portName))
+            {
+                string response = Interaction.InputBox("Something went wrong while detecting COM port of the Arduino. Please write the COM number of"
+                    + " your Arduino.", "COM port of Arduino could not detected!");
+
+                if(string.IsNullOrWhiteSpace(response) || string.IsNullOrEmpty(response))
+                {
+                    MessageBox.Show("The COM port you provided is not correct!", "Incorrect COM port", MessageBoxButtons.OK
+                        , MessageBoxIcon.Error);
+                    pbUploadToArduinoStop();
+                    return;
+                }
+
+                response = Regex.Replace(response, @"\s+", "");
+                if (Regex.IsMatch(response, @"^COM\d+$"))
+                    portName = response;
+                else if(Regex.IsMatch(response, @"^\d+$"))
+                    portName = "COM" + response;
+                else
+                {
+                    MessageBox.Show("The COM port you provided is not correct!", "Incorrect COM port", MessageBoxButtons.OK
+                        , MessageBoxIcon.Error);
+                    pbUploadToArduinoStop();
+                    return;
+                }
+            }
+
+            MessageBox.Show(portName);
+
+            return;
             string tempInoPath = Path.Combine(INO_DIR, Path.Combine(TEMP_INO_NAME, TEMP_INO_NAME + ".ino"));
             CheckFolders();
             CreateInoCode(tempInoPath);
@@ -2682,7 +2729,6 @@ namespace register_programmer
                     MessageBox.Show("Something went wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     MessageBox.Show(outputForOpenWithIde.ToString(), "Output message from Arduino IDE"
                         , MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 }
 
                 outputForOpenWithIde.Clear();
@@ -2937,60 +2983,15 @@ namespace register_programmer
         
 
         //debug purposes
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e2)
         {
-            string[] names = SerialPort.GetPortNames();
             Console.WriteLine("Serial port names: ");
+            string[] names = SerialPort.GetPortNames();
             foreach(string name in names)
             {
                 Console.WriteLine(name);
             }
-            ////////
-            ManagementObjectCollection mbsList = null;
-            ManagementObjectSearcher mbs = new ManagementObjectSearcher("Select * From Win32_USBHub");
-            mbsList = mbs.Get();
-
-            foreach (ManagementObject mo in mbsList)
-            {
-                Console.WriteLine("USBHub device Friendly name:{0}", mo["Name"].ToString());
-                Console.WriteLine("USBHub device id:{0}", mo["DeviceID"].ToString());
-            }
-            //////////
-            ManagementObjectSearcher manObjSearch = new ManagementObjectSearcher("Select * from Win32_SerialPort");
-            ManagementObjectCollection manObjReturn = manObjSearch.Get();
-            Console.WriteLine("another");
-            foreach (ManagementObject manObj in manObjReturn)
-            {
-                String portName = manObj["Name"].ToString();
-                Console.WriteLine("port: " + portName);
-            }
             Console.WriteLine("finish");
-        }
-        private string AutodetectArduinoPort()
-        {
-            ManagementScope connectionScope = new ManagementScope();
-            SelectQuery serialQuery = new SelectQuery("SELECT * FROM Win32_SerialPort");
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher(connectionScope, serialQuery);
-
-            try
-            {
-                foreach (ManagementObject item in searcher.Get())
-                {
-                    string desc = item["Description"].ToString();
-                    string deviceId = item["DeviceID"].ToString();
-
-                    if (desc.Contains("Arduino"))
-                    {
-                        return deviceId;
-                    }
-                }
-            }
-            catch (ManagementException e)
-            {
-                /* Do Nothing */
-            }
-
-            return null;
         }
 
         #region about radio buttons
@@ -3030,6 +3031,51 @@ namespace register_programmer
                 this._pdPolarityIsNegative.Value = !this.rbPositive.Checked;
         }
         #endregion
+
+        private void tmCheckPorts_Tick(object sender, EventArgs e)
+        {
+            Console.WriteLine("Detected serial port names: ");
+            string[] names = SerialPort.GetPortNames();
+            foreach (string name in names)
+            {
+                Console.WriteLine(name);
+            }
+
+            int lenOfCbPorts = cbPorts.Items.Count;
+            int numOfDetectedPort = names.Length;
+
+            if(numOfDetectedPort == lenOfCbPorts)
+            {
+                bool same = true;
+                for(int i = 0; i < lenOfCbPorts; i++)
+                {
+                    if ((string)(cbPorts.Items[i]) != names[i])
+                    {
+                        same = false;
+                        break;
+                    }
+                }
+
+                if (same) return;
+            }
+
+            List<string> oldPortList = new List<string>(lenOfCbPorts);
+            for(int i = 0; i < lenOfCbPorts; i++)
+                oldPortList.Add((string)cbPorts.Items[i]);
+
+            cbPorts.Items.Clear();
+            foreach (string name in names)
+                cbPorts.Items.Add(name);
+
+            for(int i = 0; i < numOfDetectedPort; i++)
+            {
+                if (!oldPortList.Contains(names[i]))
+                {
+                    cbPorts.SelectedIndex = i;
+                    return;
+                }
+            }
+        }
     }
 
 

@@ -176,6 +176,7 @@
             this.btnOpenWithIde = new System.Windows.Forms.ToolStripButton();
             this.pbOpenWithIde = new System.Windows.Forms.ToolStripProgressBar();
             this.btnUploadToArduino = new System.Windows.Forms.ToolStripButton();
+            this.cbPorts = new System.Windows.Forms.ToolStripComboBox();
             this.pbUploadToArduino = new System.Windows.Forms.ToolStripProgressBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -247,6 +248,7 @@
             this.cbOutputDivider = new System.Windows.Forms.ComboBox();
             this.numN = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tmCheckPorts = new System.Windows.Forms.Timer(this.components);
             tlpRegisters = new System.Windows.Forms.TableLayoutPanel();
             label44 = new System.Windows.Forms.Label();
             label76 = new System.Windows.Forms.Label();
@@ -417,7 +419,7 @@
             tlpRegisters.Controls.Add(this.txtReg12, 1, 12);
             tlpRegisters.Controls.Add(this.txtReg8, 1, 8);
             tlpRegisters.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tlpRegisters.Location = new System.Drawing.Point(1133, 286);
+            tlpRegisters.Location = new System.Drawing.Point(1133, 292);
             tlpRegisters.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             tlpRegisters.Name = "tlpRegisters";
             tlpRegisters.RowCount = 15;
@@ -1149,7 +1151,7 @@
             tableLayoutPanel7.Controls.Add(this.rb33, 2, 13);
             tableLayoutPanel7.Controls.Add(this.rbNegative, 1, 14);
             tableLayoutPanel7.Controls.Add(this.rbPositive, 2, 14);
-            tableLayoutPanel7.Location = new System.Drawing.Point(3, 285);
+            tableLayoutPanel7.Location = new System.Drawing.Point(3, 291);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 18;
             tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -2419,7 +2421,7 @@
             this.tableLayoutPanel1.SetColumnSpan(tlpMenu, 2);
             tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tlpMenu.Location = new System.Drawing.Point(842, 3);
+            tlpMenu.Location = new System.Drawing.Point(3, 34);
             tlpMenu.Name = "tlpMenu";
             tlpMenu.RowCount = 1;
             tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2429,6 +2431,7 @@
             // toolStrip1
             // 
             this.toolStrip1.AutoSize = false;
+            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip1, 2);
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -2444,10 +2447,11 @@
             this.btnOpenWithIde,
             this.pbOpenWithIde,
             this.btnUploadToArduino,
+            this.cbPorts,
             this.pbUploadToArduino});
             this.toolStrip1.Location = new System.Drawing.Point(313, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(483, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(699, 31);
             this.toolStrip1.TabIndex = 77;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -2541,8 +2545,15 @@
             this.btnUploadToArduino.Text = "Upload to Arduino";
             this.btnUploadToArduino.Click += new System.EventHandler(this.btnUpload_Click);
             // 
+            // cbPorts
+            // 
+            this.cbPorts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPorts.Name = "cbPorts";
+            this.cbPorts.Size = new System.Drawing.Size(100, 31);
+            // 
             // pbUploadToArduino
             // 
+            this.pbUploadToArduino.MarqueeAnimationSpeed = 20;
             this.pbUploadToArduino.Name = "pbUploadToArduino";
             this.pbUploadToArduino.Size = new System.Drawing.Size(100, 28);
             // 
@@ -2864,7 +2875,7 @@
             this.flpErrors.Controls.Add(this.gbPhaseAdjust);
             this.flpErrors.Controls.Add(this.gbPhaseResync);
             this.flpErrors.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpErrors.Location = new System.Drawing.Point(842, 76);
+            this.flpErrors.Location = new System.Drawing.Point(842, 82);
             this.flpErrors.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpErrors.Name = "flpErrors";
             this.flpErrors.Size = new System.Drawing.Size(586, 202);
@@ -3118,7 +3129,7 @@
             this.tableLayoutPanel5.Controls.Add(this.numDivider, 4, 0);
             this.tableLayoutPanel5.Controls.Add(this.cbDoubler, 5, 0);
             this.tableLayoutPanel5.Font = new System.Drawing.Font("Consolas", 9F);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 35);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 41);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
@@ -3302,7 +3313,7 @@
             this.tableLayoutPanel6.Controls.Add(this.cbOutputDivider, 8, 6);
             this.tableLayoutPanel6.Controls.Add(this.numN, 2, 6);
             this.tableLayoutPanel6.Font = new System.Drawing.Font("Consolas", 9F);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 76);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 82);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 7;
@@ -3591,6 +3602,11 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1433, 873);
             this.tableLayoutPanel1.TabIndex = 79;
             // 
+            // tmCheckPorts
+            // 
+            this.tmCheckPorts.Interval = 1000;
+            this.tmCheckPorts.Tick += new System.EventHandler(this.tmCheckPorts_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -3603,6 +3619,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MinimumSize = new System.Drawing.Size(1451, 920);
             this.Name = "Form1";
             this.Text = "ADF 4355-3 Programmer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -3834,6 +3851,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolStripButton btnUploadToArduino;
         private System.Windows.Forms.ToolStripProgressBar pbUploadToArduino;
+        private System.Windows.Forms.ToolStripComboBox cbPorts;
+        private System.Windows.Forms.Timer tmCheckPorts;
     }
 }
 
