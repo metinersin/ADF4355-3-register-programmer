@@ -1464,6 +1464,7 @@ namespace register_programmer
 
             #endregion
 
+            //start to listen the ports for Arduino
             tmCheckPorts.Start();
         }
 
@@ -2204,6 +2205,9 @@ namespace register_programmer
         #endregion
         #endregion
 
+        #region other
+        #endregion
+
         #endregion
 
         #region calculation methods
@@ -2645,7 +2649,6 @@ namespace register_programmer
 
         #endregion
 
-        // control event methods
         private void pbUploadToArduinoStart()
         {
             pbUploadToArduino.Style = ProgressBarStyle.Marquee;
@@ -2654,6 +2657,8 @@ namespace register_programmer
         {
             pbUploadToArduino.Style = ProgressBarStyle.Blocks;
         }
+        private static StringBuilder outputForUploadToArduino = new StringBuilder();
+        private static int lineCountForUploadToArduino = 0;
         private void btnUpload_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(ARDUINO_PROCESS.StartInfo.FileName) || string.IsNullOrWhiteSpace(ARDUINO_PROCESS.StartInfo.FileName))
@@ -2711,15 +2716,15 @@ namespace register_programmer
 
             MessageBox.Show(portName);
 
-            return;
+            //return;
             string tempInoPath = Path.Combine(INO_DIR, Path.Combine(TEMP_INO_NAME, TEMP_INO_NAME + ".ino"));
             CheckFolders();
             CreateInoCode(tempInoPath);
 
-            ARDUINO_PROCESS.StartInfo.Arguments = "--upload --port " + portName + "\"" + tempInoPath + "\"";
+            ARDUINO_PROCESS.StartInfo.Arguments = "--upload --port " + portName + " \"" + tempInoPath + "\"";
             ARDUINO_PROCESS.Exited += (s, e2) =>
             {
-                pbOpenWithIde.GetCurrentParent().Invoke(new Action(() => { pbOpenWithIdeStop(); }));
+                pbUploadToArduino.GetCurrentParent().Invoke(new Action(() => { pbUploadToArduinoStop(); }));
                 Process process = (Process)s;
                 process.CancelOutputRead();
                 if (process.ExitCode == 0)
@@ -2731,15 +2736,15 @@ namespace register_programmer
                         , MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                outputForOpenWithIde.Clear();
-                lineCountForOpenWithIde = 0;
+                outputForUploadToArduino.Clear();
+                lineCountForUploadToArduino = 0;
             };
             ARDUINO_PROCESS.OutputDataReceived += (s, e3) =>
             {
                 if (!String.IsNullOrEmpty(e3.Data))
                 {
-                    lineCountForOpenWithIde++;
-                    outputForOpenWithIde.Append("\n[" + lineCountForOpenWithIde + "]: " + e3.Data);
+                    lineCountForUploadToArduino++;
+                    outputForUploadToArduino.Append("\n[" + lineCountForUploadToArduino + "]: " + e3.Data);
                 }
             };
 
@@ -2982,7 +2987,7 @@ namespace register_programmer
 
         
 
-        //debug purposes
+        //for debug purposes
         private void button2_Click(object sender, EventArgs e2)
         {
             Console.WriteLine("Serial port names: ");
@@ -3036,10 +3041,10 @@ namespace register_programmer
         {
             Console.WriteLine("Detected serial port names: ");
             string[] names = SerialPort.GetPortNames();
-            foreach (string name in names)
+            /*foreach (string name in names)
             {
                 Console.WriteLine(name);
-            }
+            }*/
 
             int lenOfCbPorts = cbPorts.Items.Count;
             int numOfDetectedPort = names.Length;
@@ -3076,6 +3081,73 @@ namespace register_programmer
                 }
             }
         }
+    }
+
+    public class AppSettings
+    {
+        public AppSettings()
+        {
+
+        }
+
+        //inputs
+        public decimal ReferenceInput { get; set; }
+        public decimal Divider { get; set; }
+        public bool DivideBy2 { get; set; }
+        public bool Doubler { get; set; }
+        public decimal ChannelSpacing { get; set; }
+        public decimal VCOOutput { get; set; }
+        public int OutputDividerIndex { get; set;}
+        //reg1
+        public bool AutoCalibration { get; set; }
+        public int Prescaler { get; set; }
+        //reg3
+        public bool SDLoadReset { get; set; }
+        public bool PhaseResync { get; set; }
+        public bool PhaseAdjustment { get; set; }
+        public decimal Phase { get; set; }
+        //reg4
+        public int MuxOutputIndex { get; set; }
+        public bool DoubleBuffer { get; set; }
+        public int CPCurrentIndex { get; set; }
+        public bool ReferenceModeIsSingle { get; set; }
+        public bool MuxLevelIs18 { get; set; }
+        public bool PDPolarityIsNegative { get; set; }
+        public bool PowerDown { get; set; }
+        public bool CPThreeState { get; set; }
+        public bool CounterReset { get; set; }
+        //reg6
+        public int FeedbackIndex { get; set; }
+        public int CPBleedCurrentInt { get; set; }
+        public bool MuteTillLockDetect { get; set; }
+        public bool AuxOutputEnable { get; set; }
+        public int AuxOutputPower { get; set; }
+        public bool RfOutputEnable { get; set; }
+        public int RfOutputPower { get; set; }
+        public bool NegativeBleed { get; set; }
+        public bool GatedBleed { get; set; }
+
+        /*public decimal VCOOutput { get; set; }
+        public int OutputDividerIndex { get; set; }
+        public bool AutoCalibration { get; set; }
+        public int Prescaler { get; set; }
+        public bool SDLoadReset { get; set; }
+        public bool PhaseResync { get; set; }
+        public bool PhaseAdjustment { get; set; }
+        public decimal Phase { get; set; }
+        public int MuxOutputIndex { get; set; }
+        public bool DoubleBuffer { get; set; }
+        public int CPCurrentIndex { get; set; }
+        public bool ReferenceModeIsSingle { get; set; }
+        public bool MuxLevelIs18 { get; set; }
+        public bool PDPolarityIsNegative { get; set; }
+        public bool PowerDown { get; set; }
+        public bool CPThreeState { get; set; }
+        public bool CounterReset { get; set; }
+        public int FeedbackIndex { get; set; }
+        public int CPBleedCurrentInt { get; set; }
+        public bool MuteTillLockDetect { get; set; }
+        public bool AuxOutputEnable { get; set; }*/
     }
 
 

@@ -2652,8 +2652,8 @@
             // mHelp
             // 
             this.mHelp.Name = "mHelp";
-            this.mHelp.Size = new System.Drawing.Size(55, 24);
-            this.mHelp.Text = "Help";
+            this.mHelp.Size = new System.Drawing.Size(93, 24);
+            this.mHelp.Text = "For Debug";
             this.mHelp.Click += new System.EventHandler(this.button2_Click);
             // 
             // gbPhaseResync
